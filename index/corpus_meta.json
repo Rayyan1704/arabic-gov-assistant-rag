@@ -1,272 +1,206 @@
 [
   {
-    "file": "business_caa_tenders_submission.txt",
-    "path": "../data\\business\\business_caa_tenders_submission.txt",
-    "category": "business",
-    "chunk_id": 0
-  },
-  {
-    "file": "business_caa_tenders_submission.txt",
-    "path": "../data\\business\\business_caa_tenders_submission.txt",
-    "category": "business",
-    "chunk_id": 1
-  },
-  {
-    "file": "business_cra_acknowledgement_certificate.txt",
-    "path": "../data\\business\\business_cra_acknowledgement_certificate.txt",
-    "category": "business",
-    "chunk_id": 0
-  },
-  {
-    "file": "business_gta_self_registration_request.txt",
-    "path": "../data\\business\\business_gta_self_registration_request.txt",
-    "category": "business",
-    "chunk_id": 0
-  },
-  {
-    "file": "business_moci_import_pesticides.txt",
-    "path": "../data\\business\\business_moci_import_pesticides.txt",
-    "category": "business",
-    "chunk_id": 0
-  },
-  {
-    "file": "business_moci_import_pesticides.txt",
-    "path": "../data\\business\\business_moci_import_pesticides.txt",
-    "category": "business",
-    "chunk_id": 1
-  },
-  {
-    "file": "business_moci_import_pesticides.txt",
-    "path": "../data\\business\\business_moci_import_pesticides.txt",
-    "category": "business",
-    "chunk_id": 2
-  },
-  {
-    "file": "business_moci_license_reactivation.txt",
-    "path": "../data\\business\\business_moci_license_reactivation.txt",
-    "category": "business",
-    "chunk_id": 0
-  },
-  {
-    "file": "business_moci_license_reactivation.txt",
-    "path": "../data\\business\\business_moci_license_reactivation.txt",
-    "category": "business",
-    "chunk_id": 1
-  },
-  {
-    "file": "business_moci_patent_data_request.txt",
-    "path": "../data\\business\\business_moci_patent_data_request.txt",
-    "category": "business",
-    "chunk_id": 0
-  },
-  {
-    "file": "business_qdb_company_financing_tamkeen.txt",
-    "path": "../data\\business\\business_qdb_company_financing_tamkeen.txt",
-    "category": "business",
-    "chunk_id": 0
-  },
-  {
-    "file": "business_qdb_company_financing_tamkeen.txt",
-    "path": "../data\\business\\business_qdb_company_financing_tamkeen.txt",
-    "category": "business",
-    "chunk_id": 1
-  },
-  {
-    "file": "business_qfc_legal_clinic_application.txt",
-    "path": "../data\\business\\business_qfc_legal_clinic_application.txt",
-    "category": "business",
-    "chunk_id": 0
-  },
-  {
-    "file": "culture_moc_film_tv_shoot_permit.txt",
-    "path": "../data\\culture\\culture_moc_film_tv_shoot_permit.txt",
-    "category": "culture",
-    "chunk_id": 0
-  },
-  {
-    "file": "education_hbku_admission_application.txt",
-    "path": "../data\\education\\education_hbku_admission_application.txt",
-    "category": "education",
-    "chunk_id": 0
-  },
-  {
-    "file": "education_qnl_research_centers_guide.txt",
-    "path": "../data\\education\\education_qnl_research_centers_guide.txt",
-    "category": "education",
-    "chunk_id": 0
-  },
-  {
-    "file": "education_qu_course_registration.txt",
-    "path": "../data\\education\\education_qu_course_registration.txt",
-    "category": "education",
-    "chunk_id": 0
-  },
-  {
-    "file": "education_qu_transcript_request.txt",
-    "path": "../data\\education\\education_qu_transcript_request.txt",
-    "category": "education",
-    "chunk_id": 0
-  },
-  {
-    "file": "education_qu_withdrawal_request.txt",
-    "path": "../data\\education\\education_qu_withdrawal_request.txt",
-    "category": "education",
-    "chunk_id": 0
-  },
-  {
-    "file": "health_hmc_doctor_consultation.txt",
-    "path": "../data\\health\\health_hmc_doctor_consultation.txt",
+    "source_file": "data/health\\health_hmc_doctor_consultation.txt",
     "category": "health",
-    "chunk_id": 0
+    "chunk_id": 0,
+    "chunk_length": 1778
   },
   {
-    "file": "health_hmc_job_application.txt",
-    "path": "../data\\health\\health_hmc_job_application.txt",
+    "source_file": "data/health\\health_hmc_job_application.txt",
     "category": "health",
-    "chunk_id": 0
+    "chunk_id": 0,
+    "chunk_length": 1752
   },
   {
-    "file": "health_hmc_medical_report_request.txt",
-    "path": "../data\\health\\health_hmc_medical_report_request.txt",
+    "source_file": "data/health\\health_hmc_medical_report_request.txt",
     "category": "health",
-    "chunk_id": 0
+    "chunk_id": 0,
+    "chunk_length": 1786
   },
   {
-    "file": "health_hmc_urgent_medical_consultation.txt",
-    "path": "../data\\health\\health_hmc_urgent_medical_consultation.txt",
+    "source_file": "data/health\\health_hmc_urgent_medical_consultation.txt",
     "category": "health",
-    "chunk_id": 0
+    "chunk_id": 0,
+    "chunk_length": 1851
   },
   {
-    "file": "health_qchp_practitioner_license.txt",
-    "path": "../data\\health\\health_qchp_practitioner_license.txt",
+    "source_file": "data/health\\health_qchp_practitioner_license.txt",
     "category": "health",
-    "chunk_id": 0
+    "chunk_id": 0,
+    "chunk_length": 1758
   },
   {
-    "file": "housing_msdf_property_title_request.txt",
-    "path": "../data\\housing\\housing_msdf_property_title_request.txt",
+    "source_file": "data/education\\education_hbku_admission_application.txt",
+    "category": "education",
+    "chunk_id": 0,
+    "chunk_length": 1762
+  },
+  {
+    "source_file": "data/education\\education_qnl_research_centers_guide.txt",
+    "category": "education",
+    "chunk_id": 0,
+    "chunk_length": 1767
+  },
+  {
+    "source_file": "data/education\\education_qu_course_registration.txt",
+    "category": "education",
+    "chunk_id": 0,
+    "chunk_length": 1746
+  },
+  {
+    "source_file": "data/education\\education_qu_transcript_request.txt",
+    "category": "education",
+    "chunk_id": 0,
+    "chunk_length": 1854
+  },
+  {
+    "source_file": "data/education\\education_qu_withdrawal_request.txt",
+    "category": "education",
+    "chunk_id": 0,
+    "chunk_length": 1716
+  },
+  {
+    "source_file": "data/business\\business_caa_tenders_submission.txt",
+    "category": "business",
+    "chunk_id": 0,
+    "chunk_length": 1899
+  },
+  {
+    "source_file": "data/business\\business_cra_acknowledgement_certificate.txt",
+    "category": "business",
+    "chunk_id": 0,
+    "chunk_length": 1768
+  },
+  {
+    "source_file": "data/business\\business_gta_self_registration_request.txt",
+    "category": "business",
+    "chunk_id": 0,
+    "chunk_length": 1762
+  },
+  {
+    "source_file": "data/business\\business_moci_import_pesticides.txt",
+    "category": "business",
+    "chunk_id": 0,
+    "chunk_length": 1732
+  },
+  {
+    "source_file": "data/business\\business_moci_license_reactivation.txt",
+    "category": "business",
+    "chunk_id": 0,
+    "chunk_length": 1756
+  },
+  {
+    "source_file": "data/business\\business_moci_patent_data_request.txt",
+    "category": "business",
+    "chunk_id": 0,
+    "chunk_length": 1788
+  },
+  {
+    "source_file": "data/business\\business_qdb_company_financing_tamkeen.txt",
+    "category": "business",
+    "chunk_id": 0,
+    "chunk_length": 1770
+  },
+  {
+    "source_file": "data/business\\business_qfc_legal_clinic_application.txt",
+    "category": "business",
+    "chunk_id": 0,
+    "chunk_length": 1744
+  },
+  {
+    "source_file": "data/transportation\\transportation_ag_vehicle_circulation_request.txt",
+    "category": "transportation",
+    "chunk_id": 0,
+    "chunk_length": 1724
+  },
+  {
+    "source_file": "data/transportation\\transportation_caa_travel_aircargo_license.txt",
+    "category": "transportation",
+    "chunk_id": 0,
+    "chunk_length": 1768
+  },
+  {
+    "source_file": "data/transportation\\transportation_fish_transport_permit.txt",
+    "category": "transportation",
+    "chunk_id": 0,
+    "chunk_length": 1746
+  },
+  {
+    "source_file": "data/transportation\\transportation_mot_limo_license.txt",
+    "category": "transportation",
+    "chunk_id": 0,
+    "chunk_length": 1748
+  },
+  {
+    "source_file": "data/transportation\\transportation_qpost_cargo_service.txt",
+    "category": "transportation",
+    "chunk_id": 0,
+    "chunk_length": 1782
+  },
+  {
+    "source_file": "data/justice\\justice_ag_case_search.txt",
+    "category": "justice",
+    "chunk_id": 0,
+    "chunk_length": 1732
+  },
+  {
+    "source_file": "data/justice\\justice_ag_open_pleading_request.txt",
+    "category": "justice",
+    "chunk_id": 0,
+    "chunk_length": 1734
+  },
+  {
+    "source_file": "data/justice\\justice_moj_lawyer_portal.txt",
+    "category": "justice",
+    "chunk_id": 0,
+    "chunk_length": 1736
+  },
+  {
+    "source_file": "data/justice\\justice_moj_real_estate_portal.txt",
+    "category": "justice",
+    "chunk_id": 0,
+    "chunk_length": 1750
+  },
+  {
+    "source_file": "data/justice\\justice_moj_suppliers_portal.txt",
+    "category": "justice",
+    "chunk_id": 0,
+    "chunk_length": 1756
+  },
+  {
+    "source_file": "data/housing\\housing_msdf_property_title_request.txt",
     "category": "housing",
-    "chunk_id": 0
+    "chunk_id": 0,
+    "chunk_length": 1784
   },
   {
-    "file": "about_hukoomi.txt",
-    "path": "../data\\info\\about_hukoomi.txt",
+    "source_file": "data/culture\\culture_moc_film_tv_shoot_permit.txt",
+    "category": "culture",
+    "chunk_id": 0,
+    "chunk_length": 1764
+  },
+  {
+    "source_file": "data/info\\about_hukoomi.txt",
     "category": "info",
-    "chunk_id": 0
+    "chunk_id": 0,
+    "chunk_length": 1684
   },
   {
-    "file": "about_hukoomi.txt",
-    "path": "../data\\info\\about_hukoomi.txt",
+    "source_file": "data/info\\contact_info.txt",
     "category": "info",
-    "chunk_id": 1
+    "chunk_id": 0,
+    "chunk_length": 1715
   },
   {
-    "file": "about_hukoomi.txt",
-    "path": "../data\\info\\about_hukoomi.txt",
+    "source_file": "data/info\\faq_hukoomi.txt",
     "category": "info",
-    "chunk_id": 2
+    "chunk_id": 0,
+    "chunk_length": 1714
   },
   {
-    "file": "about_hukoomi.txt",
-    "path": "../data\\info\\about_hukoomi.txt",
+    "source_file": "data/info\\participation_overview.txt",
     "category": "info",
-    "chunk_id": 3
-  },
-  {
-    "file": "contact_info.txt",
-    "path": "../data\\info\\contact_info.txt",
-    "category": "info",
-    "chunk_id": 0
-  },
-  {
-    "file": "faq_hukoomi.txt",
-    "path": "../data\\info\\faq_hukoomi.txt",
-    "category": "info",
-    "chunk_id": 0
-  },
-  {
-    "file": "faq_hukoomi.txt",
-    "path": "../data\\info\\faq_hukoomi.txt",
-    "category": "info",
-    "chunk_id": 1
-  },
-  {
-    "file": "faq_hukoomi.txt",
-    "path": "../data\\info\\faq_hukoomi.txt",
-    "category": "info",
-    "chunk_id": 2
-  },
-  {
-    "file": "participation_overview.txt",
-    "path": "../data\\info\\participation_overview.txt",
-    "category": "info",
-    "chunk_id": 0
-  },
-  {
-    "file": "participation_overview.txt",
-    "path": "../data\\info\\participation_overview.txt",
-    "category": "info",
-    "chunk_id": 1
-  },
-  {
-    "file": "justice_ag_case_search.txt",
-    "path": "../data\\justice\\justice_ag_case_search.txt",
-    "category": "justice",
-    "chunk_id": 0
-  },
-  {
-    "file": "justice_ag_open_pleading_request.txt",
-    "path": "../data\\justice\\justice_ag_open_pleading_request.txt",
-    "category": "justice",
-    "chunk_id": 0
-  },
-  {
-    "file": "justice_moj_lawyer_portal.txt",
-    "path": "../data\\justice\\justice_moj_lawyer_portal.txt",
-    "category": "justice",
-    "chunk_id": 0
-  },
-  {
-    "file": "justice_moj_real_estate_portal.txt",
-    "path": "../data\\justice\\justice_moj_real_estate_portal.txt",
-    "category": "justice",
-    "chunk_id": 0
-  },
-  {
-    "file": "justice_moj_suppliers_portal.txt",
-    "path": "../data\\justice\\justice_moj_suppliers_portal.txt",
-    "category": "justice",
-    "chunk_id": 0
-  },
-  {
-    "file": "transportation_ag_vehicle_circulation_request.txt",
-    "path": "../data\\transportation\\transportation_ag_vehicle_circulation_request.txt",
-    "category": "transportation",
-    "chunk_id": 0
-  },
-  {
-    "file": "transportation_caa_travel_aircargo_license.txt",
-    "path": "../data\\transportation\\transportation_caa_travel_aircargo_license.txt",
-    "category": "transportation",
-    "chunk_id": 0
-  },
-  {
-    "file": "transportation_fish_transport_permit.txt",
-    "path": "../data\\transportation\\transportation_fish_transport_permit.txt",
-    "category": "transportation",
-    "chunk_id": 0
-  },
-  {
-    "file": "transportation_mot_limo_license.txt",
-    "path": "../data\\transportation\\transportation_mot_limo_license.txt",
-    "category": "transportation",
-    "chunk_id": 0
-  },
-  {
-    "file": "transportation_qpost_cargo_service.txt",
-    "path": "../data\\transportation\\transportation_qpost_cargo_service.txt",
-    "category": "transportation",
-    "chunk_id": 0
+    "chunk_id": 0,
+    "chunk_length": 1752
   }
 ]
