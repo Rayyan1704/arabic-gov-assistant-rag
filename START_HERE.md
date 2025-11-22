@@ -155,9 +155,9 @@ Try these in your system:
 
 ### This Week
 1. ✅ Run evaluation experiments (`07_evaluation_experiments.ipynb`)
-2. Add more documents
-3. Test with real users
-4. Deploy as web app
+2. ✅ Test category retrieval & reranking (`08_category_reranking.ipynb`)
+3. ✅ Run Streamlit demo (`streamlit run app.py`)
+4. Deploy to production
 
 ### This Month
 1. Scale to more documents
