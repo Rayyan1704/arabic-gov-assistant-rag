@@ -61,6 +61,15 @@
 - [x] Documentation complete
 - [x] Ready to push to GitHub
 
+## Day 4: Evaluation & Experiments ⭐
+
+- [ ] Created test set (20 queries)
+- [ ] Implemented evaluation metrics (P@1, P@3, MRR)
+- [ ] Tested 4 chunk configurations
+- [ ] Analyzed results scientifically
+- [ ] Documented findings
+- [ ] Saved experiment_results.json
+
 ## Next Steps (Optional)
 
 ### Deployment

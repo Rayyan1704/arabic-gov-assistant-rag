@@ -181,12 +181,26 @@ Query + Retrieved Docs → LLM → Natural Answer
 - Cosine similarity search
 - Retrieval evaluation
 
+### Day 3: LLM Integration
+- Gemini API integration
+- Prompt engineering
+- Answer generation
+- Source attribution
+
+### Day 4: Evaluation & Experiments
+- Creating test sets
+- Evaluation metrics (P@1, P@3, MRR)
+- Hypothesis testing
+- Error analysis
+- Scientific experimentation
+
 ### Key Concepts
 - **Embeddings**: Text → Numbers
 - **Semantic Search**: Meaning-based (not keywords)
 - **FAISS**: Fast similarity search
 - **RAG**: Retrieval + Generation
-- **Cosine Similarity**: Measure of vector similarity
+- **Evaluation Metrics**: P@1, P@3, P@5, MRR
+- **Scientific Method**: Hypothesis → Experiment → Analysis
 
 ## 🚀 Next Steps
 

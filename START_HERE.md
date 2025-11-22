@@ -154,9 +154,9 @@ Try these in your system:
 3. ✅ Try sample queries
 
 ### This Week
-1. Add more documents
-2. Test with real users
-3. Collect feedback
+1. ✅ Run evaluation experiments (`07_evaluation_experiments.ipynb`)
+2. Add more documents
+3. Test with real users
 4. Deploy as web app
 
 ### This Month
