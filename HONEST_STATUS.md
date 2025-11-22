@@ -22,28 +22,39 @@
 - ⚠️ **Status**: Code exists but needs Gemini API key to run
 - ⚠️ **Testing**: Not fully tested (requires API key)
 
-### Day 4: Evaluation (PARTIALLY DONE)
-- ✅ **Notebook**: `07_evaluation_experiments.ipynb` created
-- ✅ **Test queries**: Defined in code
+### Day 4: Evaluation (CODE EXISTS)
+- ✅ **Notebook**: `07_evaluation_experiments.ipynb` - **HAS COMPLETE CODE**
+- ✅ **Test queries**: 20 queries defined
+- ✅ **Evaluation function**: Complete implementation
+- ✅ **Chunking experiments**: 4 configs to test
 - ❌ **Actual Run**: NOT executed
 - ❌ **Results**: No `experiment_results.json` file
 - ❌ **Metrics**: No quantitative results saved
 
-### Days 5-6: Advanced Features (CODE READY)
-- ✅ **Code**: `src/category_retrieval.py` created
-- ✅ **Notebook**: `08_category_reranking.ipynb` created
-- ✅ **App**: `app.py` Streamlit demo created
+### Days 5-6: Advanced Features (CODE EXISTS)
+- ✅ **Code**: `src/category_retrieval.py` - **COMPLETE**
+- ✅ **Notebook**: `08_category_reranking.ipynb` - **HAS CODE**
+- ✅ **App**: `app.py` Streamlit demo - **COMPLETE**
 - ❌ **Testing**: Not executed
 - ❌ **App Launch**: Not tested
 - ❌ **Reranking**: Requires cross-encoder model download
 
-### Comprehensive Testing (NOT DONE)
-- ✅ **Test Scripts**: Created (`test_comprehensive.py`, `test_quick.py`)
-- ❌ **Execution**: NOT run
+### Comprehensive Testing (INCOMPLETE)
+- ✅ **Test Scripts**: Created (`test_comprehensive.py`, `test_quick.py`, `run_actual_tests.py`)
+- ❌ **Notebook 09**: EMPTY (no code)
+- ❌ **Execution**: NOT run (model download in progress)
 - ❌ **Results**: No test results files
 - ❌ **Metrics**: No actual accuracy numbers
 
 ## What's Documentation vs Reality 📝
+
+### Code Created ✅
+- ✅ Notebook 07: **COMPLETE CODE** (evaluation experiments)
+- ✅ Notebook 08: **COMPLETE CODE** (category reranking)
+- ❌ Notebook 09: **EMPTY** (no code written)
+- ✅ Test scripts: **COMPLETE** (3 scripts ready)
+- ✅ Streamlit app: **COMPLETE CODE**
+- ✅ All source modules: **COMPLETE**
 
 ### Documentation Created ✅
 - 15+ markdown files
@@ -52,8 +63,9 @@
 - Expected results
 
 ### Actual Execution ❌
-- Notebooks 07-09: NOT run
-- Test scripts: NOT executed
+- Notebooks 07-08: NOT run (code exists, not executed)
+- Notebook 09: NOT created (empty file)
+- Test scripts: NOT executed (model downloading)
 - Streamlit app: NOT launched
 - Comprehensive testing: NOT done
 
