@@ -16,7 +16,7 @@ class TranslationService:
     def __init__(self):
         """Initialize translator"""
         self.translator = Translator()
-        print("✅ Translation service initialized")
+        print("[OK] Translation service initialized")
     
     def detect_language(self, text):
         """
