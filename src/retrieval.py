@@ -1,10 +1,15 @@
+"""Retrieval system using FAISS"""
 import faiss
 import numpy as np
 import json
-
+from pathlib import Path
+from typing import List, Dict
 
 class RetrieverSystem:
-    def __init__(self, embeddings_path, chunks_path, metadata_path):
+    """FAISS-based retrieval system"""
+    
+    def __init__(self, embeddings_path: str, chunks_path: str, metadata_path: str):
+        """Initialize retriever with data"""
         # Load data
         self.embeddings = np.load(embeddings_path).astype('float32')
         
@@ -24,9 +29,16 @@ class RetrieverSystem:
         
         print(f"✅ Index built with {self.index.ntotal} vectors")
     
-    def search(self, query_embedding, k=10):
+    def search(self, query_embedding: np.ndarray, k: int = 10) -> List[Dict]:
         """
         Search for k most similar chunks
+        
+        Args:
+            query_embedding: Query vector
+            k: Number of results to return
+        
+        Returns:
+            List of results with scores and metadata
         """
         # Normalize query
         query_embedding = query_embedding.astype('float32').reshape(1, -1)
@@ -47,15 +59,28 @@ class RetrieverSystem:
         
         return results
     
-    def save_index(self, path):
+    def save_index(self, path: str):
         """Save FAISS index to disk"""
         faiss.write_index(self.index, path)
         print(f"✅ Index saved to {path}")
     
     @classmethod
-    def load_index(cls, index_path, embeddings_path, chunks_path, metadata_path):
+    def load_index(cls, index_path: str, embeddings_path: str, 
+                   chunks_path: str, metadata_path: str):
         """Load pre-built index"""
         retriever = cls(embeddings_path, chunks_path, metadata_path)
         retriever.index = faiss.read_index(index_path)
         print(f"✅ Loaded index with {retriever.index.ntotal} vectors")
         return retriever
+    
+    def get_stats(self) -> Dict:
+        """Get retrieval system statistics"""
+        from collections import Counter
+        categories = Counter(m['category'] for m in self.metadata)
+        
+        return {
+            'total_chunks': len(self.chunks),
+            'total_documents': len(set(m['source_file'] for m in self.metadata)),
+            'categories': dict(categories),
+            'embedding_dim': self.embeddings.shape[1]
+        }

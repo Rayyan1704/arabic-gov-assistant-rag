@@ -1,0 +1,160 @@
+{
+  "queries": [
+    {
+      "query_id": 1,
+      "query": "كيف أحصل على رخصة قيادة في قطر؟",
+      "expected_category": "transportation",
+      "top_1_category": "education",
+      "top_3_categories": [
+        "education",
+        "business",
+        "education"
+      ],
+      "correct_at_1": false,
+      "correct_in_3": false,
+      "top_1_score": 0.6304447650909424,
+      "answer_length": 223
+    },
+    {
+      "query_id": 2,
+      "query": "ما هي إجراءات فتح سجل تجاري؟",
+      "expected_category": "business",
+      "top_1_category": "business",
+      "top_3_categories": [
+        "business",
+        "business",
+        "justice"
+      ],
+      "correct_at_1": true,
+      "correct_in_3": true,
+      "top_1_score": 0.5552191734313965,
+      "answer_length": 50
+    },
+    {
+      "query_id": 3,
+      "query": "كيف أسجل أطفالي في المدرسة؟",
+      "expected_category": "education",
+      "top_1_category": "education",
+      "top_3_categories": [
+        "education",
+        "education",
+        "education"
+      ],
+      "correct_at_1": true,
+      "correct_in_3": true,
+      "top_1_score": 0.5232744216918945,
+      "answer_length": 716
+    },
+    {
+      "query_id": 4,
+      "query": "كيف أحصل على استشارة طبية؟",
+      "expected_category": "health",
+      "top_1_category": "health",
+      "top_3_categories": [
+        "health",
+        "health",
+        "health"
+      ],
+      "correct_at_1": true,
+      "correct_in_3": true,
+      "top_1_score": 0.4440993070602417,
+      "answer_length": 181
+    },
+    {
+      "query_id": 5,
+      "query": "ما هي خطوات الحصول على ترخيص بناء؟",
+      "expected_category": "housing",
+      "top_1_category": "housing",
+      "top_3_categories": [
+        "housing",
+        "transportation",
+        "housing"
+      ],
+      "correct_at_1": true,
+      "correct_in_3": true,
+      "top_1_score": 0.5768399238586426,
+      "answer_length": 66
+    },
+    {
+      "query_id": 6,
+      "query": "كيف أبحث عن قضية في المحكمة؟",
+      "expected_category": "justice",
+      "top_1_category": "justice",
+      "top_3_categories": [
+        "justice",
+        "business",
+        "housing"
+      ],
+      "correct_at_1": true,
+      "correct_in_3": true,
+      "top_1_score": 0.4011073708534241,
+      "answer_length": 71
+    },
+    {
+      "query_id": 7,
+      "query": "كيف أحصل على تصريح تصوير فيلم؟",
+      "expected_category": "culture",
+      "top_1_category": "culture",
+      "top_3_categories": [
+        "culture",
+        "culture",
+        "culture"
+      ],
+      "correct_at_1": true,
+      "correct_in_3": true,
+      "top_1_score": 0.5332537293434143,
+      "answer_length": 294
+    },
+    {
+      "query_id": 8,
+      "query": "ما هي معلومات الاتصال بالحكومة؟",
+      "expected_category": "info",
+      "top_1_category": "info",
+      "top_3_categories": [
+        "info",
+        "housing",
+        "transportation"
+      ],
+      "correct_at_1": true,
+      "correct_in_3": true,
+      "top_1_score": 0.58785080909729,
+      "answer_length": 202
+    },
+    {
+      "query_id": 9,
+      "query": "كيف أطلب كشف درجات من الجامعة؟",
+      "expected_category": "education",
+      "top_1_category": "education",
+      "top_3_categories": [
+        "education",
+        "education",
+        "education"
+      ],
+      "correct_at_1": true,
+      "correct_in_3": true,
+      "top_1_score": 0.46014919877052307,
+      "answer_length": 719
+    },
+    {
+      "query_id": 10,
+      "query": "ما هي شروط الحصول على تمويل للشركات؟",
+      "expected_category": "business",
+      "top_1_category": "business",
+      "top_3_categories": [
+        "business",
+        "business",
+        "transportation"
+      ],
+      "correct_at_1": true,
+      "correct_in_3": true,
+      "top_1_score": 0.5965228080749512,
+      "answer_length": 690
+    }
+  ],
+  "metrics": {
+    "precision_at_1": 0.9,
+    "precision_at_3": 0.9,
+    "avg_score": 0.530876150727272,
+    "avg_answer_length": 321.2
+  }
+}

@@ -1,15 +1,25 @@
 """
-Category-specific retrieval with per-category FAISS indexes
+Category-specific retrieval with per-category FAISS indexes.
+Allows searching within specific document categories for better precision.
 """
+
 import faiss
 import numpy as np
 import json
-from sentence_transformers import CrossEncoder
+from sentence_transformers import SentenceTransformer
 
 
 class CategoryRetriever:
     def __init__(self, embeddings_path, chunks_path, metadata_path):
-        """Initialize category-specific retrieval system"""
+        """
+        Initialize retriever with per-category FAISS indexes.
+        
+        Args:
+            embeddings_path: Path to embeddings.npy
+            chunks_path: Path to corpus_chunks.json
+            metadata_path: Path to corpus_meta.json
+        """
+        print("Loading data...")
         # Load data
         self.embeddings = np.load(embeddings_path).astype('float32')
         
@@ -19,11 +29,14 @@ class CategoryRetriever:
         with open(metadata_path, 'r', encoding='utf-8') as f:
             self.metadata = json.load(f)
         
-        # Normalize
+        print(f"✅ Loaded {len(self.chunks)} chunks")
+        
+        # Normalize embeddings
         faiss.normalize_L2(self.embeddings)
         
         # Get unique categories
         self.categories = list(set(m['category'] for m in self.metadata))
+        print(f"✅ Found {len(self.categories)} categories: {self.categories}")
         
         # Build per-category indexes
         self.category_indexes = {}
@@ -44,7 +57,7 @@ class CategoryRetriever:
             self.category_indexes[cat] = index
             self.category_mappings[cat] = cat_indices
             
-            print(f"✅ Built index for {cat}: {len(cat_indices)} chunks")
+            print(f"✅ Built index for '{cat}': {len(cat_indices)} chunks")
         
         # Build global index too
         d = self.embeddings.shape[1]
@@ -54,20 +67,26 @@ class CategoryRetriever:
     
     def detect_category(self, query):
         """
-        Simple keyword-based category detection
+        Simple keyword-based category detection.
+        
+        Args:
+            query: Query string
+            
+        Returns:
+            Detected category name or None
         """
         query = query.lower()
         
-        # Define keywords per category
+        # Define keywords per category (Arabic)
         category_keywords = {
-            'health': ['صحة', 'طبيب', 'مستشفى', 'علاج', 'دواء', 'طبي', 'حمد', 'استشارة', 'تقرير'],
-            'education': ['مدرسة', 'تعليم', 'جامعة', 'طالب', 'دراسة', 'تسجيل', 'مقررات', 'قبول', 'كشف'],
-            'business': ['شركة', 'تجاري', 'سجل', 'رخصة', 'استثمار', 'تمويل', 'مناقصات', 'ضرائب'],
-            'transportation': ['سيارة', 'قيادة', 'مرور', 'نقل', 'ليموزين', 'شحن', 'مركبة', 'تأجير'],
-            'justice': ['محكمة', 'قضاء', 'دعوى', 'مرافعة', 'قانون', 'عدل'],
-            'housing': ['سكن', 'منزل', 'ملكية', 'سند', 'إسكان'],
-            'culture': ['ثقافة', 'فن', 'تصوير', 'أفلام', 'إعلام'],
-            'info': ['معلومات', 'حكومي', 'استبيان', 'شارك', 'حكوي']
+            'health': ['صحة', 'طبيب', 'مستشفى', 'علاج', 'دواء', 'بطاقة صحية', 'مريض', 'عيادة'],
+            'education': ['مدرسة', 'تعليم', 'جامعة', 'طالب', 'دراسة', 'تسجيل', 'معهد', 'تعليمي'],
+            'business': ['شركة', 'تجاري', 'سجل', 'رخصة عمل', 'استثمار', 'تجارة', 'أعمال'],
+            'transportation': ['سيارة', 'قيادة', 'رخصة', 'مرور', 'نقل', 'مركبة', 'طريق'],
+            'housing': ['سكن', 'منزل', 'عقار', 'إيجار', 'شقة', 'بناء'],
+            'justice': ['قانون', 'محكمة', 'عدل', 'قضاء', 'حق', 'دعوى'],
+            'culture': ['ثقافة', 'فن', 'تراث', 'متحف', 'معرض'],
+            'info': ['معلومات', 'خدمة', 'إجراء', 'وثيقة']
         }
         
         scores = {}
@@ -83,7 +102,15 @@ class CategoryRetriever:
     
     def search(self, query_embedding, category=None, k=10):
         """
-        Search in specific category or globally
+        Search in specific category or globally.
+        
+        Args:
+            query_embedding: Query embedding vector
+            category: Category to search in (None for global search)
+            k: Number of results to return
+            
+        Returns:
+            List of result dictionaries
         """
         query_embedding = query_embedding.astype('float32').reshape(1, -1)
         faiss.normalize_L2(query_embedding)
@@ -124,33 +151,50 @@ class CategoryRetriever:
         return results
 
 
+
+from sentence_transformers import CrossEncoder
+
+
 class RerankedRetriever(CategoryRetriever):
-    """Retriever with cross-encoder reranking"""
+    """
+    Enhanced retriever with cross-encoder reranking.
+    Two-stage retrieval: fast embedding search + accurate cross-encoder reranking.
+    """
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
         # Load cross-encoder model
-        print("Loading cross-encoder for reranking...")
+        print("\nLoading cross-encoder for reranking...")
         self.reranker = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
         print("✅ Reranker loaded")
     
     def search_with_rerank(self, query, query_embedding, category=None,
                           initial_k=20, final_k=5):
         """
-        Two-stage retrieval: fast search + reranking
+        Two-stage retrieval: fast search + reranking.
         
-        Stage 1: Get initial candidates with embeddings (fast)
-        Stage 2: Rerank with cross-encoder (accurate)
+        Args:
+            query: Query text (needed for cross-encoder)
+            query_embedding: Query embedding vector
+            category: Category to search in (None for global)
+            initial_k: Number of candidates to retrieve initially
+            final_k: Number of results to return after reranking
+            
+        Returns:
+            List of reranked result dictionaries
         """
-        # Stage 1: Get initial candidates
+        # Stage 1: Get initial candidates with fast embedding search
         candidates = self.search(query_embedding, category=category, k=initial_k)
+        
+        if not candidates:
+            return []
         
         # Stage 2: Rerank with cross-encoder
         pairs = [[query, c['chunk']] for c in candidates]
         rerank_scores = self.reranker.predict(pairs)
         
-        # Add rerank scores
+        # Add rerank scores to candidates
         for i, candidate in enumerate(candidates):
             candidate['rerank_score'] = float(rerank_scores[i])
             candidate['original_score'] = candidate['score']

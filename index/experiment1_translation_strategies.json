@@ -1,0 +1,1246 @@
+{
+  "detailed_results": [
+    {
+      "query": "How do I get a limousine license?",
+      "expected_category": "transportation",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            26,
+            25,
+            27,
+            19,
+            43
+          ],
+          "scores": [
+            0.5240705013275146,
+            0.4281023442745209,
+            0.3898267149925232,
+            0.36985427141189575,
+            0.3676849603652954
+          ],
+          "time": 0.1640031337738037,
+          "top_category": "transportation",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            26,
+            25,
+            27,
+            19,
+            43
+          ],
+          "scores": [
+            0.5240705013275146,
+            0.4281023442745209,
+            0.3898267149925232,
+            0.36985427141189575,
+            0.3676849603652954
+          ],
+          "time": 0.11699366569519043,
+          "top_category": "transportation",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "كيف أحصل على رخصة ليموزين؟",
+          "top_indices": [
+            26,
+            19,
+            25,
+            43,
+            6
+          ],
+          "scores": [
+            0.4399951696395874,
+            0.4301484227180481,
+            0.4150526225566864,
+            0.41161948442459106,
+            0.4026206433773041
+          ],
+          "time": 0.3410003185272217,
+          "top_category": "transportation",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "كيف أحصل على رخصة ليموزين؟",
+          "arabic_query_2": "كيف أحصل على رخصة ليموزين؟",
+          "top_indices": [
+            26,
+            19,
+            25,
+            43,
+            6
+          ],
+          "scores": [
+            0.4399951696395874,
+            0.4301484227180481,
+            0.4150526225566864,
+            0.41161948442459106,
+            0.4026206433773041
+          ],
+          "time": 0.7712626457214355,
+          "top_category": "transportation",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "Fish transport permit requirements",
+      "expected_category": "transportation",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            25,
+            18,
+            26,
+            34,
+            16
+          ],
+          "scores": [
+            0.48392218351364136,
+            0.4552738070487976,
+            0.45509272813796997,
+            0.44896113872528076,
+            0.4259950518608093
+          ],
+          "time": 0.09600210189819336,
+          "top_category": "transportation",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            25,
+            18,
+            26,
+            34,
+            16
+          ],
+          "scores": [
+            0.48392218351364136,
+            0.4552738070487976,
+            0.45509272813796997,
+            0.44896113872528076,
+            0.4259950518608093
+          ],
+          "time": 0.08699989318847656,
+          "top_category": "transportation",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "متطلبات تصريح نقل الأسماك",
+          "top_indices": [
+            25,
+            18,
+            34,
+            19,
+            16
+          ],
+          "scores": [
+            0.4990331530570984,
+            0.47734925150871277,
+            0.4568009078502655,
+            0.4450661540031433,
+            0.4304589033126831
+          ],
+          "time": 0.3919491767883301,
+          "top_category": "transportation",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "متطلبات تصريح نقل الأسماك",
+          "arabic_query_2": "متطلبات تصريح نقل الأسماك",
+          "top_indices": [
+            25,
+            18,
+            34,
+            19,
+            16
+          ],
+          "scores": [
+            0.4990331530570984,
+            0.47734925150871277,
+            0.4568009078502655,
+            0.4450661540031433,
+            0.4304589033126831
+          ],
+          "time": 0.841637134552002,
+          "top_category": "transportation",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "Air cargo license application",
+      "expected_category": "transportation",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            24,
+            15,
+            26,
+            25,
+            40
+          ],
+          "scores": [
+            0.660063624382019,
+            0.5921071767807007,
+            0.5256730318069458,
+            0.5096958875656128,
+            0.50288987159729
+          ],
+          "time": 0.12400102615356445,
+          "top_category": "transportation",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            24,
+            15,
+            26,
+            25,
+            40
+          ],
+          "scores": [
+            0.660063624382019,
+            0.5921071767807007,
+            0.5256730318069458,
+            0.5096958875656128,
+            0.50288987159729
+          ],
+          "time": 0.105010986328125,
+          "top_category": "transportation",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "طلب رخصة الشحن الجوي",
+          "top_indices": [
+            19,
+            43,
+            16,
+            25,
+            24
+          ],
+          "scores": [
+            0.6090264320373535,
+            0.5755978226661682,
+            0.5476430654525757,
+            0.5472673773765564,
+            0.5338751673698425
+          ],
+          "time": 0.3499867916107178,
+          "top_category": "business",
+          "correct": false,
+          "p@1": 0,
+          "p@3": 0,
+          "mrr": 0.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "طلب رخصة الشحن الجوي",
+          "arabic_query_2": "طلب رخصة شحن جوي",
+          "top_indices": [
+            19,
+            43,
+            25,
+            16,
+            24
+          ],
+          "scores": [
+            0.6146135926246643,
+            0.5792102813720703,
+            0.5593631267547607,
+            0.5579699277877808,
+            0.5364564657211304
+          ],
+          "time": 2.6812148094177246,
+          "top_category": "business",
+          "correct": false,
+          "p@1": 0,
+          "p@3": 1,
+          "mrr": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "query": "How to register for courses at Qatar University?",
+      "expected_category": "education",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            12,
+            13,
+            8,
+            11,
+            22
+          ],
+          "scores": [
+            0.7611315846443176,
+            0.7185550928115845,
+            0.7020112872123718,
+            0.6352994441986084,
+            0.5736304521560669
+          ],
+          "time": 0.11100053787231445,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            12,
+            13,
+            8,
+            11,
+            22
+          ],
+          "scores": [
+            0.7611315846443176,
+            0.7185550928115845,
+            0.7020112872123718,
+            0.6352994441986084,
+            0.5736304521560669
+          ],
+          "time": 0.11101174354553223,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "كيفية التسجيل للدورات في جامعة قطر؟",
+          "top_indices": [
+            12,
+            13,
+            8,
+            11,
+            22
+          ],
+          "scores": [
+            0.771935760974884,
+            0.7556228041648865,
+            0.730770468711853,
+            0.6780747175216675,
+            0.6276731491088867
+          ],
+          "time": 0.2909889221191406,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "كيفية التسجيل للدورات في جامعة قطر؟",
+          "arabic_query_2": "كيفية التسجيل للدورات في جامعة قطر؟",
+          "top_indices": [
+            12,
+            13,
+            8,
+            11,
+            22
+          ],
+          "scores": [
+            0.771935760974884,
+            0.7556228041648865,
+            0.730770468711853,
+            0.6780747175216675,
+            0.6276731491088867
+          ],
+          "time": 0.83612060546875,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "HBKU admission process",
+      "expected_category": "education",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            10,
+            8,
+            16,
+            33,
+            7
+          ],
+          "scores": [
+            0.4599945545196533,
+            0.42396852374076843,
+            0.41405996680259705,
+            0.4100680351257324,
+            0.4055554270744324
+          ],
+          "time": 0.17299938201904297,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            10,
+            8,
+            16,
+            33,
+            7
+          ],
+          "scores": [
+            0.4599945545196533,
+            0.42396852374076843,
+            0.41405996680259705,
+            0.4100680351257324,
+            0.4055554270744324
+          ],
+          "time": 0.12398862838745117,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "عملية القبول في جامعة حمد بن خليفة",
+          "top_indices": [
+            8,
+            7,
+            13,
+            1,
+            12
+          ],
+          "scores": [
+            0.7179865837097168,
+            0.6962716579437256,
+            0.644343376159668,
+            0.6056308746337891,
+            0.5844433307647705
+          ],
+          "time": 0.318040132522583,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "عملية القبول في جامعة حمد بن خليفة",
+          "arabic_query_2": "عملية القبول في جامعة حمد بن خليفة",
+          "top_indices": [
+            8,
+            7,
+            13,
+            1,
+            12
+          ],
+          "scores": [
+            0.7179865837097168,
+            0.6962716579437256,
+            0.644343376159668,
+            0.6056308746337891,
+            0.5844433307647705
+          ],
+          "time": 0.8940603733062744,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "University transcript request",
+      "expected_category": "education",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            10,
+            12,
+            13,
+            43,
+            8
+          ],
+          "scores": [
+            0.4684411883354187,
+            0.40139931440353394,
+            0.38160333037376404,
+            0.37524256110191345,
+            0.36742180585861206
+          ],
+          "time": 0.08898496627807617,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            10,
+            12,
+            13,
+            43,
+            8
+          ],
+          "scores": [
+            0.4684411883354187,
+            0.40139931440353394,
+            0.38160333037376404,
+            0.37524256110191345,
+            0.36742180585861206
+          ],
+          "time": 0.07700300216674805,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "طلب كشف الدرجات الجامعية",
+          "top_indices": [
+            10,
+            13,
+            16,
+            12,
+            43
+          ],
+          "scores": [
+            0.5201178789138794,
+            0.4568432569503784,
+            0.41798436641693115,
+            0.36678197979927063,
+            0.3661612868309021
+          ],
+          "time": 0.47416067123413086,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "طلب كشف الدرجات الجامعية",
+          "arabic_query_2": "طلب كشف الدرجات الجامعية",
+          "top_indices": [
+            10,
+            13,
+            16,
+            12,
+            43
+          ],
+          "scores": [
+            0.5201178789138794,
+            0.4568432569503784,
+            0.41798436641693115,
+            0.36678197979927063,
+            0.3661612868309021
+          ],
+          "time": 0.8305833339691162,
+          "top_category": "education",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "How to request medical consultation?",
+      "expected_category": "health",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            2,
+            6,
+            4,
+            17,
+            3
+          ],
+          "scores": [
+            0.554799497127533,
+            0.4986334443092346,
+            0.4713151156902313,
+            0.45554476976394653,
+            0.4534103274345398
+          ],
+          "time": 0.1309952735900879,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            2,
+            6,
+            4,
+            17,
+            3
+          ],
+          "scores": [
+            0.554799497127533,
+            0.4986334443092346,
+            0.4713151156902313,
+            0.45554476976394653,
+            0.4534103274345398
+          ],
+          "time": 0.12299418449401855,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "كيفية طلب الاستشارة الطبية؟",
+          "top_indices": [
+            2,
+            6,
+            4,
+            0,
+            3
+          ],
+          "scores": [
+            0.5320805311203003,
+            0.46156400442123413,
+            0.42960628867149353,
+            0.41664859652519226,
+            0.404221773147583
+          ],
+          "time": 0.3260033130645752,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "كيفية طلب الاستشارة الطبية؟",
+          "arabic_query_2": "كيف تطلب الاستشارة الطبية؟",
+          "top_indices": [
+            2,
+            6,
+            4,
+            0,
+            3
+          ],
+          "scores": [
+            0.543474555015564,
+            0.46771806478500366,
+            0.4464523196220398,
+            0.4345874488353729,
+            0.4236183762550354
+          ],
+          "time": 0.9446926116943359,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "Hamad Medical Corporation job application",
+      "expected_category": "health",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            1,
+            2,
+            0,
+            3,
+            4
+          ],
+          "scores": [
+            0.574486494064331,
+            0.5541286468505859,
+            0.49907994270324707,
+            0.48996132612228394,
+            0.46038439869880676
+          ],
+          "time": 0.14499950408935547,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            1,
+            2,
+            0,
+            3,
+            4
+          ],
+          "scores": [
+            0.574486494064331,
+            0.5541286468505859,
+            0.49907994270324707,
+            0.48996132612228394,
+            0.46038439869880676
+          ],
+          "time": 0.13800525665283203,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "التقديم على وظائف مؤسسة حمد الطبية",
+          "top_indices": [
+            1,
+            2,
+            3,
+            7,
+            0
+          ],
+          "scores": [
+            0.8080898523330688,
+            0.7781120538711548,
+            0.7573462724685669,
+            0.7193495035171509,
+            0.6660388708114624
+          ],
+          "time": 0.29399538040161133,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "التقديم على وظائف مؤسسة حمد الطبية",
+          "arabic_query_2": "التقديم على وظائف مؤسسة حمد الطبية",
+          "top_indices": [
+            1,
+            2,
+            3,
+            7,
+            0
+          ],
+          "scores": [
+            0.8080898523330688,
+            0.7781120538711548,
+            0.7573462724685669,
+            0.7193495035171509,
+            0.6660388708114624
+          ],
+          "time": 0.8048102855682373,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "Healthcare practitioner license",
+      "expected_category": "health",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            6,
+            19,
+            25,
+            43,
+            2
+          ],
+          "scores": [
+            0.6937267780303955,
+            0.5816605091094971,
+            0.5339865684509277,
+            0.5202425122261047,
+            0.49079352617263794
+          ],
+          "time": 0.16799044609069824,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            6,
+            19,
+            25,
+            43,
+            2
+          ],
+          "scores": [
+            0.6937267780303955,
+            0.5816605091094971,
+            0.5339865684509277,
+            0.5202425122261047,
+            0.49079352617263794
+          ],
+          "time": 0.13000154495239258,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "رخصة ممارس الرعاية الصحية",
+          "top_indices": [
+            6,
+            19,
+            25,
+            2,
+            43
+          ],
+          "scores": [
+            0.7389513254165649,
+            0.6166388988494873,
+            0.5755616426467896,
+            0.561424970626831,
+            0.5527610778808594
+          ],
+          "time": 0.3211946487426758,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "رخصة ممارس الرعاية الصحية",
+          "arabic_query_2": "رخصة ممارس الرعاية الصحية",
+          "top_indices": [
+            6,
+            19,
+            25,
+            2,
+            43
+          ],
+          "scores": [
+            0.7389513254165649,
+            0.6166388988494873,
+            0.5755616426467896,
+            0.561424970626831,
+            0.5527610778808594
+          ],
+          "time": 1.8496131896972656,
+          "top_category": "health",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "How to submit tenders?",
+      "expected_category": "business",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            17,
+            25,
+            33,
+            16,
+            22
+          ],
+          "scores": [
+            0.41550010442733765,
+            0.37642228603363037,
+            0.3708014488220215,
+            0.3606286644935608,
+            0.3574007451534271
+          ],
+          "time": 0.1519947052001953,
+          "top_category": "business",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            17,
+            25,
+            33,
+            16,
+            22
+          ],
+          "scores": [
+            0.41550010442733765,
+            0.37642228603363037,
+            0.3708014488220215,
+            0.3606286644935608,
+            0.3574007451534271
+          ],
+          "time": 0.10999870300292969,
+          "top_category": "business",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "كيفية تقديم العطاءات؟",
+          "top_indices": [
+            35,
+            30,
+            25,
+            17,
+            21
+          ],
+          "scores": [
+            0.5027081370353699,
+            0.4640216827392578,
+            0.453909307718277,
+            0.4442773461341858,
+            0.4435904622077942
+          ],
+          "time": 0.30500006675720215,
+          "top_category": "housing",
+          "correct": false,
+          "p@1": 0,
+          "p@3": 0,
+          "mrr": 0.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "كيفية تقديم العطاءات؟",
+          "arabic_query_2": "كيفية تقديم العطاءات؟",
+          "top_indices": [
+            35,
+            30,
+            25,
+            17,
+            21
+          ],
+          "scores": [
+            0.5027081370353699,
+            0.4640216827392578,
+            0.453909307718277,
+            0.4442773461341858,
+            0.4435904622077942
+          ],
+          "time": 0.8887307643890381,
+          "top_category": "housing",
+          "correct": false,
+          "p@1": 0,
+          "p@3": 0,
+          "mrr": 0.0
+        }
+      }
+    },
+    {
+      "query": "Tax registration process",
+      "expected_category": "business",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            17,
+            33,
+            35,
+            10,
+            16
+          ],
+          "scores": [
+            0.6224594116210938,
+            0.42071956396102905,
+            0.42047548294067383,
+            0.3876703679561615,
+            0.36264127492904663
+          ],
+          "time": 0.10299944877624512,
+          "top_category": "business",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            17,
+            33,
+            35,
+            10,
+            16
+          ],
+          "scores": [
+            0.6224594116210938,
+            0.42071956396102905,
+            0.42047548294067383,
+            0.3876703679561615,
+            0.36264127492904663
+          ],
+          "time": 0.08100199699401855,
+          "top_category": "business",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "عملية التسجيل الضريبي",
+          "top_indices": [
+            17,
+            35,
+            33,
+            34,
+            16
+          ],
+          "scores": [
+            0.6150683164596558,
+            0.46332940459251404,
+            0.43488842248916626,
+            0.4092777967453003,
+            0.3954629600048065
+          ],
+          "time": 0.2970614433288574,
+          "top_category": "business",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "عملية التسجيل الضريبي",
+          "arabic_query_2": "عملية التسجيل الضريبي",
+          "top_indices": [
+            17,
+            35,
+            33,
+            34,
+            16
+          ],
+          "scores": [
+            0.6150683164596558,
+            0.46332940459251404,
+            0.43488842248916626,
+            0.4092777967453003,
+            0.3954629600048065
+          ],
+          "time": 1.3689002990722656,
+          "top_category": "business",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "Commercial license reactivation",
+      "expected_category": "business",
+      "methods": {
+        "method1_direct": {
+          "method": "Direct English",
+          "top_indices": [
+            19,
+            26,
+            25,
+            6,
+            40
+          ],
+          "scores": [
+            0.5517627000808716,
+            0.4907049536705017,
+            0.47095823287963867,
+            0.46648573875427246,
+            0.4228046238422394
+          ],
+          "time": 0.12800335884094238,
+          "top_category": "business",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method2_multilingual": {
+          "method": "Direct English",
+          "top_indices": [
+            19,
+            26,
+            25,
+            6,
+            40
+          ],
+          "scores": [
+            0.5517627000808716,
+            0.4907049536705017,
+            0.47095823287963867,
+            0.46648573875427246,
+            0.4228046238422394
+          ],
+          "time": 0.11599612236022949,
+          "top_category": "business",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method3_translate": {
+          "method": "Translate + Embed",
+          "arabic_query": "إعادة تفعيل الترخيص التجاري",
+          "top_indices": [
+            19,
+            25,
+            26,
+            6,
+            18
+          ],
+          "scores": [
+            0.6058294773101807,
+            0.5321671962738037,
+            0.5019708275794983,
+            0.4929960370063782,
+            0.4929371774196625
+          ],
+          "time": 0.30900073051452637,
+          "top_category": "business",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        },
+        "method4_backtrans": {
+          "method": "Back-translation",
+          "arabic_query_1": "إعادة تفعيل الترخيص التجاري",
+          "arabic_query_2": "إعادة تفعيل الرخصة التجارية",
+          "top_indices": [
+            19,
+            25,
+            6,
+            26,
+            18
+          ],
+          "scores": [
+            0.646550714969635,
+            0.5676389932632446,
+            0.5373797416687012,
+            0.5344674587249756,
+            0.5113897919654846
+          ],
+          "time": 0.9810183048248291,
+          "top_category": "business",
+          "correct": true,
+          "p@1": 1,
+          "p@3": 1,
+          "mrr": 1.0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "method1_direct": {
+      "P@1": 1.0,
+      "P@3": 1.0,
+      "MRR": 1.0,
+      "Avg_Time": 0.13199782371520996,
+      "Total_Correct": 12
+    },
+    "method2_multilingual": {
+      "P@1": 1.0,
+      "P@3": 1.0,
+      "MRR": 1.0,
+      "Avg_Time": 0.10991714398066203,
+      "Total_Correct": 12
+    },
+    "method3_translate": {
+      "P@1": 0.8333333333333334,
+      "P@3": 0.8333333333333334,
+      "MRR": 0.8333333333333334,
+      "Avg_Time": 0.33486513296763104,
+      "Total_Correct": 10
+    },
+    "method4_backtrans": {
+      "P@1": 0.8333333333333334,
+      "P@3": 0.9166666666666666,
+      "MRR": 0.861111111111111,
+      "Avg_Time": 1.1410536964734395,
+      "Total_Correct": 10
+    }
+  }
+}

@@ -3,204 +3,300 @@
     "source_file": "data/health\\health_hmc_doctor_consultation.txt",
     "category": "health",
     "chunk_id": 0,
-    "chunk_length": 1778
+    "chunk_length": 1767
   },
   {
     "source_file": "data/health\\health_hmc_job_application.txt",
     "category": "health",
     "chunk_id": 0,
-    "chunk_length": 1752
+    "chunk_length": 1741
   },
   {
     "source_file": "data/health\\health_hmc_medical_report_request.txt",
     "category": "health",
     "chunk_id": 0,
-    "chunk_length": 1786
+    "chunk_length": 1775
   },
   {
     "source_file": "data/health\\health_hmc_urgent_medical_consultation.txt",
     "category": "health",
     "chunk_id": 0,
-    "chunk_length": 1851
+    "chunk_length": 1785
+  },
+  {
+    "source_file": "data/health\\health_moph_doctor_search.txt",
+    "category": "health",
+    "chunk_id": 0,
+    "chunk_length": 1749
+  },
+  {
+    "source_file": "data/health\\health_moph_nurse_search.txt",
+    "category": "health",
+    "chunk_id": 0,
+    "chunk_length": 1749
   },
   {
     "source_file": "data/health\\health_qchp_practitioner_license.txt",
     "category": "health",
     "chunk_id": 0,
-    "chunk_length": 1758
+    "chunk_length": 1747
   },
   {
     "source_file": "data/education\\education_hbku_admission_application.txt",
     "category": "education",
     "chunk_id": 0,
-    "chunk_length": 1762
+    "chunk_length": 1751
+  },
+  {
+    "source_file": "data/education\\education_meia_quran_competition.txt",
+    "category": "education",
+    "chunk_id": 0,
+    "chunk_length": 2246
+  },
+  {
+    "source_file": "data/education\\education_moehe_disability_vouchers.txt",
+    "category": "education",
+    "chunk_id": 0,
+    "chunk_length": 2677
+  },
+  {
+    "source_file": "data/education\\education_moehe_no_vacancy_registration.txt",
+    "category": "education",
+    "chunk_id": 0,
+    "chunk_length": 2237
   },
   {
     "source_file": "data/education\\education_qnl_research_centers_guide.txt",
     "category": "education",
     "chunk_id": 0,
-    "chunk_length": 1767
+    "chunk_length": 1756
   },
   {
     "source_file": "data/education\\education_qu_course_registration.txt",
     "category": "education",
     "chunk_id": 0,
-    "chunk_length": 1746
+    "chunk_length": 1735
   },
   {
     "source_file": "data/education\\education_qu_transcript_request.txt",
     "category": "education",
     "chunk_id": 0,
-    "chunk_length": 1854
+    "chunk_length": 1779
   },
   {
     "source_file": "data/education\\education_qu_withdrawal_request.txt",
     "category": "education",
     "chunk_id": 0,
-    "chunk_length": 1716
+    "chunk_length": 1705
   },
   {
     "source_file": "data/business\\business_caa_tenders_submission.txt",
     "category": "business",
     "chunk_id": 0,
-    "chunk_length": 1899
+    "chunk_length": 1825
   },
   {
     "source_file": "data/business\\business_cra_acknowledgement_certificate.txt",
     "category": "business",
     "chunk_id": 0,
-    "chunk_length": 1768
+    "chunk_length": 1757
   },
   {
     "source_file": "data/business\\business_gta_self_registration_request.txt",
     "category": "business",
     "chunk_id": 0,
-    "chunk_length": 1762
+    "chunk_length": 1751
   },
   {
     "source_file": "data/business\\business_moci_import_pesticides.txt",
     "category": "business",
     "chunk_id": 0,
-    "chunk_length": 1732
+    "chunk_length": 1721
   },
   {
     "source_file": "data/business\\business_moci_license_reactivation.txt",
     "category": "business",
     "chunk_id": 0,
-    "chunk_length": 1756
+    "chunk_length": 1745
   },
   {
     "source_file": "data/business\\business_moci_patent_data_request.txt",
     "category": "business",
     "chunk_id": 0,
-    "chunk_length": 1788
+    "chunk_length": 1777
   },
   {
     "source_file": "data/business\\business_qdb_company_financing_tamkeen.txt",
     "category": "business",
     "chunk_id": 0,
-    "chunk_length": 1770
+    "chunk_length": 1759
   },
   {
     "source_file": "data/business\\business_qfc_legal_clinic_application.txt",
     "category": "business",
     "chunk_id": 0,
-    "chunk_length": 1744
+    "chunk_length": 1733
   },
   {
     "source_file": "data/transportation\\transportation_ag_vehicle_circulation_request.txt",
     "category": "transportation",
     "chunk_id": 0,
-    "chunk_length": 1724
+    "chunk_length": 1713
   },
   {
     "source_file": "data/transportation\\transportation_caa_travel_aircargo_license.txt",
     "category": "transportation",
     "chunk_id": 0,
-    "chunk_length": 1768
+    "chunk_length": 1757
   },
   {
     "source_file": "data/transportation\\transportation_fish_transport_permit.txt",
     "category": "transportation",
     "chunk_id": 0,
-    "chunk_length": 1746
+    "chunk_length": 1735
   },
   {
     "source_file": "data/transportation\\transportation_mot_limo_license.txt",
     "category": "transportation",
     "chunk_id": 0,
-    "chunk_length": 1748
+    "chunk_length": 1759
+  },
+  {
+    "source_file": "data/transportation\\transportation_mowasalat_bus_purchase.txt",
+    "category": "transportation",
+    "chunk_id": 0,
+    "chunk_length": 1684
   },
   {
     "source_file": "data/transportation\\transportation_qpost_cargo_service.txt",
     "category": "transportation",
     "chunk_id": 0,
-    "chunk_length": 1782
+    "chunk_length": 1771
   },
   {
     "source_file": "data/justice\\justice_ag_case_search.txt",
     "category": "justice",
     "chunk_id": 0,
-    "chunk_length": 1732
+    "chunk_length": 1721
   },
   {
     "source_file": "data/justice\\justice_ag_open_pleading_request.txt",
     "category": "justice",
     "chunk_id": 0,
-    "chunk_length": 1734
+    "chunk_length": 1723
   },
   {
     "source_file": "data/justice\\justice_moj_lawyer_portal.txt",
     "category": "justice",
     "chunk_id": 0,
-    "chunk_length": 1736
+    "chunk_length": 1725
   },
   {
     "source_file": "data/justice\\justice_moj_real_estate_portal.txt",
     "category": "justice",
     "chunk_id": 0,
-    "chunk_length": 1750
+    "chunk_length": 1739
   },
   {
     "source_file": "data/justice\\justice_moj_suppliers_portal.txt",
     "category": "justice",
     "chunk_id": 0,
-    "chunk_length": 1756
+    "chunk_length": 1745
+  },
+  {
+    "source_file": "data/justice\\justice_sjc_cancel_travel_ban.txt",
+    "category": "justice",
+    "chunk_id": 0,
+    "chunk_length": 2002
+  },
+  {
+    "source_file": "data/housing\\housing_gama_movable_inheritance_delivery.txt",
+    "category": "housing",
+    "chunk_id": 0,
+    "chunk_length": 2498
+  },
+  {
+    "source_file": "data/housing\\housing_mm_land_lease_renewal.txt",
+    "category": "housing",
+    "chunk_id": 0,
+    "chunk_length": 2582
+  },
+  {
+    "source_file": "data/housing\\housing_mm_rent_allowance.txt",
+    "category": "housing",
+    "chunk_id": 0,
+    "chunk_length": 1863
+  },
+  {
+    "source_file": "data/housing\\housing_msdf_demolition_reconstruction_phase2.txt",
+    "category": "housing",
+    "chunk_id": 0,
+    "chunk_length": 2142
   },
   {
     "source_file": "data/housing\\housing_msdf_property_title_request.txt",
     "category": "housing",
     "chunk_id": 0,
-    "chunk_length": 1784
+    "chunk_length": 1773
+  },
+  {
+    "source_file": "data/culture\\culture_moc_artistic_event_license.txt",
+    "category": "culture",
+    "chunk_id": 0,
+    "chunk_length": 2127
   },
   {
     "source_file": "data/culture\\culture_moc_film_tv_shoot_permit.txt",
     "category": "culture",
     "chunk_id": 0,
-    "chunk_length": 1764
+    "chunk_length": 1753
+  },
+  {
+    "source_file": "data/culture\\culture_moc_fm_radio_license.txt",
+    "category": "culture",
+    "chunk_id": 0,
+    "chunk_length": 2182
+  },
+  {
+    "source_file": "data/culture\\culture_moc_press_card_license.txt",
+    "category": "culture",
+    "chunk_id": 0,
+    "chunk_length": 1914
+  },
+  {
+    "source_file": "data/culture\\culture_qm_national_museum_discovery.txt",
+    "category": "culture",
+    "chunk_id": 0,
+    "chunk_length": 1754
   },
   {
     "source_file": "data/info\\about_hukoomi.txt",
     "category": "info",
     "chunk_id": 0,
-    "chunk_length": 1684
+    "chunk_length": 1673
   },
   {
     "source_file": "data/info\\contact_info.txt",
     "category": "info",
     "chunk_id": 0,
-    "chunk_length": 1715
+    "chunk_length": 1704
   },
   {
     "source_file": "data/info\\faq_hukoomi.txt",
     "category": "info",
     "chunk_id": 0,
-    "chunk_length": 1714
+    "chunk_length": 1703
+  },
+  {
+    "source_file": "data/info\\info_npc_general_statistics.txt",
+    "category": "info",
+    "chunk_id": 0,
+    "chunk_length": 1547
   },
   {
     "source_file": "data/info\\participation_overview.txt",
     "category": "info",
     "chunk_id": 0,
-    "chunk_length": 1752
+    "chunk_length": 1741
   }
 ]
