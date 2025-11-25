@@ -1,0 +1,212 @@
+{
+  "total": 15,
+  "correct": 13,
+  "accuracy": 0.8666666666666667,
+  "by_language": {
+    "english": {
+      "correct": 8,
+      "total": 10
+    },
+    "arabic": {
+      "correct": 5,
+      "total": 5
+    }
+  },
+  "results": [
+    {
+      "query": "apply nurse qatar",
+      "lang": "EN",
+      "expected": "health",
+      "predicted": "health",
+      "score": 0.7289148569107056,
+      "top3": [
+        "health",
+        "health",
+        "health"
+      ],
+      "correct": true
+    },
+    {
+      "query": "how to get limousine license",
+      "lang": "EN",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "score": 0.5407170057296753,
+      "top3": [
+        "transportation",
+        "business",
+        "transportation"
+      ],
+      "correct": true
+    },
+    {
+      "query": "register my kid school",
+      "lang": "EN",
+      "expected": "education",
+      "predicted": "education",
+      "score": 0.5724618434906006,
+      "top3": [
+        "education",
+        "education",
+        "housing"
+      ],
+      "correct": true
+    },
+    {
+      "query": "doctor search qatar",
+      "lang": "EN",
+      "expected": "health",
+      "predicted": "health",
+      "score": 0.6826130151748657,
+      "top3": [
+        "health",
+        "health",
+        "education"
+      ],
+      "correct": true
+    },
+    {
+      "query": "business license renew",
+      "lang": "EN",
+      "expected": "business",
+      "predicted": "transportation",
+      "score": 0.6429013013839722,
+      "top3": [
+        "transportation",
+        "business",
+        "health"
+      ],
+      "correct": false
+    },
+    {
+      "query": "ابي رخصة سواقة",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "score": 0.4777042865753174,
+      "top3": [
+        "transportation",
+        "business",
+        "transportation"
+      ],
+      "correct": true
+    },
+    {
+      "query": "وين اسجل ولدي مدرسة",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "score": 0.4410971701145172,
+      "top3": [
+        "education",
+        "education",
+        "housing"
+      ],
+      "correct": true
+    },
+    {
+      "query": "شلون اطلع رخصة تجارية",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "business",
+      "score": 0.6861188411712646,
+      "top3": [
+        "business",
+        "transportation",
+        "transportation"
+      ],
+      "correct": true
+    },
+    {
+      "query": "دكتور",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "score": 0.526521623134613,
+      "top3": [
+        "health",
+        "health",
+        "health"
+      ],
+      "correct": true
+    },
+    {
+      "query": "مستشفى حمد",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "score": 0.690650463104248,
+      "top3": [
+        "health",
+        "health",
+        "health"
+      ],
+      "correct": true
+    },
+    {
+      "query": "limozin lisence",
+      "lang": "EN",
+      "expected": "transportation",
+      "predicted": "business",
+      "score": 0.5248705744743347,
+      "top3": [
+        "business",
+        "transportation",
+        "transportation"
+      ],
+      "correct": false
+    },
+    {
+      "query": "تسجيل univercity",
+      "lang": "EN",
+      "expected": "education",
+      "predicted": "education",
+      "score": 0.6061173677444458,
+      "top3": [
+        "education",
+        "education",
+        "education"
+      ],
+      "correct": true
+    },
+    {
+      "query": "rent allowance",
+      "lang": "EN",
+      "expected": "housing",
+      "predicted": "housing",
+      "score": 0.6159961223602295,
+      "top3": [
+        "housing",
+        "housing",
+        "housing"
+      ],
+      "correct": true
+    },
+    {
+      "query": "court case",
+      "lang": "EN",
+      "expected": "justice",
+      "predicted": "justice",
+      "score": 0.46646392345428467,
+      "top3": [
+        "justice",
+        "justice",
+        "justice"
+      ],
+      "correct": true
+    },
+    {
+      "query": "radio license",
+      "lang": "EN",
+      "expected": "culture",
+      "predicted": "culture",
+      "score": 0.6073464155197144,
+      "top3": [
+        "culture",
+        "culture",
+        "culture"
+      ],
+      "correct": true
+    }
+  ]
+}
