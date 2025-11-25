@@ -1,0 +1,1194 @@
+{
+  "summary": {
+    "total_queries": 105,
+    "formal_queries": 50,
+    "real_world_queries": 55,
+    "total_correct": 85,
+    "overall_accuracy": 0.8095238095238095,
+    "formal_accuracy": 0.82,
+    "real_world_accuracy": 0.8
+  },
+  "by_language": {
+    "english": {
+      "correct": 24,
+      "total": 29,
+      "accuracy": 0.8275862068965517
+    },
+    "arabic": {
+      "correct": 61,
+      "total": 76,
+      "accuracy": 0.8026315789473685
+    }
+  },
+  "by_category": {
+    "transportation": {
+      "correct": 13,
+      "total": 17,
+      "accuracy": 0.7647058823529411
+    },
+    "education": {
+      "correct": 15,
+      "total": 18,
+      "accuracy": 0.8333333333333334
+    },
+    "health": {
+      "correct": 18,
+      "total": 18,
+      "accuracy": 1.0
+    },
+    "business": {
+      "correct": 13,
+      "total": 17,
+      "accuracy": 0.7647058823529411
+    },
+    "housing": {
+      "correct": 10,
+      "total": 11,
+      "accuracy": 0.9090909090909091
+    },
+    "justice": {
+      "correct": 8,
+      "total": 9,
+      "accuracy": 0.8888888888888888
+    },
+    "culture": {
+      "correct": 7,
+      "total": 8,
+      "accuracy": 0.875
+    },
+    "info": {
+      "correct": 1,
+      "total": 7,
+      "accuracy": 0.14285714285714285
+    }
+  },
+  "all_results": [
+    {
+      "query": "كيف أحصل على رخصة ليموزين؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.49726808071136475
+    },
+    {
+      "query": "ما هي متطلبات تصريح نقل الأسماك؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.5074232220649719
+    },
+    {
+      "query": "كيف أتقدم للحصول على ترخيص شحن جوي؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.6328532099723816
+    },
+    {
+      "query": "ما هي خطوات شراء حافلة من مواصلات؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.6434773206710815
+    },
+    {
+      "query": "كيف أطلب تعميم على مركبة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.46431440114974976
+    },
+    {
+      "query": "ما هي خدمة الشحن من بريد قطر؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.8636906147003174
+    },
+    {
+      "query": "كيف أسجل في مقررات جامعة قطر؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.7509084343910217
+    },
+    {
+      "query": "ما هي خطوات طلب كشف الدرجات؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.4610529839992523
+    },
+    {
+      "query": "كيف أتقدم للقبول في جامعة حمد بن خليفة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.6625706553459167
+    },
+    {
+      "query": "كيف أنسحب من الجامعة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.25699806213378906
+    },
+    {
+      "query": "ما هي خطوات التسجيل في مسابقة القرآن المدرسية؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.7675884962081909
+    },
+    {
+      "query": "كيف أسجل طفلي في المدرسة إذا لم يكن هناك شاغر؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.49570178985595703
+    },
+    {
+      "query": "كيف أحصل على القسائم التعليمية لذوي الإعاقة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.7004494071006775
+    },
+    {
+      "query": "كيف أبحث عن طبيب في قطر؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.68387770652771
+    },
+    {
+      "query": "كيف أبحث عن ممرض مرخص؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.5952458381652832
+    },
+    {
+      "query": "كيف أطلب استشارة طبية من الجمعية القطرية للسكري؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.7637981176376343
+    },
+    {
+      "query": "كيف أتقدم للعمل في مؤسسة حمد الطبية؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.603487491607666
+    },
+    {
+      "query": "كيف أحصل على التقارير الطبية من مؤسسة حمد؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.7571436762809753
+    },
+    {
+      "query": "كيف أحصل على ترخيص دائم للممارسين الصحيين؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.7238936424255371
+    },
+    {
+      "query": "كيف أتواصل مع مؤسسة حمد للاستشارات الطبية العاجلة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.7265783548355103
+    },
+    {
+      "query": "كيف أعيد تفعيل رخصة تجارية؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.5832483768463135
+    },
+    {
+      "query": "كيف أحصل على بيانات براءة اختراع؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.47381696105003357
+    },
+    {
+      "query": "كيف أسجل نفسي كمكلف في الضرائب؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.5266668200492859
+    },
+    {
+      "query": "كيف أحصل على شهادة إقرار من غرفة التجارة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "transportation",
+      "correct": false,
+      "score": 0.5420791506767273
+    },
+    {
+      "query": "كيف أقدم عروض المناقصات للهيئة العامة للطيران؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.7198857069015503
+    },
+    {
+      "query": "كيف أحصل على تصريح استيراد مبيدات؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.7151949405670166
+    },
+    {
+      "query": "كيف أجدد عقد إيجار أرض؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "housing",
+      "predicted": "housing",
+      "correct": true,
+      "score": 0.6158799529075623
+    },
+    {
+      "query": "كيف أحصل على بدل إيجار؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "housing",
+      "predicted": "housing",
+      "correct": true,
+      "score": 0.5132561326026917
+    },
+    {
+      "query": "كيف أطلب هدم وإعادة بناء المساكن الشعبية؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "housing",
+      "predicted": "housing",
+      "correct": true,
+      "score": 0.6665112972259521
+    },
+    {
+      "query": "كيف أحصل على سند الملكية؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "housing",
+      "predicted": "housing",
+      "correct": true,
+      "score": 0.4527382552623749
+    },
+    {
+      "query": "كيف أحصل على تسليم الإرث المنقول؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "housing",
+      "predicted": "housing",
+      "correct": true,
+      "score": 0.5494557619094849
+    },
+    {
+      "query": "كيف أبحث عن قضية في النيابة العامة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "justice",
+      "predicted": "justice",
+      "correct": true,
+      "score": 0.4108302891254425
+    },
+    {
+      "query": "كيف أطلب فتح باب مرافعة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "justice",
+      "predicted": "justice",
+      "correct": true,
+      "score": 0.3862093687057495
+    },
+    {
+      "query": "كيف أستخدم بوابة المحامين؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "justice",
+      "predicted": "justice",
+      "correct": true,
+      "score": 0.5517456531524658
+    },
+    {
+      "query": "كيف أتقدم للعيادة القانونية في مركز قطر للمال؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "justice",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.6832519173622131
+    },
+    {
+      "query": "كيف أحصل على ترخيص فعالية فنية؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "culture",
+      "predicted": "culture",
+      "correct": true,
+      "score": 0.6406466960906982
+    },
+    {
+      "query": "كيف أحصل على تصريح تصوير فيلم؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "culture",
+      "predicted": "culture",
+      "correct": true,
+      "score": 0.5332539081573486
+    },
+    {
+      "query": "كيف أحصل على ترخيص محطة راديو FM؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "culture",
+      "predicted": "culture",
+      "correct": true,
+      "score": 0.5785078406333923
+    },
+    {
+      "query": "كيف أحصل على ترخيص مطبعة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "culture",
+      "predicted": "culture",
+      "correct": true,
+      "score": 0.5331666469573975
+    },
+    {
+      "query": "كيف أحصل على ترخيص بطاقة صحفية؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "culture",
+      "predicted": "culture",
+      "correct": true,
+      "score": 0.6946172118186951
+    },
+    {
+      "query": "ما هو حكومي؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "info",
+      "predicted": "housing",
+      "correct": false,
+      "score": 0.4588763117790222
+    },
+    {
+      "query": "كيف أتواصل مع حكومي؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "info",
+      "predicted": "housing",
+      "correct": false,
+      "score": 0.47012871503829956
+    },
+    {
+      "query": "ما هي الأسئلة الشائعة عن حكومي؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "info",
+      "predicted": "info",
+      "correct": true,
+      "score": 0.543005108833313
+    },
+    {
+      "query": "ما هي خدمات حكومي المتاحة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "info",
+      "predicted": "housing",
+      "correct": false,
+      "score": 0.6230497360229492
+    },
+    {
+      "query": "كيف أستخدم بوابة حكومي؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "info",
+      "predicted": "transportation",
+      "correct": false,
+      "score": 0.48421236872673035
+    },
+    {
+      "query": "رخصة ليموزين",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.5248705744743347
+    },
+    {
+      "query": "تسجيل جامعة قطر",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.7509995698928833
+    },
+    {
+      "query": "بحث طبيب",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.5816379189491272
+    },
+    {
+      "query": "مناقصات",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.3902914822101593
+    },
+    {
+      "query": "بدل إيجار",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "housing",
+      "predicted": "housing",
+      "correct": true,
+      "score": 0.614212155342102
+    },
+    {
+      "query": "driving license",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.6009238958358765
+    },
+    {
+      "query": "رخصة سواقة",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.5997177958488464
+    },
+    {
+      "query": "how get limo license",
+      "type": "broken_en",
+      "lang": "EN",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.5595434904098511
+    },
+    {
+      "query": "ابي اطلع رخصة سياقة",
+      "type": "dialect_ar",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.5253827571868896
+    },
+    {
+      "query": "bus purchase qatar",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.6112725734710693
+    },
+    {
+      "query": "شحن جوي",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.4498000144958496
+    },
+    {
+      "query": "fish transport",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.33007869124412537
+    },
+    {
+      "query": "تصريح نقل",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.6496362686157227
+    },
+    {
+      "query": "cargo service",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.6531108617782593
+    },
+    {
+      "query": "طلب تعميم سيارة",
+      "type": "formal_ar",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.4800293445587158
+    },
+    {
+      "query": "school registration",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.6716327667236328
+    },
+    {
+      "query": "تسجيل مدرسة",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.6559362411499023
+    },
+    {
+      "query": "register kid school",
+      "type": "broken_en",
+      "lang": "EN",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.6162577867507935
+    },
+    {
+      "query": "وين اسجل ولدي",
+      "type": "dialect_ar",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.19057995080947876
+    },
+    {
+      "query": "university admission",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.490221232175827
+    },
+    {
+      "query": "قبول جامعة",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.4917452931404114
+    },
+    {
+      "query": "transcript request",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "education",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.42075610160827637
+    },
+    {
+      "query": "كشف درجات",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.4038253426551819
+    },
+    {
+      "query": "quran competition",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.6411559581756592
+    },
+    {
+      "query": "مسابقة قران",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "education",
+      "correct": true,
+      "score": 0.4594896137714386
+    },
+    {
+      "query": "find doctor",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.4885587692260742
+    },
+    {
+      "query": "دكتور",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.526521623134613
+    },
+    {
+      "query": "nurse license",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.5762091875076294
+    },
+    {
+      "query": "رخصة ممرض",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.6001623272895813
+    },
+    {
+      "query": "hamad hospital",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.690650463104248
+    },
+    {
+      "query": "مستشفى حمد",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.690650463104248
+    },
+    {
+      "query": "medical report",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.6029036045074463
+    },
+    {
+      "query": "تقرير طبي",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.6029036045074463
+    },
+    {
+      "query": "doctor consultation",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.5618488788604736
+    },
+    {
+      "query": "استشارة طبية",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "health",
+      "predicted": "health",
+      "correct": true,
+      "score": 0.6113230586051941
+    },
+    {
+      "query": "business license",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.665321409702301
+    },
+    {
+      "query": "رخصة تجارية",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.665321409702301
+    },
+    {
+      "query": "company registration",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.5132718086242676
+    },
+    {
+      "query": "تسجيل شركة",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.5438939929008484
+    },
+    {
+      "query": "tenders",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "business",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.3707776665687561
+    },
+    {
+      "query": "مناقصات",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.3902914822101593
+    },
+    {
+      "query": "tax registration",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.5474396347999573
+    },
+    {
+      "query": "تسجيل ضريبي",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.5805284976959229
+    },
+    {
+      "query": "patent",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.4237074851989746
+    },
+    {
+      "query": "براءة اختراع",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "business",
+      "correct": true,
+      "score": 0.4237074851989746
+    },
+    {
+      "query": "rent allowance",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "housing",
+      "predicted": "housing",
+      "correct": true,
+      "score": 0.6159961223602295
+    },
+    {
+      "query": "بدل ايجار",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "housing",
+      "predicted": "housing",
+      "correct": true,
+      "score": 0.6639597415924072
+    },
+    {
+      "query": "property title",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "housing",
+      "predicted": "transportation",
+      "correct": false,
+      "score": 0.4803542196750641
+    },
+    {
+      "query": "سند ملكية",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "housing",
+      "predicted": "housing",
+      "correct": true,
+      "score": 0.5069884657859802
+    },
+    {
+      "query": "land lease",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "housing",
+      "predicted": "housing",
+      "correct": true,
+      "score": 0.5611403584480286
+    },
+    {
+      "query": "court case",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "justice",
+      "predicted": "justice",
+      "correct": true,
+      "score": 0.46646392345428467
+    },
+    {
+      "query": "قضية محكمة",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "justice",
+      "predicted": "justice",
+      "correct": true,
+      "score": 0.45978933572769165
+    },
+    {
+      "query": "lawyer portal",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "justice",
+      "predicted": "justice",
+      "correct": true,
+      "score": 0.5385301113128662
+    },
+    {
+      "query": "بوابة محامين",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "justice",
+      "predicted": "justice",
+      "correct": true,
+      "score": 0.46822986006736755
+    },
+    {
+      "query": "legal clinic",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "justice",
+      "predicted": "justice",
+      "correct": true,
+      "score": 0.5490992069244385
+    },
+    {
+      "query": "radio license",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "culture",
+      "predicted": "culture",
+      "correct": true,
+      "score": 0.6073464155197144
+    },
+    {
+      "query": "ترخيص راديو",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "culture",
+      "predicted": "culture",
+      "correct": true,
+      "score": 0.667757511138916
+    },
+    {
+      "query": "film permit",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "culture",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.4223019778728485
+    },
+    {
+      "query": "hukoomi",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "info",
+      "predicted": "transportation",
+      "correct": false,
+      "score": 0.48899686336517334
+    },
+    {
+      "query": "حكومي",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "info",
+      "predicted": "transportation",
+      "correct": false,
+      "score": 0.48899686336517334
+    }
+  ],
+  "failures": [
+    {
+      "query": "ما هي خطوات طلب كشف الدرجات؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.4610529839992523
+    },
+    {
+      "query": "كيف أحصل على شهادة إقرار من غرفة التجارة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "transportation",
+      "correct": false,
+      "score": 0.5420791506767273
+    },
+    {
+      "query": "كيف أتقدم للعيادة القانونية في مركز قطر للمال؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "justice",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.6832519173622131
+    },
+    {
+      "query": "ما هو حكومي؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "info",
+      "predicted": "housing",
+      "correct": false,
+      "score": 0.4588763117790222
+    },
+    {
+      "query": "كيف أتواصل مع حكومي؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "info",
+      "predicted": "housing",
+      "correct": false,
+      "score": 0.47012871503829956
+    },
+    {
+      "query": "ما هي خدمات حكومي المتاحة؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "info",
+      "predicted": "housing",
+      "correct": false,
+      "score": 0.6230497360229492
+    },
+    {
+      "query": "كيف أستخدم بوابة حكومي؟",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "info",
+      "predicted": "transportation",
+      "correct": false,
+      "score": 0.48421236872673035
+    },
+    {
+      "query": "رخصة ليموزين",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.5248705744743347
+    },
+    {
+      "query": "مناقصات",
+      "type": "formal",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.3902914822101593
+    },
+    {
+      "query": "رخصة سواقة",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.5997177958488464
+    },
+    {
+      "query": "شحن جوي",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.4498000144958496
+    },
+    {
+      "query": "تصريح نقل",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "transportation",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.6496362686157227
+    },
+    {
+      "query": "transcript request",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "education",
+      "predicted": "business",
+      "correct": false,
+      "score": 0.42075610160827637
+    },
+    {
+      "query": "كشف درجات",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.4038253426551819
+    },
+    {
+      "query": "tenders",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "business",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.3707776665687561
+    },
+    {
+      "query": "مناقصات",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "business",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.3902914822101593
+    },
+    {
+      "query": "property title",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "housing",
+      "predicted": "transportation",
+      "correct": false,
+      "score": 0.4803542196750641
+    },
+    {
+      "query": "film permit",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "culture",
+      "predicted": "justice",
+      "correct": false,
+      "score": 0.4223019778728485
+    },
+    {
+      "query": "hukoomi",
+      "type": "short_en",
+      "lang": "EN",
+      "expected": "info",
+      "predicted": "transportation",
+      "correct": false,
+      "score": 0.48899686336517334
+    },
+    {
+      "query": "حكومي",
+      "type": "short_ar",
+      "lang": "AR",
+      "expected": "info",
+      "predicted": "transportation",
+      "correct": false,
+      "score": 0.48899686336517334
+    }
+  ]
+}
