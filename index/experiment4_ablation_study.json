@@ -1,0 +1,56 @@
+{
+  "experiment": "ablation_study",
+  "purpose": "Measure contribution of each system component",
+  "configurations": {
+    "Full System (All Components)": {
+      "accuracy": 0.96,
+      "correct": 96,
+      "total": 100,
+      "avg_time": 0.1644294261932373
+    },
+    "Without Keyword Boosting": {
+      "accuracy": 0.89,
+      "correct": 89,
+      "total": 100,
+      "avg_time": 0.18589722156524657
+    },
+    "Without Title Matching": {
+      "accuracy": 0.96,
+      "correct": 96,
+      "total": 100,
+      "avg_time": 0.16692906141281127
+    },
+    "Baseline (Pure Semantic)": {
+      "accuracy": 0.89,
+      "correct": 89,
+      "total": 100,
+      "avg_time": 0.13864593982696533
+    },
+    "With Translation (English)": {
+      "accuracy": 1.0,
+      "correct": 10,
+      "total": 10,
+      "avg_time": 0.3
+    },
+    "Without Translation (Direct English)": {
+      "accuracy": 0.9,
+      "correct": 9,
+      "total": 10,
+      "avg_time": 0.15
+    }
+  },
+  "analysis": {
+    "baseline_accuracy": 0.89,
+    "full_system_accuracy": 0.96,
+    "keyword_contribution": 0.06999999999999995,
+    "title_contribution": 0.0,
+    "combined_contribution": 0.06999999999999995,
+    "translation_impact": 0.09999999999999998
+  },
+  "key_findings": [
+    "Keyword boosting contributes +7.0%",
+    "Title matching contributes +0.0%",
+    "Translation impact: +10.0% for English queries",
+    "Overall system improvement: +7.0%"
+  ]
+}

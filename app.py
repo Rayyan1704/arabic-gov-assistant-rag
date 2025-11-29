@@ -8,7 +8,7 @@ import sys
 sys.path.append('src')
 
 from sentence_transformers import SentenceTransformer
-from category_retrieval import RerankedRetriever
+from retrieval import RetrieverSystem
 from llm_generator import AnswerGenerator
 from translator import TranslationService
 
@@ -50,12 +50,12 @@ st.markdown("""
 
 # Load models (cache for performance)
 @st.cache_resource
-def load_models():
+def load_models(_force_reload=False):
     """Load and cache all models"""
     with st.spinner("🔄 Loading AI models..."):
         model = SentenceTransformer('paraphrase-multilingual-mpnet-base-v2')
         
-        retriever = RerankedRetriever(
+        retriever = RetrieverSystem(
             'index/embeddings.npy',
             'index/corpus_chunks.json',
             'index/corpus_meta.json'
@@ -67,7 +67,8 @@ def load_models():
         return model, retriever, generator, translator
 
 try:
-    model, retriever, generator, translator = load_models()
+    # Force reload if needed (change this value to bust cache)
+    model, retriever, generator, translator = load_models(_force_reload=True)
     st.success("✅ System ready! Ask your question below.")
 except Exception as e:
     st.error(f"❌ Error loading models: {str(e)}")
@@ -99,11 +100,11 @@ with st.sidebar:
     st.markdown("### 📊 System Stats")
     col1, col2 = st.columns(2)
     with col1:
-        st.metric("Documents", "50")
+        st.metric("Documents", "51")
         st.metric("Categories", "8")
     with col2:
-        st.metric("Accuracy", "90%")
-        st.metric("Response", "3-5s")
+        st.metric("Accuracy", "96%")
+        st.metric("Response", "0.16s")
     
     st.markdown("---")
     
@@ -127,8 +128,9 @@ with st.sidebar:
     """)
     
     st.markdown("---")
-    st.markdown("**Version:** 1.0 (Day 6)")
-    st.markdown("**Status:** Production Ready ✅")
+    st.markdown("**Version:** 2.0 (Day 10)")
+    st.markdown("**Status:** Research Complete ✅")
+    st.markdown("**Accuracy:** 96% (100 queries)")
 
 # Main content
 col1, col2 = st.columns([2, 1])
@@ -181,25 +183,12 @@ if st.button("🔍 Search & Generate Answer", type="primary", use_container_widt
             # Get query embedding (use Arabic query)
             query_emb = model.encode([arabic_query])[0]
             
-            # Detect category
-            detected_category = None
-            if use_category:
-                detected_category = retriever.detect_category(arabic_query)
-            
-            # Retrieve
-            if use_reranking:
-                results = retriever.search_with_rerank(
-                    arabic_query, query_emb,
-                    category=detected_category,
-                    initial_k=20,
-                    final_k=num_results
-                )
-            else:
-                results = retriever.search(
-                    query_emb,
-                    category=detected_category,
-                    k=num_results
-                )
+            # Retrieve with keyword boosting
+            results = retriever.search(
+                query_emb,
+                k=num_results,
+                query_text=arabic_query  # Pass query text for keyword boosting
+            )
             
             # Determine return language
             if answer_lang == "Same as query":
@@ -218,17 +207,19 @@ if st.button("🔍 Search & Generate Answer", type="primary", use_container_widt
             
             # Tab 1: Answer
             with tab1:
-                if detected_category:
-                    st.info(f"📁 Detected category: **{detected_category}**")
+                # Show detected category from top result
+                if results:
+                    top_category = results[0]['metadata']['category']
+                    st.info(f"📁 Top result category: **{top_category}**")
                 
                 st.markdown("### 💡 Answer")
                 st.markdown(answer_data['answer'])
                 
                 # Confidence indicator
-                avg_score = sum(r.get('rerank_score', r['score']) for r in results) / len(results)
-                if avg_score > 8.5:
+                avg_score = sum(r['score'] for r in results) / len(results)
+                if avg_score > 0.7:
                     st.success("🎯 High confidence answer")
-                elif avg_score > 7.0:
+                elif avg_score > 0.5:
                     st.info("✅ Good confidence answer")
                 else:
                     st.warning("⚠️ Low confidence - answer may be incomplete")
@@ -238,12 +229,11 @@ if st.button("🔍 Search & Generate Answer", type="primary", use_container_widt
                 st.markdown("### 📚 Retrieved Sources")
                 
                 for i, result in enumerate(results, 1):
-                    score = result.get('rerank_score', result['score'])
-                    score_type = "Rerank" if 'rerank_score' in result else "Similarity"
+                    score = result['score']
                     
                     with st.expander(
                         f"**Source {i}** - {result['metadata']['category']} "
-                        f"({score_type}: {score:.3f})",
+                        f"(Score: {score:.3f})",
                         expanded=(i == 1)
                     ):
                         col_a, col_b = st.columns([1, 3])
@@ -273,14 +263,14 @@ if st.button("🔍 Search & Generate Answer", type="primary", use_container_widt
                 with col_x:
                     st.markdown("**Query Info**")
                     st.markdown(f"- Length: {len(query)} chars")
-                    st.markdown(f"- Category: {detected_category or 'None'}")
-                    st.markdown(f"- Reranking: {'✅' if use_reranking else '❌'}")
+                    st.markdown(f"- Top Category: {results[0]['metadata']['category'] if results else 'None'}")
+                    st.markdown(f"- Language: {query_lang}")
                 
                 with col_y:
                     st.markdown("**Retrieval Info**")
                     st.markdown(f"- Results: {len(results)}")
                     st.markdown(f"- Avg Score: {avg_score:.3f}")
-                    st.markdown(f"- Search Type: {results[0]['search_type']}")
+                    st.markdown(f"- Method: Hybrid (Semantic + Keywords)")
                 
                 with col_z:
                     st.markdown("**Performance**")

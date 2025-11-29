@@ -1,67 +1,64 @@
-# 🚀 Quick Start Guide - AraGovAssist RAG System
+# Quick Start Guide
 
-**5-Minute Setup & Testing Guide**
-
----
-
-## ⚡ Prerequisites
-
-```bash
-# Python 3.8+
-# Virtual environment activated
-# .env file with GEMINI_API_KEY
-```
+**Setup and Testing Instructions**
 
 ---
 
-## 📦 Installation (1 minute)
+## Prerequisites
+
+- Python 3.12+
+- Virtual environment activated
+- `.env` file with `GEMINI_API_KEY`
+
+---
+
+## Installation
 
 ```bash
-# Install dependencies
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🧪 Quick Tests (4 minutes)
+## Testing
 
-### 1. Verify System (30 seconds)
+### System Verification
 ```bash
 python show_system_summary.py
 ```
-**Expected:** Complete system overview with all metrics
+Output: System overview with metrics
 
-### 2. Test Basic RAG (1 minute)
+### Production System Test
 ```bash
-python test_end_to_end.py
+python test_production_system.py
 ```
-**Expected:** 5 queries answered with 90% accuracy
+Output: Critical query validation results
 
-### 3. Test Advanced Retrieval (2 minutes)
+### Comprehensive Evaluation
 ```bash
-python test_reranked_end_to_end.py
+python test_comprehensive_100_queries.py
 ```
-**Expected:** 5 queries with reranking, improved relevance scores
+Output: 100-query test results with accuracy metrics
 
-### 4. Compare Approaches (30 seconds)
+### Final Accuracy Test
 ```bash
-python test_category_reranking.py
+python test_final_accuracy.py
 ```
-**Expected:** Comparison of global, category, and reranked search
+Output: Accuracy measurement on test set
 
 ---
 
-## 🎯 Usage Examples
+## Usage
 
 ### Python API
 ```python
-from src.category_retrieval import RerankedRetriever
-from src.llm_generator import AnswerGenerator
 from sentence_transformers import SentenceTransformer
+from src.retrieval import RetrieverSystem
+from src.llm_generator import AnswerGenerator
 
 # Initialize
 model = SentenceTransformer('paraphrase-multilingual-mpnet-base-v2')
-retriever = RerankedRetriever(
+retriever = RetrieverSystem(
     'index/embeddings.npy',
     'index/corpus_chunks.json',
     'index/corpus_meta.json'
@@ -69,237 +66,156 @@ retriever = RerankedRetriever(
 generator = AnswerGenerator()
 
 # Query
-query = "كيف أحصل على بطاقة صحية؟"
+query = "كيف أحصل على رخصة قيادة؟"
 query_emb = model.encode([query])[0]
 
-# Retrieve with reranking
-docs = retriever.search_with_rerank(query, query_emb, final_k=3)
+# Retrieve
+results = retriever.search(query_emb, k=3, query_text=query)
 
 # Generate answer
-result = generator.generate_answer(query, docs)
-print(result['answer'])
+answer = generator.generate_answer(query, [r['chunk'] for r in results])
+print(answer)
 ```
 
-### Command Line (Simple)
+### Web Interface
 ```bash
-# Run any test script
-python test_10_queries.py
-python chunking_experiments.py
+streamlit run app.py
+```
+
+### Command Line
+```bash
+python test_production_system.py
+python test_comprehensive_100_queries.py
 ```
 
 ---
 
-## 📊 What to Expect
+## Expected Performance
 
-### Performance
-- **Accuracy:** 90% (9/10 queries correct)
-- **Response Time:** 3-5 seconds
-- **Reranking Improvement:** +1575% better scores
-- **Category Detection:** 100% accurate
+### Metrics
+- Accuracy: 96.0% (96/100 queries)
+- Response Time: 0.16s average
+- Statistical Significance: p < 0.0001
 
 ### Output Format
 ```
-Query: كيف أحصل على بطاقة صحية؟
-Detected category: health
+Query: كيف أحصل على رخصة قيادة؟
 Retrieved: 3 documents
-Top score: 8.506 (reranked)
+Top score: 0.847
 
-Answer: [Gemini-generated response]
-Sources: [health/doc1.txt, health/doc2.txt]
+Answer: [Generated response]
+Sources: [transportation/doc1.txt, transportation/doc2.txt]
 ```
 
 ---
 
-## 🔧 Configuration
+## Configuration
 
-### Change Retrieval Settings
+### Retrieval Parameters
 ```python
-# In your code
-retriever.search_with_rerank(
-    query, 
+results = retriever.search(
     query_emb,
-    initial_k=20,  # Candidates to retrieve
-    final_k=5      # Results after reranking
+    k=10,              # Number of results
+    query_text=query   # Enable keyword boosting
 )
 ```
 
-### Change LLM Settings
+### LLM Parameters
 ```python
 # In src/llm_generator.py
 generation_config=genai.types.GenerationConfig(
-    temperature=0.3,      # Lower = more factual
-    max_output_tokens=500 # Response length
+    temperature=0.1,
+    max_output_tokens=1000
 )
 ```
 
 ---
 
-## 📁 Key Files
+## Key Files
 
 ### Source Code
-- `src/category_retrieval.py` - Advanced retrieval ⭐
+- `src/retrieval.py` - FAISS retrieval with enhancements
 - `src/llm_generator.py` - LLM generation
-- `src/retrieval.py` - Basic retrieval
+- `src/category_retrieval.py` - Category-aware retrieval
 - `src/chunking.py` - Document chunking
 - `src/preprocessing.py` - Text preprocessing
 
 ### Test Scripts
-- `test_reranked_end_to_end.py` - Full pipeline ⭐
-- `test_category_reranking.py` - Compare approaches ⭐
-- `test_10_queries.py` - Accuracy test
-- `test_end_to_end.py` - Basic pipeline
+- `test_production_system.py` - Critical query validation
+- `test_comprehensive_100_queries.py` - Large-scale testing
+- `test_final_accuracy.py` - Accuracy measurement
+- `verify_data.py` - Data quality check
 
 ### Documentation
-- `FINAL_COMPLETE_STATUS.md` - Complete overview ⭐
-- `DAY5_CHECKPOINT.md` - Advanced features ⭐
-- `README.md` - Project README
+- `RESEARCH_SUMMARY.md` - Research findings
+- `PROJECT_COMPLETE.md` - Project summary
+- `README.md` - Project overview
 - `QUICK_START_GUIDE.md` - This file
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
-### Issue: "GEMINI_API_KEY not found"
-**Solution:** Create `.env` file with:
+### GEMINI_API_KEY not found
+Create `.env` file:
 ```
 GEMINI_API_KEY=your_key_here
 ```
 
-### Issue: "Module not found"
-**Solution:** Install dependencies:
+### Module not found
+Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-### Issue: "Index files not found"
-**Solution:** Index files should already exist in `index/` folder. If missing:
+### Index files not found
+Build index:
 ```bash
 python build_retrieval_system.py
 ```
 
-### Issue: Slow performance
-**Solution:** Normal! Reranking takes 1-2 seconds. To speed up:
-- Reduce `initial_k` (fewer candidates)
-- Skip reranking (use basic retrieval)
-
 ---
 
-## 📈 Performance Tuning
+## System Reference
 
-### For Speed (< 2 seconds)
-```python
-# Use basic retrieval without reranking
-from src.retrieval import FAISSRetriever
-retriever = FAISSRetriever('index/faiss.index', ...)
-results = retriever.search(query_emb, k=3)
-```
-
-### For Accuracy (current setup)
-```python
-# Use reranking (current default)
-retriever = RerankedRetriever(...)
-results = retriever.search_with_rerank(query, query_emb)
-```
-
-### For Scale (1000+ docs)
-```python
-# Use category-specific search
-category = retriever.detect_category(query)
-results = retriever.search(query_emb, category=category)
-```
-
----
-
-## 🎓 Learning Path
-
-### Beginner
-1. Run `test_end_to_end.py` - See basic RAG
-2. Read `DAY1_CHECKPOINT.md` - Understand data
-3. Read `DAY2_CHECKPOINT.md` - Understand embeddings
-
-### Intermediate
-1. Run `test_category_reranking.py` - Compare approaches
-2. Read `DAY4_CHECKPOINT.md` - Understand experiments
-3. Read `DAY5_CHECKPOINT.md` - Understand reranking
-
-### Advanced
-1. Read `FINAL_COMPLETE_STATUS.md` - Full system
-2. Modify `src/category_retrieval.py` - Customize
-3. Deploy with FastAPI - Production use
-
----
-
-## 🚀 Next Steps
-
-### Option 1: Deploy
-```bash
-# Create FastAPI wrapper
-# Add Docker container
-# Deploy to cloud
-```
-
-### Option 2: Enhance
-```bash
-# Add Streamlit UI
-# Expand document corpus
-# Add hybrid search (BM25)
-```
-
-### Option 3: Portfolio
-```bash
-# Push to GitHub
-# Write blog post
-# Present findings
-```
-
----
-
-## 📞 Quick Reference
-
-### System Stats
-- Documents: 50
+### Statistics
+- Documents: 51
 - Categories: 8
-- Chunks: 50
-- Embedding dim: 768
-- Accuracy: 90%
-- Response time: 3-5s
+- Embedding dimensions: 768
+- Accuracy: 96.0%
+- Response time: 0.16s
 
-### Key Commands
+### Commands
 ```bash
-# Show summary
+# System summary
 python show_system_summary.py
 
-# Test basic RAG
-python test_end_to_end.py
+# Production test
+python test_production_system.py
 
-# Test advanced RAG
-python test_reranked_end_to_end.py
+# Comprehensive evaluation
+python test_comprehensive_100_queries.py
 
-# Compare approaches
-python test_category_reranking.py
+# Accuracy measurement
+python test_final_accuracy.py
 
-# Run experiments
-python test_10_queries.py
-python chunking_experiments.py
+# Run all experiments
+python run_all_experiments.py
 ```
 
 ---
 
-## ✅ Success Checklist
+## Verification Checklist
 
 - [ ] Dependencies installed
 - [ ] `.env` file configured
-- [ ] `show_system_summary.py` runs successfully
-- [ ] `test_end_to_end.py` shows 90% accuracy
-- [ ] `test_reranked_end_to_end.py` shows reranking
-- [ ] Understand the system architecture
-- [ ] Ready to deploy or enhance!
+- [ ] `show_system_summary.py` executes
+- [ ] `test_production_system.py` passes
+- [ ] System architecture understood
 
 ---
 
-**You're all set! 🎉**
-
-For detailed information, see:
-- `FINAL_COMPLETE_STATUS.md` - Complete system overview
-- `DAY5_CHECKPOINT.md` - Advanced features
-- `README.md` - Project documentation
+For detailed information:
+- `RESEARCH_SUMMARY.md` - Research findings
+- `PROJECT_COMPLETE.md` - Project summary
+- `README.md` - Project overview

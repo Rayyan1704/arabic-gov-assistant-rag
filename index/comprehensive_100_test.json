@@ -3,28 +3,28 @@
     "total_queries": 105,
     "formal_queries": 50,
     "real_world_queries": 55,
-    "total_correct": 85,
-    "overall_accuracy": 0.8095238095238095,
-    "formal_accuracy": 0.82,
-    "real_world_accuracy": 0.8
+    "total_correct": 90,
+    "overall_accuracy": 0.8571428571428571,
+    "formal_accuracy": 0.88,
+    "real_world_accuracy": 0.8363636363636363
   },
   "by_language": {
     "english": {
-      "correct": 24,
+      "correct": 25,
       "total": 29,
-      "accuracy": 0.8275862068965517
+      "accuracy": 0.8620689655172413
     },
     "arabic": {
-      "correct": 61,
+      "correct": 65,
       "total": 76,
-      "accuracy": 0.8026315789473685
+      "accuracy": 0.8552631578947368
     }
   },
   "by_category": {
     "transportation": {
-      "correct": 13,
+      "correct": 15,
       "total": 17,
-      "accuracy": 0.7647058823529411
+      "accuracy": 0.8823529411764706
     },
     "education": {
       "correct": 15,
@@ -37,29 +37,29 @@
       "accuracy": 1.0
     },
     "business": {
-      "correct": 13,
+      "correct": 14,
       "total": 17,
-      "accuracy": 0.7647058823529411
+      "accuracy": 0.8235294117647058
     },
     "housing": {
-      "correct": 10,
+      "correct": 11,
       "total": 11,
-      "accuracy": 0.9090909090909091
+      "accuracy": 1.0
     },
     "justice": {
-      "correct": 8,
+      "correct": 6,
       "total": 9,
-      "accuracy": 0.8888888888888888
+      "accuracy": 0.6666666666666666
     },
     "culture": {
-      "correct": 7,
+      "correct": 8,
       "total": 8,
-      "accuracy": 0.875
+      "accuracy": 1.0
     },
     "info": {
-      "correct": 1,
+      "correct": 3,
       "total": 7,
-      "accuracy": 0.14285714285714285
+      "accuracy": 0.42857142857142855
     }
   },
   "all_results": [
@@ -70,7 +70,7 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.49726808071136475
+      "score": 0.4903567433357239
     },
     {
       "query": "ما هي متطلبات تصريح نقل الأسماك؟",
@@ -79,7 +79,7 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.5074232220649719
+      "score": 0.4421318769454956
     },
     {
       "query": "كيف أتقدم للحصول على ترخيص شحن جوي؟",
@@ -88,7 +88,7 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.6328532099723816
+      "score": 0.5920391082763672
     },
     {
       "query": "ما هي خطوات شراء حافلة من مواصلات؟",
@@ -97,7 +97,7 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.6434773206710815
+      "score": 0.6146427392959595
     },
     {
       "query": "كيف أطلب تعميم على مركبة؟",
@@ -106,7 +106,7 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.46431440114974976
+      "score": 0.3759860098361969
     },
     {
       "query": "ما هي خدمة الشحن من بريد قطر؟",
@@ -115,7 +115,7 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.8636906147003174
+      "score": 0.8532577753067017
     },
     {
       "query": "كيف أسجل في مقررات جامعة قطر؟",
@@ -124,16 +124,16 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.7509084343910217
+      "score": 0.7899197340011597
     },
     {
       "query": "ما هي خطوات طلب كشف الدرجات؟",
       "type": "formal",
       "lang": "AR",
       "expected": "education",
-      "predicted": "business",
+      "predicted": "justice",
       "correct": false,
-      "score": 0.4610529839992523
+      "score": 0.3460525870323181
     },
     {
       "query": "كيف أتقدم للقبول في جامعة حمد بن خليفة؟",
@@ -142,7 +142,7 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.6625706553459167
+      "score": 0.6742168068885803
     },
     {
       "query": "كيف أنسحب من الجامعة؟",
@@ -151,7 +151,7 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.25699806213378906
+      "score": 0.33103951811790466
     },
     {
       "query": "ما هي خطوات التسجيل في مسابقة القرآن المدرسية؟",
@@ -160,7 +160,7 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.7675884962081909
+      "score": 0.7729044556617737
     },
     {
       "query": "كيف أسجل طفلي في المدرسة إذا لم يكن هناك شاغر؟",
@@ -169,7 +169,7 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.49570178985595703
+      "score": 0.5589494705200195
     },
     {
       "query": "كيف أحصل على القسائم التعليمية لذوي الإعاقة؟",
@@ -178,7 +178,7 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.7004494071006775
+      "score": 0.6755011081695557
     },
     {
       "query": "كيف أبحث عن طبيب في قطر؟",
@@ -187,7 +187,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.68387770652771
+      "score": 0.6910677552223206
     },
     {
       "query": "كيف أبحث عن ممرض مرخص؟",
@@ -196,7 +196,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.5952458381652832
+      "score": 0.5485294461250305
     },
     {
       "query": "كيف أطلب استشارة طبية من الجمعية القطرية للسكري؟",
@@ -205,7 +205,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.7637981176376343
+      "score": 0.7557616233825684
     },
     {
       "query": "كيف أتقدم للعمل في مؤسسة حمد الطبية؟",
@@ -214,7 +214,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.603487491607666
+      "score": 0.7148829698562622
     },
     {
       "query": "كيف أحصل على التقارير الطبية من مؤسسة حمد؟",
@@ -223,7 +223,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.7571436762809753
+      "score": 0.8034902811050415
     },
     {
       "query": "كيف أحصل على ترخيص دائم للممارسين الصحيين؟",
@@ -232,7 +232,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.7238936424255371
+      "score": 0.6666693091392517
     },
     {
       "query": "كيف أتواصل مع مؤسسة حمد للاستشارات الطبية العاجلة؟",
@@ -241,7 +241,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.7265783548355103
+      "score": 0.8232921957969666
     },
     {
       "query": "كيف أعيد تفعيل رخصة تجارية؟",
@@ -250,7 +250,7 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.5832483768463135
+      "score": 0.7113782167434692
     },
     {
       "query": "كيف أحصل على بيانات براءة اختراع؟",
@@ -259,7 +259,7 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.47381696105003357
+      "score": 0.5380824208259583
     },
     {
       "query": "كيف أسجل نفسي كمكلف في الضرائب؟",
@@ -268,16 +268,16 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.5266668200492859
+      "score": 0.5093109607696533
     },
     {
       "query": "كيف أحصل على شهادة إقرار من غرفة التجارة؟",
       "type": "formal",
       "lang": "AR",
       "expected": "business",
-      "predicted": "transportation",
-      "correct": false,
-      "score": 0.5420791506767273
+      "predicted": "business",
+      "correct": true,
+      "score": 0.5140448212623596
     },
     {
       "query": "كيف أقدم عروض المناقصات للهيئة العامة للطيران؟",
@@ -286,7 +286,7 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.7198857069015503
+      "score": 0.7081813812255859
     },
     {
       "query": "كيف أحصل على تصريح استيراد مبيدات؟",
@@ -295,7 +295,7 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.7151949405670166
+      "score": 0.6257379055023193
     },
     {
       "query": "كيف أجدد عقد إيجار أرض؟",
@@ -304,7 +304,7 @@
       "expected": "housing",
       "predicted": "housing",
       "correct": true,
-      "score": 0.6158799529075623
+      "score": 0.5911468267440796
     },
     {
       "query": "كيف أحصل على بدل إيجار؟",
@@ -313,7 +313,7 @@
       "expected": "housing",
       "predicted": "housing",
       "correct": true,
-      "score": 0.5132561326026917
+      "score": 0.5077428221702576
     },
     {
       "query": "كيف أطلب هدم وإعادة بناء المساكن الشعبية؟",
@@ -322,7 +322,7 @@
       "expected": "housing",
       "predicted": "housing",
       "correct": true,
-      "score": 0.6665112972259521
+      "score": 0.7068391442298889
     },
     {
       "query": "كيف أحصل على سند الملكية؟",
@@ -331,7 +331,7 @@
       "expected": "housing",
       "predicted": "housing",
       "correct": true,
-      "score": 0.4527382552623749
+      "score": 0.37813031673431396
     },
     {
       "query": "كيف أحصل على تسليم الإرث المنقول؟",
@@ -340,16 +340,16 @@
       "expected": "housing",
       "predicted": "housing",
       "correct": true,
-      "score": 0.5494557619094849
+      "score": 0.4186873435974121
     },
     {
       "query": "كيف أبحث عن قضية في النيابة العامة؟",
       "type": "formal",
       "lang": "AR",
       "expected": "justice",
-      "predicted": "justice",
-      "correct": true,
-      "score": 0.4108302891254425
+      "predicted": "transportation",
+      "correct": false,
+      "score": 0.41758108139038086
     },
     {
       "query": "كيف أطلب فتح باب مرافعة؟",
@@ -358,7 +358,7 @@
       "expected": "justice",
       "predicted": "justice",
       "correct": true,
-      "score": 0.3862093687057495
+      "score": 0.41386860609054565
     },
     {
       "query": "كيف أستخدم بوابة المحامين؟",
@@ -367,7 +367,7 @@
       "expected": "justice",
       "predicted": "justice",
       "correct": true,
-      "score": 0.5517456531524658
+      "score": 0.5931274890899658
     },
     {
       "query": "كيف أتقدم للعيادة القانونية في مركز قطر للمال؟",
@@ -376,7 +376,7 @@
       "expected": "justice",
       "predicted": "business",
       "correct": false,
-      "score": 0.6832519173622131
+      "score": 0.7083031535148621
     },
     {
       "query": "كيف أحصل على ترخيص فعالية فنية؟",
@@ -385,7 +385,7 @@
       "expected": "culture",
       "predicted": "culture",
       "correct": true,
-      "score": 0.6406466960906982
+      "score": 0.6335878372192383
     },
     {
       "query": "كيف أحصل على تصريح تصوير فيلم؟",
@@ -394,7 +394,7 @@
       "expected": "culture",
       "predicted": "culture",
       "correct": true,
-      "score": 0.5332539081573486
+      "score": 0.5169423222541809
     },
     {
       "query": "كيف أحصل على ترخيص محطة راديو FM؟",
@@ -403,7 +403,7 @@
       "expected": "culture",
       "predicted": "culture",
       "correct": true,
-      "score": 0.5785078406333923
+      "score": 0.5578214526176453
     },
     {
       "query": "كيف أحصل على ترخيص مطبعة؟",
@@ -412,7 +412,7 @@
       "expected": "culture",
       "predicted": "culture",
       "correct": true,
-      "score": 0.5331666469573975
+      "score": 0.5342682003974915
     },
     {
       "query": "كيف أحصل على ترخيص بطاقة صحفية؟",
@@ -421,7 +421,7 @@
       "expected": "culture",
       "predicted": "culture",
       "correct": true,
-      "score": 0.6946172118186951
+      "score": 0.6874067783355713
     },
     {
       "query": "ما هو حكومي؟",
@@ -430,16 +430,16 @@
       "expected": "info",
       "predicted": "housing",
       "correct": false,
-      "score": 0.4588763117790222
+      "score": 0.44279927015304565
     },
     {
       "query": "كيف أتواصل مع حكومي؟",
       "type": "formal",
       "lang": "AR",
       "expected": "info",
-      "predicted": "housing",
-      "correct": false,
-      "score": 0.47012871503829956
+      "predicted": "info",
+      "correct": true,
+      "score": 0.476734459400177
     },
     {
       "query": "ما هي الأسئلة الشائعة عن حكومي؟",
@@ -448,7 +448,7 @@
       "expected": "info",
       "predicted": "info",
       "correct": true,
-      "score": 0.543005108833313
+      "score": 0.5021375417709351
     },
     {
       "query": "ما هي خدمات حكومي المتاحة؟",
@@ -457,25 +457,25 @@
       "expected": "info",
       "predicted": "housing",
       "correct": false,
-      "score": 0.6230497360229492
+      "score": 0.687120258808136
     },
     {
       "query": "كيف أستخدم بوابة حكومي؟",
       "type": "formal",
       "lang": "AR",
       "expected": "info",
-      "predicted": "transportation",
-      "correct": false,
-      "score": 0.48421236872673035
+      "predicted": "info",
+      "correct": true,
+      "score": 0.5513019561767578
     },
     {
       "query": "رخصة ليموزين",
       "type": "formal",
       "lang": "AR",
       "expected": "transportation",
-      "predicted": "business",
-      "correct": false,
-      "score": 0.5248705744743347
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.5073764324188232
     },
     {
       "query": "تسجيل جامعة قطر",
@@ -484,7 +484,7 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.7509995698928833
+      "score": 0.7889238595962524
     },
     {
       "query": "بحث طبيب",
@@ -493,16 +493,16 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.5816379189491272
+      "score": 0.5391290187835693
     },
     {
       "query": "مناقصات",
       "type": "formal",
       "lang": "AR",
       "expected": "business",
-      "predicted": "justice",
+      "predicted": "housing",
       "correct": false,
-      "score": 0.3902914822101593
+      "score": 0.25177162885665894
     },
     {
       "query": "بدل إيجار",
@@ -511,7 +511,7 @@
       "expected": "housing",
       "predicted": "housing",
       "correct": true,
-      "score": 0.614212155342102
+      "score": 0.5710029602050781
     },
     {
       "query": "driving license",
@@ -520,16 +520,16 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.6009238958358765
+      "score": 0.6580767631530762
     },
     {
       "query": "رخصة سواقة",
       "type": "short_ar",
       "lang": "AR",
       "expected": "transportation",
-      "predicted": "business",
+      "predicted": "culture",
       "correct": false,
-      "score": 0.5997177958488464
+      "score": 0.5199640989303589
     },
     {
       "query": "how get limo license",
@@ -538,7 +538,7 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.5595434904098511
+      "score": 0.5212986469268799
     },
     {
       "query": "ابي اطلع رخصة سياقة",
@@ -547,7 +547,7 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.5253827571868896
+      "score": 0.45568612217903137
     },
     {
       "query": "bus purchase qatar",
@@ -556,16 +556,16 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.6112725734710693
+      "score": 0.5604503750801086
     },
     {
       "query": "شحن جوي",
       "type": "short_ar",
       "lang": "AR",
       "expected": "transportation",
-      "predicted": "business",
-      "correct": false,
-      "score": 0.4498000144958496
+      "predicted": "transportation",
+      "correct": true,
+      "score": 0.3745609521865845
     },
     {
       "query": "fish transport",
@@ -574,7 +574,7 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.33007869124412537
+      "score": 0.20831865072250366
     },
     {
       "query": "تصريح نقل",
@@ -583,7 +583,7 @@
       "expected": "transportation",
       "predicted": "justice",
       "correct": false,
-      "score": 0.6496362686157227
+      "score": 0.5695620775222778
     },
     {
       "query": "cargo service",
@@ -592,7 +592,7 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.6531108617782593
+      "score": 0.5437796115875244
     },
     {
       "query": "طلب تعميم سيارة",
@@ -601,7 +601,7 @@
       "expected": "transportation",
       "predicted": "transportation",
       "correct": true,
-      "score": 0.4800293445587158
+      "score": 0.42996978759765625
     },
     {
       "query": "school registration",
@@ -610,7 +610,7 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.6716327667236328
+      "score": 0.6678720712661743
     },
     {
       "query": "تسجيل مدرسة",
@@ -619,7 +619,7 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.6559362411499023
+      "score": 0.6759744882583618
     },
     {
       "query": "register kid school",
@@ -628,16 +628,16 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.6162577867507935
+      "score": 0.6498968005180359
     },
     {
       "query": "وين اسجل ولدي",
       "type": "dialect_ar",
       "lang": "AR",
       "expected": "education",
-      "predicted": "education",
-      "correct": true,
-      "score": 0.19057995080947876
+      "predicted": "housing",
+      "correct": false,
+      "score": 0.13265053927898407
     },
     {
       "query": "university admission",
@@ -646,7 +646,7 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.490221232175827
+      "score": 0.4535723626613617
     },
     {
       "query": "قبول جامعة",
@@ -655,25 +655,25 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.4917452931404114
+      "score": 0.43661001324653625
     },
     {
       "query": "transcript request",
       "type": "short_en",
       "lang": "EN",
       "expected": "education",
-      "predicted": "business",
+      "predicted": "culture",
       "correct": false,
-      "score": 0.42075610160827637
+      "score": 0.34323573112487793
     },
     {
       "query": "كشف درجات",
       "type": "short_ar",
       "lang": "AR",
       "expected": "education",
-      "predicted": "justice",
-      "correct": false,
-      "score": 0.4038253426551819
+      "predicted": "education",
+      "correct": true,
+      "score": 0.2835996747016907
     },
     {
       "query": "quran competition",
@@ -682,7 +682,7 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.6411559581756592
+      "score": 0.5909229516983032
     },
     {
       "query": "مسابقة قران",
@@ -691,7 +691,7 @@
       "expected": "education",
       "predicted": "education",
       "correct": true,
-      "score": 0.4594896137714386
+      "score": 0.39429140090942383
     },
     {
       "query": "find doctor",
@@ -700,7 +700,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.4885587692260742
+      "score": 0.4836229681968689
     },
     {
       "query": "دكتور",
@@ -709,7 +709,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.526521623134613
+      "score": 0.4827934801578522
     },
     {
       "query": "nurse license",
@@ -718,7 +718,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.5762091875076294
+      "score": 0.5225999355316162
     },
     {
       "query": "رخصة ممرض",
@@ -727,7 +727,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.6001623272895813
+      "score": 0.546322226524353
     },
     {
       "query": "hamad hospital",
@@ -736,7 +736,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.690650463104248
+      "score": 0.6450048685073853
     },
     {
       "query": "مستشفى حمد",
@@ -745,7 +745,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.690650463104248
+      "score": 0.6450048685073853
     },
     {
       "query": "medical report",
@@ -754,7 +754,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.6029036045074463
+      "score": 0.5928423404693604
     },
     {
       "query": "تقرير طبي",
@@ -763,7 +763,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.6029036045074463
+      "score": 0.5928423404693604
     },
     {
       "query": "doctor consultation",
@@ -772,7 +772,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.5618488788604736
+      "score": 0.5218996405601501
     },
     {
       "query": "استشارة طبية",
@@ -781,7 +781,7 @@
       "expected": "health",
       "predicted": "health",
       "correct": true,
-      "score": 0.6113230586051941
+      "score": 0.599989116191864
     },
     {
       "query": "business license",
@@ -790,7 +790,7 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.665321409702301
+      "score": 0.6150516271591187
     },
     {
       "query": "رخصة تجارية",
@@ -799,7 +799,7 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.665321409702301
+      "score": 0.6150516271591187
     },
     {
       "query": "company registration",
@@ -808,7 +808,7 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.5132718086242676
+      "score": 0.4526665210723877
     },
     {
       "query": "تسجيل شركة",
@@ -817,25 +817,25 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.5438939929008484
+      "score": 0.4784875512123108
     },
     {
       "query": "tenders",
       "type": "short_en",
       "lang": "EN",
       "expected": "business",
-      "predicted": "justice",
+      "predicted": "housing",
       "correct": false,
-      "score": 0.3707776665687561
+      "score": 0.2334202080965042
     },
     {
       "query": "مناقصات",
       "type": "short_ar",
       "lang": "AR",
       "expected": "business",
-      "predicted": "justice",
+      "predicted": "housing",
       "correct": false,
-      "score": 0.3902914822101593
+      "score": 0.25177162885665894
     },
     {
       "query": "tax registration",
@@ -844,7 +844,7 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.5474396347999573
+      "score": 0.5233957171440125
     },
     {
       "query": "تسجيل ضريبي",
@@ -853,7 +853,7 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.5805284976959229
+      "score": 0.5422065258026123
     },
     {
       "query": "patent",
@@ -862,7 +862,7 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.4237074851989746
+      "score": 0.4407420754432678
     },
     {
       "query": "براءة اختراع",
@@ -871,7 +871,7 @@
       "expected": "business",
       "predicted": "business",
       "correct": true,
-      "score": 0.4237074851989746
+      "score": 0.4407420754432678
     },
     {
       "query": "rent allowance",
@@ -880,7 +880,7 @@
       "expected": "housing",
       "predicted": "housing",
       "correct": true,
-      "score": 0.6159961223602295
+      "score": 0.5820358991622925
     },
     {
       "query": "بدل ايجار",
@@ -889,16 +889,16 @@
       "expected": "housing",
       "predicted": "housing",
       "correct": true,
-      "score": 0.6639597415924072
+      "score": 0.6186881065368652
     },
     {
       "query": "property title",
       "type": "short_en",
       "lang": "EN",
       "expected": "housing",
-      "predicted": "transportation",
-      "correct": false,
-      "score": 0.4803542196750641
+      "predicted": "housing",
+      "correct": true,
+      "score": 0.4404676556587219
     },
     {
       "query": "سند ملكية",
@@ -907,7 +907,7 @@
       "expected": "housing",
       "predicted": "housing",
       "correct": true,
-      "score": 0.5069884657859802
+      "score": 0.40636947751045227
     },
     {
       "query": "land lease",
@@ -916,7 +916,7 @@
       "expected": "housing",
       "predicted": "housing",
       "correct": true,
-      "score": 0.5611403584480286
+      "score": 0.5158365964889526
     },
     {
       "query": "court case",
@@ -925,7 +925,7 @@
       "expected": "justice",
       "predicted": "justice",
       "correct": true,
-      "score": 0.46646392345428467
+      "score": 0.4304538071155548
     },
     {
       "query": "قضية محكمة",
@@ -934,7 +934,7 @@
       "expected": "justice",
       "predicted": "justice",
       "correct": true,
-      "score": 0.45978933572769165
+      "score": 0.42013412714004517
     },
     {
       "query": "lawyer portal",
@@ -943,7 +943,7 @@
       "expected": "justice",
       "predicted": "justice",
       "correct": true,
-      "score": 0.5385301113128662
+      "score": 0.5121315717697144
     },
     {
       "query": "بوابة محامين",
@@ -952,16 +952,16 @@
       "expected": "justice",
       "predicted": "justice",
       "correct": true,
-      "score": 0.46822986006736755
+      "score": 0.36633366346359253
     },
     {
       "query": "legal clinic",
       "type": "short_en",
       "lang": "EN",
       "expected": "justice",
-      "predicted": "justice",
-      "correct": true,
-      "score": 0.5490992069244385
+      "predicted": "health",
+      "correct": false,
+      "score": 0.5116560459136963
     },
     {
       "query": "radio license",
@@ -970,7 +970,7 @@
       "expected": "culture",
       "predicted": "culture",
       "correct": true,
-      "score": 0.6073464155197144
+      "score": 0.5926822423934937
     },
     {
       "query": "ترخيص راديو",
@@ -979,34 +979,34 @@
       "expected": "culture",
       "predicted": "culture",
       "correct": true,
-      "score": 0.667757511138916
+      "score": 0.6399328708648682
     },
     {
       "query": "film permit",
       "type": "short_en",
       "lang": "EN",
       "expected": "culture",
-      "predicted": "justice",
-      "correct": false,
-      "score": 0.4223019778728485
+      "predicted": "culture",
+      "correct": true,
+      "score": 0.42330944538116455
     },
     {
       "query": "hukoomi",
       "type": "short_en",
       "lang": "EN",
       "expected": "info",
-      "predicted": "transportation",
+      "predicted": "housing",
       "correct": false,
-      "score": 0.48899686336517334
+      "score": 0.4410558342933655
     },
     {
       "query": "حكومي",
       "type": "short_ar",
       "lang": "AR",
       "expected": "info",
-      "predicted": "transportation",
+      "predicted": "housing",
       "correct": false,
-      "score": 0.48899686336517334
+      "score": 0.4410558342933655
     }
   ],
   "failures": [
@@ -1015,18 +1015,18 @@
       "type": "formal",
       "lang": "AR",
       "expected": "education",
-      "predicted": "business",
+      "predicted": "justice",
       "correct": false,
-      "score": 0.4610529839992523
+      "score": 0.3460525870323181
     },
     {
-      "query": "كيف أحصل على شهادة إقرار من غرفة التجارة؟",
+      "query": "كيف أبحث عن قضية في النيابة العامة؟",
       "type": "formal",
       "lang": "AR",
-      "expected": "business",
+      "expected": "justice",
       "predicted": "transportation",
       "correct": false,
-      "score": 0.5420791506767273
+      "score": 0.41758108139038086
     },
     {
       "query": "كيف أتقدم للعيادة القانونية في مركز قطر للمال؟",
@@ -1035,7 +1035,7 @@
       "expected": "justice",
       "predicted": "business",
       "correct": false,
-      "score": 0.6832519173622131
+      "score": 0.7083031535148621
     },
     {
       "query": "ما هو حكومي؟",
@@ -1044,16 +1044,7 @@
       "expected": "info",
       "predicted": "housing",
       "correct": false,
-      "score": 0.4588763117790222
-    },
-    {
-      "query": "كيف أتواصل مع حكومي؟",
-      "type": "formal",
-      "lang": "AR",
-      "expected": "info",
-      "predicted": "housing",
-      "correct": false,
-      "score": 0.47012871503829956
+      "score": 0.44279927015304565
     },
     {
       "query": "ما هي خدمات حكومي المتاحة؟",
@@ -1062,52 +1053,25 @@
       "expected": "info",
       "predicted": "housing",
       "correct": false,
-      "score": 0.6230497360229492
-    },
-    {
-      "query": "كيف أستخدم بوابة حكومي؟",
-      "type": "formal",
-      "lang": "AR",
-      "expected": "info",
-      "predicted": "transportation",
-      "correct": false,
-      "score": 0.48421236872673035
-    },
-    {
-      "query": "رخصة ليموزين",
-      "type": "formal",
-      "lang": "AR",
-      "expected": "transportation",
-      "predicted": "business",
-      "correct": false,
-      "score": 0.5248705744743347
+      "score": 0.687120258808136
     },
     {
       "query": "مناقصات",
       "type": "formal",
       "lang": "AR",
       "expected": "business",
-      "predicted": "justice",
+      "predicted": "housing",
       "correct": false,
-      "score": 0.3902914822101593
+      "score": 0.25177162885665894
     },
     {
       "query": "رخصة سواقة",
       "type": "short_ar",
       "lang": "AR",
       "expected": "transportation",
-      "predicted": "business",
+      "predicted": "culture",
       "correct": false,
-      "score": 0.5997177958488464
-    },
-    {
-      "query": "شحن جوي",
-      "type": "short_ar",
-      "lang": "AR",
-      "expected": "transportation",
-      "predicted": "business",
-      "correct": false,
-      "score": 0.4498000144958496
+      "score": 0.5199640989303589
     },
     {
       "query": "تصريح نقل",
@@ -1116,79 +1080,70 @@
       "expected": "transportation",
       "predicted": "justice",
       "correct": false,
-      "score": 0.6496362686157227
+      "score": 0.5695620775222778
+    },
+    {
+      "query": "وين اسجل ولدي",
+      "type": "dialect_ar",
+      "lang": "AR",
+      "expected": "education",
+      "predicted": "housing",
+      "correct": false,
+      "score": 0.13265053927898407
     },
     {
       "query": "transcript request",
       "type": "short_en",
       "lang": "EN",
       "expected": "education",
-      "predicted": "business",
+      "predicted": "culture",
       "correct": false,
-      "score": 0.42075610160827637
-    },
-    {
-      "query": "كشف درجات",
-      "type": "short_ar",
-      "lang": "AR",
-      "expected": "education",
-      "predicted": "justice",
-      "correct": false,
-      "score": 0.4038253426551819
+      "score": 0.34323573112487793
     },
     {
       "query": "tenders",
       "type": "short_en",
       "lang": "EN",
       "expected": "business",
-      "predicted": "justice",
+      "predicted": "housing",
       "correct": false,
-      "score": 0.3707776665687561
+      "score": 0.2334202080965042
     },
     {
       "query": "مناقصات",
       "type": "short_ar",
       "lang": "AR",
       "expected": "business",
-      "predicted": "justice",
+      "predicted": "housing",
       "correct": false,
-      "score": 0.3902914822101593
+      "score": 0.25177162885665894
     },
     {
-      "query": "property title",
+      "query": "legal clinic",
       "type": "short_en",
       "lang": "EN",
-      "expected": "housing",
-      "predicted": "transportation",
+      "expected": "justice",
+      "predicted": "health",
       "correct": false,
-      "score": 0.4803542196750641
-    },
-    {
-      "query": "film permit",
-      "type": "short_en",
-      "lang": "EN",
-      "expected": "culture",
-      "predicted": "justice",
-      "correct": false,
-      "score": 0.4223019778728485
+      "score": 0.5116560459136963
     },
     {
       "query": "hukoomi",
       "type": "short_en",
       "lang": "EN",
       "expected": "info",
-      "predicted": "transportation",
+      "predicted": "housing",
       "correct": false,
-      "score": 0.48899686336517334
+      "score": 0.4410558342933655
     },
     {
       "query": "حكومي",
       "type": "short_ar",
       "lang": "AR",
       "expected": "info",
-      "predicted": "transportation",
+      "predicted": "housing",
       "correct": false,
-      "score": 0.48899686336517334
+      "score": 0.4410558342933655
     }
   ]
 }

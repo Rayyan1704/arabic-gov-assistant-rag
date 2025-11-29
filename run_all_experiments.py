@@ -37,23 +37,33 @@ def run_experiment(script_name, description):
 
 def main():
     print("="*80)
-    print("RESEARCH EXPERIMENTS - DAY 8")
+    print("RESEARCH EXPERIMENTS - ALL 4 EXPERIMENTS")
     print("="*80)
     print("\nThis will run:")
     print("1. Experiment 1: Translation Strategies (4 methods)")
     print("2. Experiment 2: Hybrid Retrieval (5 configurations)")
-    print("\nEstimated time: 10-15 minutes")
+    print("3. Experiment 3: Comprehensive Evaluation (100 queries)")
+    print("4. Experiment 4: Ablation Study (component analysis)")
+    print("\nEstimated time: 20-25 minutes")
     
     input("\nPress Enter to start...")
     
     experiments = [
         {
-            'script': 'experiments/translation_strategies.py',
+            'script': 'experiments/experiment1_translation_strategies.py',
             'description': 'Experiment 1 - Translation Strategies'
         },
         {
-            'script': 'experiments/hybrid_retrieval.py',
+            'script': 'experiments/experiment2_hybrid_retrieval.py',
             'description': 'Experiment 2 - Hybrid Retrieval'
+        },
+        {
+            'script': 'experiments/experiment3_comprehensive_evaluation.py',
+            'description': 'Experiment 3 - Comprehensive Evaluation'
+        },
+        {
+            'script': 'experiments/experiment4_ablation_study.py',
+            'description': 'Experiment 4 - Ablation Study'
         }
     ]
     
@@ -94,6 +104,8 @@ def main():
         print("\nResults saved to:")
         print("  - index/experiment1_translation_strategies.json")
         print("  - index/experiment2_hybrid_retrieval.json")
+        print("  - index/experiment3_comprehensive_evaluation.json")
+        print("  - index/experiment4_ablation_study.json")
     else:
         print("\n⚠️  Some experiments failed. Check the output above for details.")
 
