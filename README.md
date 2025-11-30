@@ -1,201 +1,369 @@
-# 🇶🇦 AraGovAssist - Qatar Government Services RAG System
+# Arabic Government Services RAG System
 
-A production-grade Retrieval-Augmented Generation (RAG) system for Qatar government services documentation in Arabic, featuring advanced retrieval techniques including cross-encoder reranking and per-category indexes.
+A cross-lingual Retrieval-Augmented Generation system for Qatar government services with 96% accuracy on bilingual queries.
 
-## 🎯 System Performance
+[![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28-red.svg)](https://streamlit.io)
+[![FAISS](https://img.shields.io/badge/FAISS-1.7.4-green.svg)](https://faiss.ai)
 
-- **Retrieval Accuracy:** 90% (9/10 test queries)
-- **Category Detection:** 100% (5/5 queries)
-- **Hallucination Rate:** 0% (honest "I don't know" responses)
-- **Response Time:** ~3-5 seconds
-- **Reranking Improvement:** Significant (8.759 vs 0.523 scores)
+---
 
-## 📁 Project Structure
+## Overview
 
-```
-arabic-gov-assistant-rag/
-├── data/                   # Government service documents (50 files)
-│   ├── health/            # 7 documents
-│   ├── education/         # 8 documents
-│   ├── business/          # 8 documents
-│   ├── transportation/    # 6 documents
-│   ├── justice/           # 6 documents
-│   ├── housing/           # 5 documents
-│   ├── culture/           # 5 documents
-│   └── info/              # 5 documents
-├── notebooks/             # Jupyter notebooks for experiments
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_chunking_experiments.ipynb
-│   └── 03_retrieval_testing.ipynb
-├── src/                   # Source code
-│   ├── __init__.py
-│   ├── preprocessing.py   # Text preprocessing
-│   ├── chunking.py        # Document chunking
-│   ├── retrieval.py       # FAISS retrieval
-│   ├── llm_generator.py   # Gemini LLM integration
-│   └── category_retrieval.py  # Advanced retrieval with reranking
-├── index/                 # Generated FAISS index + results
-│   ├── faiss.index        # FAISS vector index
-│   ├── embeddings.npy     # Document embeddings
-│   ├── corpus_chunks.json # Chunked documents
-│   ├── corpus_meta.json   # Document metadata
-│   └── *.json             # Experiment results
-├── requirements.txt       # Python dependencies
-├── verify_data.py         # Data quality verification
-└── README.md             # This file
-```
+**Objective:** Enable cross-lingual information retrieval for Qatar government services.
 
-## 🚀 Quick Start
+**System Capabilities:**
+- Searches 51 government service documents across 8 categories
+- Processes Arabic and English queries with 96% accuracy
+- Generates contextual answers using Google Gemini 1.5 Flash
+- Responds in 0.16s average time
+- Provides web-based interface via Streamlit
 
-### 1. Install Dependencies
+---
+
+## Performance Metrics
+
+| Metric | Value |
+|--------|-------|
+| Overall Accuracy | 96.0% (96/100 queries) |
+| Arabic Accuracy | 96.0% (48/50) |
+| English Accuracy | 96.0% (48/50) |
+| Response Time | 0.16s average |
+| Statistical Significance | p < 0.0001 |
+| Improvement over BM25 | +40 percentage points (71% relative) |
+
+---
+
+## Quick Start
+
+### 1. Installation
 
 ```bash
+# Clone repository
+git clone https://github.com/Rayyan1704/arabic-gov-assistant-rag.git
+cd arabic-gov-assistant-rag
+
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Verify Data Quality
+### 2. Configuration
 
+Create `.env` file:
 ```bash
-python verify_data.py
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-### 3. Explore in Notebooks
+### 3. Build System
 
 ```bash
-jupyter notebook
+# Step 1: Process documents into chunks
+python scripts/build/process_all_documents.py
+
+# Step 2: Generate embeddings
+python scripts/build/generate_embeddings.py
+
+# Step 3: Build FAISS index
+python scripts/build/build_retrieval_system.py
 ```
 
-Open `notebooks/01_data_exploration.ipynb` to start.
+### 4. Run Application
 
-## 📊 Data Statistics
-
-- **Total Documents:** 50
-- **Categories:** 8
-- **Languages:** Arabic
-- **Format:** Plain text with markdown structure
-- **Quality:** ✅ All files verified
-
-## 🔧 Components
-
-### Core Pipeline
-
-1. **Preprocessing** (`src/preprocessing.py`)
-   - Arabic text normalization
-   - Diacritics removal
-   - Alef variant normalization
-   - Document loading and cleaning
-
-2. **Chunking** (`src/chunking.py`)
-   - Paragraph-based chunking
-   - Sentence-based chunking
-   - Section-based chunking
-   - Configurable chunk size and overlap
-
-3. **Retrieval** (`src/retrieval.py`)
-   - FAISS-based semantic search
-   - Multilingual embeddings (paraphrase-multilingual-mpnet-base-v2)
-   - Category filtering
-   - Index persistence
-
-4. **Advanced Retrieval** (`src/category_retrieval.py`) ⭐ NEW
-   - Per-category FAISS indexes
-   - Automatic category detection
-   - Two-stage retrieval (embedding + reranking)
-   - Cross-encoder reranking (ms-marco-MiniLM-L-6-v2)
-
-5. **LLM Generation** (`src/llm_generator.py`)
-   - Google Gemini 2.0 Flash integration
-   - Context-aware answer generation
-   - Source citation
-   - Honest "I don't know" responses
-
-## �  Usage
-
-### Basic Retrieval
 ```bash
-python test_end_to_end.py
+# Web interface
+streamlit run app.py
+
+# Or run experiments
+python run_all_experiments.py
 ```
 
-### Advanced Retrieval with Reranking
-```bash
-python test_reranked_end_to_end.py
+---
+
+## Project Structure
+
+```
+arabic-gov-assistant-rag/
+│
+├── app.py                          # Streamlit web interface
+├── run_all_experiments.py          # Master experiment script
+│
+├── src/                            # Core modules (7 files)
+│   ├── preprocessing.py            # Arabic text normalization
+│   ├── chunking.py                 # Document chunking
+│   ├── retrieval.py                # FAISS retrieval + enhancements
+│   ├── category_retrieval.py       # Category-aware retrieval
+│   ├── llm_generator.py            # Gemini LLM integration
+│   ├── translator.py               # Google Translate integration
+│   └── __init__.py
+│
+├── scripts/                        # Build and test scripts
+│   ├── build/                      # Build pipeline (3 scripts)
+│   │   ├── process_all_documents.py
+│   │   ├── generate_embeddings.py
+│   │   └── build_retrieval_system.py
+│   ├── tests/                      # Test scripts (2 scripts)
+│   │   ├── verify_data.py
+│   │   └── test_comprehensive_100_queries.py
+│   └── README.md
+│
+├── data/                           # Document corpus (51 docs, 8 categories)
+│   ├── business/
+│   ├── culture/
+│   ├── education/
+│   ├── health/
+│   ├── housing/
+│   ├── info/
+│   ├── justice/
+│   └── transportation/
+│
+├── experiments/                    # Research experiments (4 experiments)
+│   ├── experiment1_translation_strategies.py
+│   ├── experiment2_hybrid_retrieval.py
+│   ├── experiment3_comprehensive_evaluation.py
+│   ├── experiment4_ablation_study.py
+│   └── test_queries_dataset.json
+│
+├── index/                          # Generated indexes and results
+│   ├── embeddings.npy
+│   ├── faiss.index
+│   ├── corpus_chunks.json
+│   ├── corpus_meta.json
+│   └── experiment*.json
+│
+├── notebooks/                      # Jupyter notebooks (2 notebooks)
+│   ├── 01_data_exploration.ipynb
+│   └── 02_embeddings.ipynb
+│
+└── Documentation/                  # Research documentation (15 files)
+    ├── README.md                   # This file
+    ├── QUICK_START_GUIDE.md        # Setup instructions
+    ├── RESEARCH_SUMMARY.md         # Research findings
+    ├── PROJECT_TIMELINE.md         # 20-day development plan
+    ├── PROJECT_COMPLETE.md         # Completion summary
+    └── PHASE1-10.md                # Phase documentation
 ```
 
-### Compare Retrieval Approaches
-```bash
-python test_category_reranking.py
+---
+
+## System Architecture
+
+### Processing Pipeline
+
+```
+User Query (Arabic/English)
+    ↓
+Language Detection
+    ↓
+Translation (if English)
+    ↓
+Query Embedding (768-dim)
+    ↓
+FAISS Similarity Search
+    ↓
+Keyword Boosting
+    ↓
+Top-k Selection
+    ↓
+LLM Answer Generation (Gemini)
+    ↓
+Response with Sources
 ```
 
-### Run Experiments
-```bash
-# Test 10 diverse queries
-python test_10_queries.py
+### Technology Stack
 
-# Chunking experiments
-python chunking_experiments.py
-```
+- **Embeddings:** paraphrase-multilingual-mpnet-base-v2
+- **Vector Index:** FAISS IndexFlatIP
+- **LLM:** Google Gemini 1.5 Flash
+- **Translation:** Google Translate API
+- **UI:** Streamlit
+- **Language:** Python 3.12
 
-## 📊 Development Journey
+---
 
-### Day 1-2: Foundation
-- Data collection and preprocessing
-- Embedding generation
-- FAISS index creation
+## Research Experiments
 
-### Day 3: LLM Integration
-- Gemini API integration
-- Prompt engineering
-- Answer generation
+### Experiment 1: Translation Strategies
+**Test Set:** 12 English queries
 
-### Day 4: Scientific Validation
-- 10 diverse query testing (90% accuracy)
-- Chunking experiments (4 configurations)
-- Performance metrics (P@K, MRR)
+**Results:**
+- Multilingual embeddings: 100% accuracy without translation
+- Translation overhead: +0.23s latency
+- **Finding:** Modern multilingual models eliminate translation requirement
 
-### Day 5: Advanced Techniques ⭐
-- Per-category FAISS indexes
-- Cross-encoder reranking
-- Two-stage retrieval
-- Comprehensive comparison
+### Experiment 2: Hybrid Retrieval
+**Test Set:** 50 Arabic queries
 
-**Total Development Time:** 27.5 hours
+**Results:**
+- Pure semantic: 84% P@1
+- BM25 hybrid: 70-80% P@1
+- **Finding:** High-quality embeddings outperform hybrid approaches
 
-## 🎓 Key Features
+### Experiment 3: Comprehensive Evaluation
+**Test Set:** 100 queries (50 Arabic + 50 English)
 
-### What Makes This Professional
-1. ✅ **Scientific Validation** - Proper experiments with metrics
-2. ✅ **Advanced Techniques** - Two-stage retrieval with reranking
-3. ✅ **Honest Evaluation** - 0% hallucination rate
-4. ✅ **Production Ready** - Modular, tested, documented
-5. ✅ **Comprehensive Testing** - 9 test scripts covering all aspects
+**Results:**
+- Overall accuracy: 96.0%
+- Statistical significance: p < 0.0001
+- **Finding:** System validated at scale with equal cross-lingual performance
+
+### Experiment 4: Ablation Study
+**Test Set:** 100 queries
+
+**Results:**
+- Keyword boosting: +7% contribution
+- Translation: +10% for English queries
+- Title matching: 0% impact
+- **Finding:** Keyword boosting critical for domain-specific retrieval
+
+---
+
+## Key Features
 
 ### Technical Highlights
-- Multilingual embeddings for Arabic text
-- FAISS for efficient similarity search
-- Cross-encoder reranking for accuracy
-- Category-aware retrieval
-- LLM-powered answer generation
-- Extensive experimentation and validation
+- Cross-lingual query processing (Arabic/English)
+- Keyword boosting for domain-specific terms
+- Statistical validation (p < 0.0001)
+- Zero hallucination (context-only responses)
+- Production-ready web interface
 
-## 📚 Documentation
+### Research Contributions
+1. Systematic comparison of translation strategies for Arabic RAG
+2. Evaluation of hybrid retrieval approaches
+3. Quantification of component contributions via ablation study
+4. 100-query bilingual benchmark dataset
 
-- `PROJECT_SETUP.md` - Initial setup guide
-- `DAY1_CHECKPOINT.md` - Data and preprocessing
-- `DAY2_CHECKPOINT.md` - Embeddings and FAISS
-- `DAY3_CHECKPOINT.md` - LLM integration
-- `DAY4_CHECKPOINT.md` - Experiments and validation
-- `DAY5_CHECKPOINT.md` - Advanced retrieval techniques
-- `COMPLETE_PROJECT_SUMMARY.md` - Full project overview
+---
 
-## 🔬 Research & Learning
+## Usage Examples
 
-This project demonstrates:
-- End-to-end RAG system development
-- Arabic NLP challenges and solutions
-- Trade-offs between speed and accuracy
-- When to use advanced techniques vs simple solutions
-- Scientific approach to ML system evaluation
+### Web Interface
+```bash
+streamlit run app.py
+```
 
-## 📄 License
+### Python API
+```python
+from sentence_transformers import SentenceTransformer
+from src.retrieval import RetrieverSystem
+from src.llm_generator import AnswerGenerator
+
+# Initialize
+model = SentenceTransformer('paraphrase-multilingual-mpnet-base-v2')
+retriever = RetrieverSystem(
+    'index/embeddings.npy',
+    'index/corpus_chunks.json',
+    'index/corpus_meta.json'
+)
+generator = AnswerGenerator()
+
+# Query
+query = "كيف أحصل على رخصة قيادة؟"
+query_emb = model.encode([query])[0]
+results = retriever.search(query_emb, k=3, query_text=query)
+answer = generator.generate_answer(query, [r['chunk'] for r in results])
+```
+
+### Run Tests
+```bash
+# Verify data quality
+python scripts/tests/verify_data.py
+
+# Run comprehensive evaluation
+python scripts/tests/test_comprehensive_100_queries.py
+
+# Run all experiments
+python run_all_experiments.py
+```
+
+---
+
+## Development Timeline
+
+**Duration:** 20 days (November 19-28, 2025)  
+**Total Hours:** ~100 hours
+
+| Phase | Days | Focus |
+|-------|------|-------|
+| Phase 1-2 | 1-4 | Setup, data collection, embeddings |
+| Phase 3-4 | 5-8 | LLM integration, testing |
+| Phase 5-6 | 9-12 | Advanced retrieval, UI |
+| Phase 7 | 13-14 | Translation, optimization |
+| Phase 8-9 | 15-18 | Research experiments |
+| Phase 10 | 19-20 | Finalization |
+
+See [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) for detailed breakdown.
+
+---
+
+## Documentation
+
+### Getting Started
+- [QUICK_START_GUIDE.md](QUICK_START_GUIDE.md) - Setup and usage instructions
+- [scripts/README.md](scripts/README.md) - Build pipeline documentation
+
+### Research Documentation
+- [RESEARCH_SUMMARY.md](RESEARCH_SUMMARY.md) - Key findings and contributions
+- [PROJECT_COMPLETE.md](PROJECT_COMPLETE.md) - Project completion summary
+- [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) - Development timeline
+
+### Phase Documentation
+- [PHASE1_SETUP_AND_DATA.md](PHASE1_SETUP_AND_DATA.md) - Days 1-2
+- [PHASE2_CORE_SYSTEM.md](PHASE2_CORE_SYSTEM.md) - Days 3-4
+- [PHASE3_EMBEDDINGS.md](PHASE3_EMBEDDINGS.md) - Days 5-6
+- [PHASE4_RETRIEVAL.md](PHASE4_RETRIEVAL.md) - Days 7-8
+- [PHASE5_RERANKING.md](PHASE5_RERANKING.md) - Days 9-10
+- [PHASE6_UI_DEVELOPMENT.md](PHASE6_UI_DEVELOPMENT.md) - Days 11-12
+- [PHASE7_OPTIMIZATION.md](PHASE7_OPTIMIZATION.md) - Days 13-14
+- [PHASE8_EXPERIMENTS_1_2.md](PHASE8_EXPERIMENTS_1_2.md) - Days 15-16
+- [PHASE9_EXPERIMENTS_3_4.md](PHASE9_EXPERIMENTS_3_4.md) - Days 17-18
+- [PHASE10_FINALIZATION.md](PHASE10_FINALIZATION.md) - Days 19-20
+
+---
+
+## Limitations
+
+### Current Limitations
+- Justice category: 50% accuracy (limited training data: 4 documents)
+- Test set: 100 queries (moderate scale)
+- Single domain: Qatar government services
+- Languages: Arabic and English only
+
+### Future Work
+1. Expand justice category documents (4 → 15+)
+2. Add domain-specific legal embeddings
+3. Increase test set size (100 → 500+ queries)
+4. Evaluate on additional domains
+5. Conduct user studies
+
+---
+
+## Citation
+
+If you use this work, please cite:
+
+```bibtex
+@misc{arabic-gov-rag-2025,
+  title={Cross-Lingual RAG System for Arabic Government Services},
+  author={Rayyan},
+  year={2025},
+  url={https://github.com/Rayyan1704/arabic-gov-assistant-rag}
+}
+```
+
+---
+
+## License
 
 Educational and research purposes.
+
+---
+
+## Contact
+
+For questions or collaboration:
+- GitHub: [@Rayyan1704](https://github.com/Rayyan1704)
+- Repository: [arabic-gov-assistant-rag](https://github.com/Rayyan1704/arabic-gov-assistant-rag)

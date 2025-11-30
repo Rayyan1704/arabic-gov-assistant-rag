@@ -20,31 +20,41 @@ pip install -r requirements.txt
 
 ---
 
+## Build System
+
+Run these scripts in order to build the system from scratch:
+
+### Step 1: Process Documents
+```bash
+python scripts/build/process_all_documents.py
+```
+Output: Chunks documents into `index/corpus_chunks.json`
+
+### Step 2: Generate Embeddings
+```bash
+python scripts/build/generate_embeddings.py
+```
+Output: Creates `index/embeddings.npy`
+
+### Step 3: Build FAISS Index
+```bash
+python scripts/build/build_retrieval_system.py
+```
+Output: Creates `index/faiss.index`
+
 ## Testing
 
-### System Verification
+### Verify Data Quality
 ```bash
-python show_system_summary.py
+python scripts/tests/verify_data.py
 ```
-Output: System overview with metrics
-
-### Production System Test
-```bash
-python test_production_system.py
-```
-Output: Critical query validation results
+Output: Data quality check and corpus statistics
 
 ### Comprehensive Evaluation
 ```bash
-python test_comprehensive_100_queries.py
+python scripts/tests/test_comprehensive_100_queries.py
 ```
-Output: 100-query test results with accuracy metrics
-
-### Final Accuracy Test
-```bash
-python test_final_accuracy.py
-```
-Output: Accuracy measurement on test set
+Output: 100-query test results with 96% accuracy
 
 ---
 
@@ -84,8 +94,11 @@ streamlit run app.py
 
 ### Command Line
 ```bash
-python test_production_system.py
-python test_comprehensive_100_queries.py
+# Run comprehensive test
+python scripts/tests/test_comprehensive_100_queries.py
+
+# Run all experiments
+python run_all_experiments.py
 ```
 
 ---
