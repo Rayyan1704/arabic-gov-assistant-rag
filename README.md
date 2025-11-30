@@ -15,7 +15,7 @@ A cross-lingual Retrieval-Augmented Generation system for Qatar government servi
 **System Capabilities:**
 - Searches 51 government service documents across 8 categories
 - Processes Arabic and English queries with 96% accuracy
-- Generates contextual answers using Google Gemini 1.5 Flash
+- Generates contextual answers using Google Gemini 2.0 Flash
 - Responds in 0.16s average time
 - Provides web-based interface via Streamlit
 
@@ -138,13 +138,24 @@ arabic-gov-assistant-rag/
 │   ├── 01_data_exploration.ipynb
 │   └── 02_embeddings.ipynb
 │
-└── Documentation/                  # Research documentation (15 files)
+├── phases/                         # Phase documentation (10 files)
+│   ├── PHASE1_SETUP_AND_DATA.md
+│   ├── PHASE2_CORE_SYSTEM.md
+│   ├── PHASE3_EMBEDDINGS.md
+│   ├── PHASE4_RETRIEVAL.md
+│   ├── PHASE5_RERANKING.md
+│   ├── PHASE6_UI_DEVELOPMENT.md
+│   ├── PHASE7_OPTIMIZATION.md
+│   ├── PHASE8_EXPERIMENTS_1_2.md
+│   ├── PHASE9_EXPERIMENTS_3_4.md
+│   └── PHASE10_FINALIZATION.md
+│
+└── Documentation/                  # Research documentation (5 files)
     ├── README.md                   # This file
     ├── QUICK_START_GUIDE.md        # Setup instructions
     ├── RESEARCH_SUMMARY.md         # Research findings
     ├── PROJECT_TIMELINE.md         # 20-day development plan
-    ├── PROJECT_COMPLETE.md         # Completion summary
-    └── PHASE1-10.md                # Phase documentation
+    └── PROJECT_COMPLETE.md         # Completion summary
 ```
 
 ---
@@ -177,7 +188,7 @@ Response with Sources
 
 - **Embeddings:** paraphrase-multilingual-mpnet-base-v2
 - **Vector Index:** FAISS IndexFlatIP
-- **LLM:** Google Gemini 1.5 Flash
+- **LLM:** Google Gemini 2.0 Flash
 - **Translation:** Google Translate API
 - **UI:** Streamlit
 - **Language:** Python 3.12
@@ -311,16 +322,16 @@ See [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) for detailed breakdown.
 - [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) - Development timeline
 
 ### Phase Documentation
-- [PHASE1_SETUP_AND_DATA.md](PHASE1_SETUP_AND_DATA.md) - Days 1-2
-- [PHASE2_CORE_SYSTEM.md](PHASE2_CORE_SYSTEM.md) - Days 3-4
-- [PHASE3_EMBEDDINGS.md](PHASE3_EMBEDDINGS.md) - Days 5-6
-- [PHASE4_RETRIEVAL.md](PHASE4_RETRIEVAL.md) - Days 7-8
-- [PHASE5_RERANKING.md](PHASE5_RERANKING.md) - Days 9-10
-- [PHASE6_UI_DEVELOPMENT.md](PHASE6_UI_DEVELOPMENT.md) - Days 11-12
-- [PHASE7_OPTIMIZATION.md](PHASE7_OPTIMIZATION.md) - Days 13-14
-- [PHASE8_EXPERIMENTS_1_2.md](PHASE8_EXPERIMENTS_1_2.md) - Days 15-16
-- [PHASE9_EXPERIMENTS_3_4.md](PHASE9_EXPERIMENTS_3_4.md) - Days 17-18
-- [PHASE10_FINALIZATION.md](PHASE10_FINALIZATION.md) - Days 19-20
+- [PHASE1_SETUP_AND_DATA.md](phases/PHASE1_SETUP_AND_DATA.md) - Days 1-2
+- [PHASE2_CORE_SYSTEM.md](phases/PHASE2_CORE_SYSTEM.md) - Days 3-4
+- [PHASE3_EMBEDDINGS.md](phases/PHASE3_EMBEDDINGS.md) - Days 5-6
+- [PHASE4_RETRIEVAL.md](phases/PHASE4_RETRIEVAL.md) - Days 7-8
+- [PHASE5_RERANKING.md](phases/PHASE5_RERANKING.md) - Days 9-10
+- [PHASE6_UI_DEVELOPMENT.md](phases/PHASE6_UI_DEVELOPMENT.md) - Days 11-12
+- [PHASE7_OPTIMIZATION.md](phases/PHASE7_OPTIMIZATION.md) - Days 13-14
+- [PHASE8_EXPERIMENTS_1_2.md](phases/PHASE8_EXPERIMENTS_1_2.md) - Days 15-16
+- [PHASE9_EXPERIMENTS_3_4.md](phases/PHASE9_EXPERIMENTS_3_4.md) - Days 17-18
+- [PHASE10_FINALIZATION.md](phases/PHASE10_FINALIZATION.md) - Days 19-20
 
 ---
 

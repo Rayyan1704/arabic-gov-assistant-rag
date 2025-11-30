@@ -93,7 +93,7 @@ Average Answer Length: 321 characters
 **Finding:** All configurations achieved identical performance (90% accuracy)
 
 **Explanation:**
-- Small corpus (50 documents)
+- Small corpus (51 documents)
 - Documents already small (average ~500 characters)
 - Chunking has minimal impact at this scale
 - Paragraph-based chunking preserves semantic units
@@ -201,7 +201,7 @@ Average Answer Length: 321 characters
 
 ### Limitations
 1. Corpus coverage: Missing driving license document
-2. Small scale: 50 documents insufficient for some queries
+2. Small scale: 51 documents insufficient for some queries
 3. No reranking: Basic similarity search only
 4. Single-language: Arabic queries only tested
 
@@ -242,7 +242,7 @@ Average Answer Length: 321 characters
 
 ### Challenge 6: Result Interpretation
 **Issue:** All chunking strategies showed identical performance  
-**Cause:** Small corpus (50 documents)  
+**Cause:** Small corpus (51 documents)  
 **Solution:** Documented finding, noted chunking impact increases with corpus size
 
 ---

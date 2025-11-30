@@ -31,7 +31,7 @@
 ### Documentation
 - RESEARCH_SUMMARY.md: Complete experimental findings
 - PROJECT_TIMELINE.md: 20-day development timeline
-- PROJECT_STRUCTURE.md: System organization
+- README.md: System organization and structure
 - PHASE1-10 checkpoints: Development documentation
 - README.md: Project overview and quick start
 
@@ -83,7 +83,7 @@ Root/
 ├── Documentation
 │   ├── RESEARCH_SUMMARY.md
 │   ├── PROJECT_TIMELINE.md
-│   ├── PROJECT_STRUCTURE.md
+│   ├── PROJECT_COMPLETE.md
 │   └── PHASE1-10_*.md
 │
 ├── Data & Index
@@ -126,7 +126,7 @@ Root/
 
 1. **Retrieval:** FAISS + multilingual embeddings + keyword boosting
 2. **Translation:** Google Translate API (bidirectional)
-3. **Generation:** Google Gemini 1.5 Flash
+3. **Generation:** Google Gemini 2.0 Flash
 4. **UI:** Streamlit web application
 5. **Testing:** 100-query benchmark with statistical validation
 

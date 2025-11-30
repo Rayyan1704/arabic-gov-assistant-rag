@@ -20,7 +20,7 @@ What retrieval strategies optimize accuracy for cross-lingual Arabic-English RAG
 3. **Vector Index:** FAISS with cosine similarity
 4. **Retrieval Enhancement:** Contextual keyword boosting, title matching
 5. **Translation:** Google Translate API (bidirectional EN ↔ AR)
-6. **Generation:** Google Gemini 1.5 Flash with context-aware prompting
+6. **Generation:** Google Gemini 2.0 Flash with context-aware prompting
 
 ### Retrieval Scoring Formula
 ```

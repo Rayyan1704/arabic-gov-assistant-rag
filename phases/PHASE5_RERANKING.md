@@ -205,7 +205,7 @@ sentence-transformers==2.2.2  # Includes CrossEncoder
 
 ### Category-Specific Indexes
 - Performance: Similar to global search (0.492 vs 0.523)
-- Reason: Small corpus (50 documents)
+- Reason: Small corpus (51 documents)
 - Benefit: Would improve with larger corpus (1000+ documents)
 
 ### Cross-Encoder Reranking
@@ -250,7 +250,7 @@ sentence-transformers==2.2.2  # Includes CrossEncoder
 
 ### Challenge 6: Category Index Value
 **Issue:** Category indexes showed no improvement over global search  
-**Cause:** Small corpus (50 documents)  
+**Cause:** Small corpus (51 documents)  
 **Solution:** Documented finding, noted value increases with larger corpus
 
 ---

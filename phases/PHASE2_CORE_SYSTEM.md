@@ -117,7 +117,7 @@ class RetrieverSystem:
 ## Performance Metrics
 
 ### Processing Time
-- Embedding generation: 2.3s for 50 documents
+- Embedding generation: 2.3s for 51 documents
 - Index construction: 0.1s
 - Query time: ~0.001s per search
 

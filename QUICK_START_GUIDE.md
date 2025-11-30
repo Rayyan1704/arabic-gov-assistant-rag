@@ -154,10 +154,8 @@ generation_config=genai.types.GenerationConfig(
 - `src/preprocessing.py` - Text preprocessing
 
 ### Test Scripts
-- `test_production_system.py` - Critical query validation
-- `test_comprehensive_100_queries.py` - Large-scale testing
-- `test_final_accuracy.py` - Accuracy measurement
-- `verify_data.py` - Data quality check
+- `scripts/tests/test_comprehensive_100_queries.py` - Main validation (100 queries)
+- `scripts/tests/verify_data.py` - Data quality check
 
 ### Documentation
 - `RESEARCH_SUMMARY.md` - Research findings
@@ -182,9 +180,11 @@ pip install -r requirements.txt
 ```
 
 ### Index files not found
-Build index:
+Build index (run in order):
 ```bash
-python build_retrieval_system.py
+python scripts/build/process_all_documents.py
+python scripts/build/generate_embeddings.py
+python scripts/build/build_retrieval_system.py
 ```
 
 ---
@@ -200,20 +200,17 @@ python build_retrieval_system.py
 
 ### Commands
 ```bash
-# System summary
-python show_system_summary.py
+# Verify data quality
+python scripts/tests/verify_data.py
 
-# Production test
-python test_production_system.py
+# Run comprehensive evaluation (100 queries)
+python scripts/tests/test_comprehensive_100_queries.py
 
-# Comprehensive evaluation
-python test_comprehensive_100_queries.py
-
-# Accuracy measurement
-python test_final_accuracy.py
-
-# Run all experiments
+# Run all 4 experiments
 python run_all_experiments.py
+
+# Start web interface
+streamlit run app.py
 ```
 
 ---
@@ -222,8 +219,9 @@ python run_all_experiments.py
 
 - [ ] Dependencies installed
 - [ ] `.env` file configured
-- [ ] `show_system_summary.py` executes
-- [ ] `test_production_system.py` passes
+- [ ] `scripts/tests/verify_data.py` passes
+- [ ] `scripts/tests/test_comprehensive_100_queries.py` shows 96% accuracy
+- [ ] `streamlit run app.py` launches successfully
 - [ ] System architecture understood
 
 ---

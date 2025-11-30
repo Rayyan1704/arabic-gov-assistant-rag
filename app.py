@@ -321,7 +321,7 @@ with col_f1:
     st.markdown("**🎯 Accuracy:** 90% (validated)")
 
 with col_f2:
-    st.markdown("**⚡ Response Time:** 3-5 seconds")
+    st.markdown("**⚡ Response Time:** 0.16s")
 
 with col_f3:
     st.markdown("**🚀 Status:** Production Ready")
