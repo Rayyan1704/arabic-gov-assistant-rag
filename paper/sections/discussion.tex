@@ -1,14 +1,8 @@
 \section{Discussion}
 
-\subsection{Interpretation of Results}
+\subsection{Key Findings}
 
-\textbf{Multilingual embeddings eliminate translation overhead (RQ1).} The paraphrase-multilingual-mpnet-base-v2 model achieved 100\% accuracy on English queries without any translation step. This simplifies the architecture, removes latency (0.11s vs 0.34s for translate-then-embed), and avoids error propagation. The retrieval time of 0.17s enables real-time applications. For Arabic-English RAG, translation appears unnecessary when embeddings are sufficiently strong.
-
-\textbf{Hybrid retrieval provides marginal improvement (RQ2).} Hybrid 70/30 weighting achieved 92\% P@1 compared to 90\% for pure semantic search—a modest 2\% gain. This aligns with conventional wisdom that BM25 can complement semantic search \cite{ma2021replication}. However, domain-specific keyword boosting (+8\%) provides a larger improvement than hybrid retrieval (+2\%), suggesting that targeted enhancements outperform generic hybrid approaches for specialized domains.
-
-\textbf{Dialectal Arabic performs better than expected (RQ3).} The 90\% accuracy on Gulf dialect queries exceeded our expectations. The multilingual model apparently learned sufficient dialectal variation from its training data to handle moderate dialect. Very colloquial expressions still fail, but the baseline is stronger than assumed. The 15\% overall drop from formal to messy queries indicates robust semantic understanding.
-
-\textbf{Keyword boosting is the primary lever (RQ4).} The ablation was clear: +8\% from domain-specific keyword boosting, 0\% from title matching. For domain-specific RAG systems, investing in terminology understanding and boosting accordingly is a simple, effective strategy.
+Multilingual embeddings achieved 100\% accuracy without translation, eliminating latency (0.11s vs 0.34s) and error propagation. Hybrid retrieval provided marginal improvement (+2\%) while keyword boosting contributed +8\%, suggesting targeted enhancements outperform generic approaches. Dialectal Arabic achieved 90\% accuracy, exceeding expectations—the multilingual model learned sufficient dialectal variation. Ablation showed keyword boosting is the primary lever (+8\%) while title matching contributed nothing
 
 \subsection{Practical Implications}
 
@@ -22,16 +16,8 @@ For practitioners building cross-lingual RAG systems:
 
 \subsection{Limitations}
 
-\textbf{Corpus size.} 51 documents is small. Retrieval is inherently easier with fewer candidates, and results may not generalise to thousands of documents. The 84\% category accuracy on messy queries provides a more realistic picture than the 99\% on formal queries.
-
-\textbf{Category vs source accuracy.} Our primary metric is category accuracy (99\% formal, 84\% messy), but exact source accuracy is lower: 84\% at P@1 for formal queries and 51\% for messy queries. Notably, even on noisy inputs like single words or dialectal Arabic, the system identifies the exact correct document over half the time. Source accuracy improves significantly at P@3 (92\% formal, 69\% messy) and P@5 (78\% messy), indicating the correct document is usually in the top results.
-
-\textbf{Single domain.} This evaluation covers government services in Qatar. Other domains—technical documentation, customer support, medical information—may exhibit different characteristics.
-
-\textbf{Category coverage.} Several categories contain only 5-6 documents. More coverage would strengthen confidence in per-category conclusions.
-
-\textbf{No human evaluation.} All metrics are automated. User studies would provide stronger validation of answer quality and usefulness.
+The corpus size (51 documents) is small and results may not generalise to larger collections. Several categories contain only 5-6 documents. The evaluation covers a single domain (Qatar government services) and uses automated metrics without human evaluation. Source accuracy (84\% formal, 51\% messy at P@1) is lower than category accuracy, though it improves to 78\% at P@5 for messy queries
 
 \subsection{Comparison with Prior Work}
 
-Our 99\% category accuracy on formal queries exceeds typical RAG benchmarks (70-85\%) \cite{thakur2021beir}, but this likely reflects the small, focused corpus rather than algorithmic superiority. The 84\% on messy queries aligns with robustness studies showing 10-20\% degradation on noisy inputs \cite{wang2022robustness}. Our contribution is less about beating benchmarks and more about providing empirical evidence for design decisions in cross-lingual settings—specifically, that translation is unnecessary and hybrid retrieval may hurt when embeddings are strong.
+Our 99\% category accuracy exceeds typical RAG benchmarks (70-85\%) \cite{thakur2021beir}, likely due to the small corpus. The 84\% on messy queries aligns with robustness studies \cite{wang2022robustness}. Our contribution provides empirical evidence that translation is unnecessary and hybrid retrieval provides marginal benefit when embeddings are strong
