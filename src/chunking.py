@@ -43,9 +43,6 @@ def chunk_document(filepath: str, chunk_size=512, overlap=128) -> List[str]:
     with open(filepath, 'r', encoding='utf-8') as f:
         text = f.read()
     
-    # Preprocess
-    import re
-    
     # Clean document
     text = re.sub(r'\n{3,}', '\n\n', text)
     lines = text.split('\n')
@@ -54,9 +51,9 @@ def chunk_document(filepath: str, chunk_size=512, overlap=128) -> List[str]:
     
     # Normalize Arabic
     text = re.sub(r'[\u064B-\u065F\u0670]', '', text)
-    text = re.sub(r'[إأآا]', 'ا', text)
-    text = re.sub(r'ى', 'ي', text)
-    text = re.sub(r'ة', 'ه', text)
+    text = re.sub(r'[إأآ]', 'ا', text)  # Normalize alef variants
+    text = re.sub(r'ى', 'ي', text)  # Normalize alef maksura
+    text = re.sub(r'ة', 'ه', text)  # Normalize taa marbuta
     text = re.sub(r'\s+', ' ', text)
     text = re.sub(r'[^\u0600-\u06FF\s\d\.\،\؛\؟]', '', text)
     text = text.strip()

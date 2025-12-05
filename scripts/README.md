@@ -38,7 +38,7 @@ Run these scripts in order to build the system from scratch:
   streamlit run app.py
   ```
 
-- **run_all_experiments.py** - Run all 4 research experiments
+- **run_all_experiments.py** - Run all 5 research experiments
   ```bash
   python run_all_experiments.py
   ```

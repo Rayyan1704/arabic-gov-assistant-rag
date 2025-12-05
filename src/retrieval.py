@@ -66,102 +66,104 @@ class RetrieverSystem:
     def _build_keyword_map(self):
         """Build keyword to category mapping for query boosting"""
         return {
-            # Info (STRONG BOOST - was failing)
-            'خدمات حكومي': ('info', 5.0),  # "hukoomi services" in Arabic - HIGHEST
-            'hukoomi services': ('info', 4.5),  # Exact phrase English
-            'about hukoomi': ('info', 4.0),  # Exact phrase
-            'حكومي': ('info', 3.5),
-            'hukoomi': ('info', 3.5),
-            'بوابة': ('info', 3.0),
-            'حكومة': ('info', 3.0),
-            'about': ('info', 2.0),
-            'portal': ('info', 2.0),
-            'خدمات': ('info', 1.5),
+            # Education - TRANSCRIPT SPECIFIC (HIGHEST PRIORITY)
+            'transcript request': 'education',
+            'transcript': 'education',
+            'طلب نسخة': 'education',  # Translation of "transcript request"
+            'كشف درجات': 'education',
+            'كشف الدرجات': 'education',
+            'نسخة درجات': 'education',
+            'طلب كشف': 'education',
+            'grades transcript': 'education',
+            'academic transcript': 'education',
+            'university transcript': 'education',
+            'نسخة الجامعة': 'education',  # Translation of "university transcript"
+            'كيفية طلب نسخة': 'education',  # Translation of "how to request transcript"
+            'جامعة قطر': 'education',
+            'qatar university': 'education',
+            'جامعة': 'education',
+            'university': 'education',
+            'مدرسة': 'education',
+            'school': 'education',
+            'تسجيل': 'education',
+            'admission': 'education',
+            'طلاب': 'education',
+            'student': 'education',
+            'grades': 'education',
+            'درجات': 'education',
+            
+            # Info
+            'حكومي': 'info',
+            'hukoomi': 'info',
+            'بوابة': 'info',
+            'portal': 'info',
+            'about': 'info',
+            'خدمات': 'info',
             
             # Transportation
-            'ليموزين': ('transportation', 2.0),
-            'limousine': ('transportation', 2.0),
-            'قيادة': ('transportation', 2.0),
-            'سواقة': ('transportation', 2.0),
-            'driving': ('transportation', 1.8),
-            'رخصة قيادة': ('transportation', 2.0),
-            'نقل': ('transportation', 1.5),
-            'transport': ('transportation', 1.5),
+            'ليموزين': 'transportation',
+            'limousine': 'transportation',
+            'قيادة': 'transportation',
+            'سواقة': 'transportation',
+            'driving': 'transportation',
+            'رخصة قيادة': 'transportation',
+            'نقل': 'transportation',
+            'transport': 'transportation',
+            'license': 'transportation',
             
-            # Business (but NOT legal clinic - that's justice)
-            'مناقصات': ('business', 2.5),
-            'tender': ('business', 2.5),
-            'تجارية': ('business', 2.0),
-            'business license': ('business', 2.0),
-            'رخصة تجارية': ('business', 2.0),
-            'patent': ('business', 1.8),
-            'براءة': ('business', 1.8),
+            # Business
+            'مناقصات': 'business',
+            'tender': 'business',
+            'تجارية': 'business',
+            'business': 'business',
+            'رخصة تجارية': 'business',
+            'patent': 'business',
+            'براءة': 'business',
             
-            # Education (with university context)
-            'كشف درجات': ('education', 3.5),
-            'كشف الدرجات': ('education', 3.5),
-            'transcript': ('education', 3.5),
-            'transcript request': ('education', 4.0),  # Exact phrase
-            'طلب نسخة': ('education', 4.0),  # Translation of "transcript request"
-            'نسخة درجات': ('education', 3.5),
-            'نسخة': ('education', 2.5),
-            'جامعة قطر': ('education', 2.5),
-            'qatar university': ('education', 2.5),
-            'جامعة': ('education', 2.0),
-            'university': ('education', 2.0),
-            'مدرسة': ('education', 2.0),
-            'school': ('education', 2.0),
-            'تسجيل': ('education', 1.5),
-            'admission': ('education', 1.8),
-            'طلاب': ('education', 1.5),
-            'student': ('education', 1.5),
-            'grades': ('education', 2.0),
-            'درجات': ('education', 2.0),
-            
-            # Justice (STRONG BOOST - legal clinic is actually in business folder)
-            'عيادة قانونية': ('business', 3.0),  # It's in business folder!
-            'العيادة القانونية': ('business', 3.0),
-            'legal clinic': ('business', 3.0),
-            'مركز قطر للمال': ('business', 3.0),
-            'qfc': ('business', 2.5),
-            'قضية': ('justice', 2.5),
-            'case search': ('justice', 2.5),
-            'محكمة': ('justice', 2.0),
-            'court': ('justice', 2.0),
-            'نيابة': ('justice', 2.0),
-            'attorney': ('justice', 2.0),
+            # Justice
+            'بوابة المحامين': 'justice',
+            'lawyers portal': 'justice',
+            'محامي': 'justice',
+            'lawyer': 'justice',
+            'قضية': 'justice',
+            'case': 'justice',
+            'محكمة': 'justice',
+            'court': 'justice',
+            'نيابة': 'justice',
+            'attorney': 'justice',
+            'قانوني': 'justice',
+            'legal': 'justice',
             
             # Health
-            'دكتور': ('health', 2.0),
-            'doctor': ('health', 2.0),
-            'ممرض': ('health', 2.0),
-            'nurse': ('health', 2.0),
-            'طبيب': ('health', 2.0),
-            'استشارة': ('health', 1.5),
-            'consultation': ('health', 1.5),
+            'دكتور': 'health',
+            'doctor': 'health',
+            'ممرض': 'health',
+            'nurse': 'health',
+            'طبيب': 'health',
+            'صحة': 'health',
+            'health': 'health',
             
             # Housing
-            'بدل ايجار': ('housing', 2.0),
-            'بدل إيجار': ('housing', 2.0),
-            'rent allowance': ('housing', 2.0),
-            'ايجار': ('housing', 1.5),
-            'إيجار': ('housing', 1.5),
+            'بدل ايجار': 'housing',
+            'rent allowance': 'housing',
+            'ايجار': 'housing',
+            'rent': 'housing',
+            'سكن': 'housing',
+            'housing': 'housing',
+            
+            # Culture
+            'ثقافة': 'culture',
+            'culture': 'culture',
+            'متحف': 'culture',
+            'museum': 'culture',
         }
     
-    def _apply_keyword_boost(self, query: str, scores: np.ndarray) -> np.ndarray:
-        """Boost scores based on query keywords"""
-        query_lower = query.lower()
+    def _direct_filename_match(self, query: str):
+        """Check for direct filename pattern matches
         
-        for keyword, target_cat in self.keyword_map.items():
-            if keyword in query_lower:
-                for i, meta in enumerate(self.metadata):
-                    if meta['category'] == target_cat:
-                        scores[i] *= 1.5  # 50% boost
-        
-        return scores
-    
-    def _direct_filename_match(self, query: str) -> int:
-        """Check for direct filename pattern matches"""
+        Returns:
+            int: Index of matching document, or None if no match
+        """
         query_lower = query.lower()
         
         # Direct mappings for specific queries
@@ -214,30 +216,31 @@ class RetrieverSystem:
                 for title in self.titles
             ])
             
-            # Keyword boosting with variable weights
+            # Keyword boosting
             keyword_boost = np.ones(len(self.chunks))
             query_lower = query_text.lower()
             
             # Check for multi-word phrases first (more specific)
-            for keyword, (target_cat, boost_factor) in sorted(self.keyword_map.items(), key=lambda x: -len(x[0])):
-                if keyword in query_lower:
+            for keyword, target_cat in sorted(self.keyword_map.items(), key=lambda x: -len(x[0])):
+                if keyword.lower() in query_lower:
                     for i, meta in enumerate(self.metadata):
                         if meta['category'] == target_cat:
-                            # Use the specific boost factor for this keyword
-                            keyword_boost[i] = max(keyword_boost[i], boost_factor)
+                            # Apply boost
+                            keyword_boost[i] = max(keyword_boost[i], 2.0)
             
             # If direct match found, boost it heavily
             if direct_match_idx is not None:
                 keyword_boost[direct_match_idx] = 10.0  # Very strong boost
             
-            # Combined scoring: 
-            # - Title match is very important (35%)
-            # - Semantic similarity (40%)
-            # - Keyword boost (25% - increased from 10%)
+            # Combined scoring with additive keyword boost
+            # - Semantic similarity (50%)
+            # - Title match (20%)
+            # - Keyword boost (30% - additive, not multiplicative)
+            keyword_bonus = (keyword_boost - 1.0) * 0.3  # Convert boost to bonus
             final_scores = (
-                0.35 * title_scores +
-                0.40 * semantic_scores +
-                0.25 * (semantic_scores * keyword_boost)
+                0.50 * semantic_scores +
+                0.20 * title_scores +
+                keyword_bonus
             )
         else:
             # No query text, use semantic only

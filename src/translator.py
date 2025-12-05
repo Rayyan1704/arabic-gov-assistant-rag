@@ -124,3 +124,26 @@ class TranslationService:
             return self.translate_to_english(answer)
         else:
             return self.translate_to_arabic(answer)
+    
+    def translate_text(self, text, target_lang):
+        """
+        Generic text translation method.
+        
+        Args:
+            text: Text to translate
+            target_lang: Target language ('ar' or 'en')
+            
+        Returns:
+            Translated text
+        """
+        source_lang = self.detect_language(text)
+        
+        # If already in target language, return as-is
+        if source_lang == target_lang:
+            return text
+        
+        # Translate
+        if target_lang == 'en':
+            return self.translate_to_english(text)
+        else:
+            return self.translate_to_arabic(text)

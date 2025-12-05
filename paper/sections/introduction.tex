@@ -1,0 +1,18 @@
+\section{Introduction}
+
+Retrieval-Augmented Generation (RAG) has become a standard approach for grounding large language model responses in retrieved documents \cite{lewis2020retrieval, guu2020realm}. It has demonstrated higher effectiveness than pure generative approaches due to its ability to provide verifiable, contextual answers \cite{gao2023retrieval}. Even though RAG systems are highly effective on English queries, their performance in cross-lingual settings—particularly Arabic-English—remains understudied.
+
+Recent work on multilingual information retrieval has explored translation-based methods \cite{oard1998comparative} and multilingual embeddings \cite{reimers2020making}. However, these approaches have not been systematically evaluated within RAG systems for government service domains, where users expect to query in either Arabic or English and receive accurate responses \cite{androutsopoulou2019transforming, lee2019government}.
+
+Despite the potential of multilingual embeddings, existing cross-lingual RAG systems often rely on explicit translation pipelines, which introduce latency and error propagation \cite{nie2010cross}. Moreover, the common practice of augmenting semantic search with BM25 (hybrid retrieval) has not been validated for high-quality multilingual embeddings. Finally, the robustness of such systems to real-world query variations—dialectal Arabic, broken grammar, single-word queries—remains unclear.
+
+In this work, we build and evaluate a multilingual RAG system for Qatar government services. We aim to answer the following research questions:
+
+\begin{itemize}
+    \item[\textbf{RQ1}] Can multilingual embeddings match or exceed translation-based approaches for cross-lingual retrieval?
+    \item[\textbf{RQ2}] Does hybrid retrieval (semantic + BM25) improve accuracy when embedding quality is high?
+    \item[\textbf{RQ3}] How robust is the system to real-world query variations (dialectal Arabic, broken grammar, short phrases)?
+    \item[\textbf{RQ4}] Which system components contribute most to retrieval accuracy?
+\end{itemize}
+
+Our experimental results on a corpus of 51 government service documents show that: (i) multilingual embeddings achieve 100\% accuracy on English queries without translation, eliminating pipeline complexity; (ii) hybrid retrieval provides marginal improvement (+2\%) over pure semantic search, but keyword boosting (+8\%) is more effective; (iii) the system achieves 84\% category accuracy on messy queries and 90\% on dialectal Arabic; (iv) keyword boosting contributes +8\% accuracy while title matching contributes nothing. All improvements over a BM25 baseline are statistically significant (p < 0.0001).

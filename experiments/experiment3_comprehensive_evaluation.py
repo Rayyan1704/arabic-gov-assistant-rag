@@ -52,13 +52,23 @@ def evaluate_system(retriever, model, translator, queries):
             
             # Extract predictions
             predicted_cat = search_results[0]['metadata']['category']
+            predicted_source = search_results[0]['metadata']['source_file']
             top_5_cats = [r['metadata']['category'] for r in search_results]
+            top_5_sources = [r['metadata']['source_file'] for r in search_results]
             scores = [r['score'] for r in search_results]
+            
+            # Expected source (if available)
+            expected_source = query_data.get('source', None)
             
             # Calculate metrics
             correct_at_1 = predicted_cat == expected_cat
             correct_at_3 = expected_cat in top_5_cats[:3]
             correct_at_5 = expected_cat in top_5_cats
+            
+            # Source accuracy
+            source_correct_at_1 = (predicted_source == expected_source) if expected_source else None
+            source_correct_at_3 = (expected_source in top_5_sources[:3]) if expected_source else None
+            source_correct_at_5 = (expected_source in top_5_sources) if expected_source else None
             
             # MRR
             try:
@@ -77,10 +87,15 @@ def evaluate_system(retriever, model, translator, queries):
                 'query': original_query,
                 'expected_category': expected_cat,
                 'predicted_category': predicted_cat,
+                'expected_source': expected_source,
+                'predicted_source': predicted_source,
                 'language': query_lang,
                 'correct_at_1': correct_at_1,
                 'correct_at_3': correct_at_3,
                 'correct_at_5': correct_at_5,
+                'source_correct_at_1': source_correct_at_1,
+                'source_correct_at_3': source_correct_at_3,
+                'source_correct_at_5': source_correct_at_5,
                 'reciprocal_rank': rr,
                 'ndcg_at_5': ndcg,
                 'top_score': scores[0],
@@ -97,13 +112,22 @@ def calculate_statistics(results):
     """Calculate comprehensive statistics"""
     total = len(results)
     
-    # Overall metrics
+    # Overall category metrics
     p_at_1 = sum(r['correct_at_1'] for r in results) / total
     p_at_3 = sum(r['correct_at_3'] for r in results) / total
     p_at_5 = sum(r['correct_at_5'] for r in results) / total
     mrr = sum(r['reciprocal_rank'] for r in results) / total
     ndcg = sum(r['ndcg_at_5'] for r in results) / total
     avg_time = sum(r['response_time'] for r in results) / total
+    
+    # Source accuracy metrics
+    source_results = [r for r in results if r['source_correct_at_1'] is not None]
+    if source_results:
+        source_p_at_1 = sum(r['source_correct_at_1'] for r in source_results) / len(source_results)
+        source_p_at_3 = sum(r['source_correct_at_3'] for r in source_results) / len(source_results)
+        source_p_at_5 = sum(r['source_correct_at_5'] for r in source_results) / len(source_results)
+    else:
+        source_p_at_1 = source_p_at_3 = source_p_at_5 = None
     
     # Per-language breakdown
     ar_results = [r for r in results if r['language'] == 'ar']
@@ -128,9 +152,12 @@ def calculate_statistics(results):
     
     return {
         'overall': {
-            'precision_at_1': p_at_1,
-            'precision_at_3': p_at_3,
-            'precision_at_5': p_at_5,
+            'category_precision_at_1': p_at_1,
+            'category_precision_at_3': p_at_3,
+            'category_precision_at_5': p_at_5,
+            'source_precision_at_1': source_p_at_1,
+            'source_precision_at_3': source_p_at_3,
+            'source_precision_at_5': source_p_at_5,
             'mrr': mrr,
             'ndcg_at_5': ndcg,
             'avg_response_time': avg_time,
@@ -221,7 +248,7 @@ def analyze_failures(results):
 
 def main():
     print("="*80)
-    print("EXPERIMENT 4: COMPREHENSIVE EVALUATION")
+    print("EXPERIMENT 3: COMPREHENSIVE EVALUATION")
     print("="*80)
     
     # Load system
@@ -238,7 +265,9 @@ def main():
     # Load queries
     print("\n2. Loading test queries...")
     queries = load_test_queries()
-    print(f"   [OK] Loaded {len(queries)} queries")
+    # Count total tests (each query pair has AR + EN = 2 tests)
+    total_tests = sum(2 if (q.get('query_ar') and q.get('query_en')) else 1 for q in queries)
+    print(f"   [OK] Loaded {len(queries)} query pairs ({total_tests} total tests: AR + EN)")
     
     # Evaluate
     print("\n3. Running evaluation...")
@@ -261,9 +290,10 @@ def main():
     print("="*80)
     
     print(f"\n📊 Overall Performance:")
-    print(f"   Precision@1: {statistics['overall']['precision_at_1']:.1%}")
-    print(f"   Precision@3: {statistics['overall']['precision_at_3']:.1%}")
-    print(f"   Precision@5: {statistics['overall']['precision_at_5']:.1%}")
+    print(f"   Category P@1: {statistics['overall']['category_precision_at_1']:.1%}")
+    print(f"   Category P@3: {statistics['overall']['category_precision_at_3']:.1%}")
+    print(f"   Source P@1:   {statistics['overall']['source_precision_at_1']:.1%}" if statistics['overall']['source_precision_at_1'] else "   Source P@1:   N/A")
+    print(f"   Source P@3:   {statistics['overall']['source_precision_at_3']:.1%}" if statistics['overall']['source_precision_at_3'] else "   Source P@3:   N/A")
     print(f"   MRR: {statistics['overall']['mrr']:.3f}")
     print(f"   NDCG@5: {statistics['overall']['ndcg_at_5']:.3f}")
     print(f"   Avg Time: {statistics['overall']['avg_response_time']:.3f}s")
@@ -314,29 +344,32 @@ def main():
         'detailed_results': convert_types(results)
     }
     
-    with open('index/experiment4_comprehensive_evaluation.json', 'w', encoding='utf-8') as f:
+    with open('index/experiment3_comprehensive_evaluation.json', 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     
-    print(f"\n[OK] Results saved to index/experiment4_comprehensive_evaluation.json")
+    print(f"\n[OK] Results saved to index/experiment3_comprehensive_evaluation.json")
     
     # Conclusion
     print("\n" + "="*80)
     print("CONCLUSION")
     print("="*80)
     
-    if statistics['overall']['precision_at_1'] >= 0.85:
-        print("✅ EXCELLENT: System achieves >85% accuracy")
-    elif statistics['overall']['precision_at_1'] >= 0.75:
-        print("✅ GOOD: System achieves >75% accuracy")
+    if statistics['overall']['category_precision_at_1'] >= 0.90:
+        print("✅ EXCELLENT: System achieves >90% category accuracy")
+    elif statistics['overall']['category_precision_at_1'] >= 0.75:
+        print("✅ GOOD: System achieves >75% category accuracy")
     else:
-        print("⚠️  NEEDS IMPROVEMENT: System below 75% accuracy")
+        print("⚠️  NEEDS IMPROVEMENT: System below 75% category accuracy")
+    
+    if statistics['overall']['source_precision_at_1'] and statistics['overall']['source_precision_at_1'] >= 0.80:
+        print(f"✅ GOOD: Source accuracy at {statistics['overall']['source_precision_at_1']:.1%}")
     
     if comparison['significant']:
         print(f"✅ SIGNIFICANT: System significantly outperforms baseline (p<0.05)")
     else:
         print(f"⚠️  NOT SIGNIFICANT: Improvement not statistically significant")
     
-    print("\n[OK] Experiment 4 complete!")
+    print("\n[OK] Experiment 3 complete!")
 
 
 if __name__ == "__main__":

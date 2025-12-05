@@ -8,405 +8,55 @@
     "purpose": "Research evaluation for cross-lingual RAG system"
   },
   "queries": [
-    {
-      "id": 1,
-      "query_ar": "كيف أحصل على رخصة ليموزين؟",
-      "query_en": "How do I get a limousine license?",
-      "category": "transportation",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 2,
-      "query_ar": "ما هي متطلبات تصريح نقل الأسماك؟",
-      "query_en": "What are the requirements for fish transport permit?",
-      "category": "transportation",
-      "difficulty": "medium",
-      "query_type": "informational"
-    },
-    {
-      "id": 3,
-      "query_ar": "كيف أتقدم للحصول على ترخيص شحن جوي؟",
-      "query_en": "How to apply for air cargo license?",
-      "category": "transportation",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 4,
-      "query_ar": "ما هي خطوات شراء حافلة من مواصلات؟",
-      "query_en": "What are the steps to buy a bus from Mowasalat?",
-      "category": "transportation",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 5,
-      "query_ar": "كيف أطلب تعميم على مركبة؟",
-      "query_en": "How to request vehicle circulation?",
-      "category": "transportation",
-      "difficulty": "hard",
-      "query_type": "procedural"
-    },
-    {
-      "id": 6,
-      "query_ar": "ما هي خدمة الشحن من بريد قطر؟",
-      "query_en": "What is the cargo service from Qatar Post?",
-      "category": "transportation",
-      "difficulty": "easy",
-      "query_type": "informational"
-    },
-    {
-      "id": 7,
-      "query_ar": "كيف أسجل في مقررات جامعة قطر؟",
-      "query_en": "How to register for courses at Qatar University?",
-      "category": "education",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 8,
-      "query_ar": "ما هي خطوات طلب كشف الدرجات؟",
-      "query_en": "What are the steps to request transcript?",
-      "category": "education",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 9,
-      "query_ar": "كيف أتقدم للقبول في جامعة حمد بن خليفة؟",
-      "query_en": "How to apply for admission to HBKU?",
-      "category": "education",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 10,
-      "query_ar": "كيف أنسحب من الجامعة؟",
-      "query_en": "How to withdraw from university?",
-      "category": "education",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 11,
-      "query_ar": "ما هي خطوات التسجيل في مسابقة القرآن المدرسية؟",
-      "query_en": "What are the steps to register for school Quran competition?",
-      "category": "education",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 12,
-      "query_ar": "كيف أسجل طفلي في المدرسة إذا لم يكن هناك شاغر؟",
-      "query_en": "How to register my child in school if there's no vacancy?",
-      "category": "education",
-      "difficulty": "hard",
-      "query_type": "procedural"
-    },
-    {
-      "id": 13,
-      "query_ar": "كيف أحصل على القسائم التعليمية لذوي الإعاقة؟",
-      "query_en": "How to get educational vouchers for people with disabilities?",
-      "category": "education",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 14,
-      "query_ar": "كيف أبحث عن طبيب في قطر؟",
-      "query_en": "How to search for a doctor in Qatar?",
-      "category": "health",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 15,
-      "query_ar": "كيف أبحث عن ممرض مرخص؟",
-      "query_en": "How to search for licensed nurse?",
-      "category": "health",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 16,
-      "query_ar": "كيف أطلب استشارة طبية من الجمعية القطرية للسكري؟",
-      "query_en": "How to request medical consultation from Qatar Diabetes Association?",
-      "category": "health",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 17,
-      "query_ar": "كيف أتقدم للعمل في مؤسسة حمد الطبية؟",
-      "query_en": "How to apply for job at Hamad Medical Corporation?",
-      "category": "health",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 18,
-      "query_ar": "كيف أحصل على التقارير الطبية من مؤسسة حمد؟",
-      "query_en": "How to get medical reports from Hamad?",
-      "category": "health",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 19,
-      "query_ar": "كيف أحصل على ترخيص دائم للممارسين الصحيين؟",
-      "query_en": "How to get permanent license for health practitioners?",
-      "category": "health",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 20,
-      "query_ar": "كيف أتواصل مع مؤسسة حمد للاستشارات الطبية العاجلة؟",
-      "query_en": "How to contact Hamad for urgent medical consultation?",
-      "category": "health",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 21,
-      "query_ar": "كيف أعيد تفعيل رخصة تجارية؟",
-      "query_en": "How to reactivate commercial license?",
-      "category": "business",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 22,
-      "query_ar": "كيف أحصل على بيانات براءة اختراع؟",
-      "query_en": "How to get patent data?",
-      "category": "business",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 23,
-      "query_ar": "كيف أسجل نفسي كمكلف في الضرائب؟",
-      "query_en": "How to self-register as taxpayer?",
-      "category": "business",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 24,
-      "query_ar": "كيف أحصل على شهادة إقرار من غرفة التجارة؟",
-      "query_en": "How to get acknowledgement certificate from Chamber of Commerce?",
-      "category": "business",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 25,
-      "query_ar": "كيف أقدم عروض المناقصات للهيئة العامة للطيران؟",
-      "query_en": "How to submit tenders to Civil Aviation Authority?",
-      "category": "business",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 26,
-      "query_ar": "كيف أحصل على تصريح استيراد مبيدات؟",
-      "query_en": "How to get pesticide import permit?",
-      "category": "business",
-      "difficulty": "hard",
-      "query_type": "procedural"
-    },
-    {
-      "id": 27,
-      "query_ar": "كيف أجدد عقد إيجار أرض؟",
-      "query_en": "How to renew land lease contract?",
-      "category": "housing",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 28,
-      "query_ar": "كيف أحصل على بدل إيجار؟",
-      "query_en": "How to get rent allowance?",
-      "category": "housing",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 29,
-      "query_ar": "كيف أطلب هدم وإعادة بناء المساكن الشعبية؟",
-      "query_en": "How to request demolition and rebuilding of public housing?",
-      "category": "housing",
-      "difficulty": "hard",
-      "query_type": "procedural"
-    },
-    {
-      "id": 30,
-      "query_ar": "كيف أحصل على سند الملكية؟",
-      "query_en": "How to get property ownership deed?",
-      "category": "housing",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 31,
-      "query_ar": "كيف أحصل على تسليم الإرث المنقول؟",
-      "query_en": "How to get movable inheritance delivery?",
-      "category": "housing",
-      "difficulty": "hard",
-      "query_type": "procedural"
-    },
-    {
-      "id": 32,
-      "query_ar": "كيف أبحث عن قضية في النيابة العامة؟",
-      "query_en": "How to search for case at Attorney General?",
-      "category": "justice",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 33,
-      "query_ar": "كيف أطلب فتح باب مرافعة؟",
-      "query_en": "How to request open pleading?",
-      "category": "justice",
-      "difficulty": "hard",
-      "query_type": "procedural"
-    },
-    {
-      "id": 34,
-      "query_ar": "كيف أستخدم بوابة المحامين؟",
-      "query_en": "How to use lawyers portal?",
-      "category": "justice",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 35,
-      "query_ar": "كيف أتقدم للعيادة القانونية في مركز قطر للمال؟",
-      "query_en": "How to apply to legal clinic at Qatar Financial Centre?",
-      "category": "justice",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 36,
-      "query_ar": "كيف أحصل على ترخيص فعالية فنية؟",
-      "query_en": "How to get artistic event license?",
-      "category": "culture",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 37,
-      "query_ar": "كيف أحصل على تصريح تصوير فيلم؟",
-      "query_en": "How to get film shooting permit?",
-      "category": "culture",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 38,
-      "query_ar": "كيف أحصل على ترخيص محطة راديو FM؟",
-      "query_en": "How to get FM radio license?",
-      "category": "culture",
-      "difficulty": "hard",
-      "query_type": "procedural"
-    },
-    {
-      "id": 39,
-      "query_ar": "كيف أحصل على ترخيص مطبعة؟",
-      "query_en": "How to get printing press license?",
-      "category": "culture",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 40,
-      "query_ar": "كيف أحصل على ترخيص بطاقة صحفية؟",
-      "query_en": "How to get press card license?",
-      "category": "culture",
-      "difficulty": "medium",
-      "query_type": "procedural"
-    },
-    {
-      "id": 41,
-      "query_ar": "ما هو حكومي؟",
-      "query_en": "What is Hukoomi?",
-      "category": "info",
-      "difficulty": "easy",
-      "query_type": "informational"
-    },
-    {
-      "id": 42,
-      "query_ar": "كيف أتواصل مع حكومي؟",
-      "query_en": "How to contact Hukoomi?",
-      "category": "info",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 43,
-      "query_ar": "ما هي الأسئلة الشائعة عن حكومي؟",
-      "query_en": "What are Hukoomi FAQs?",
-      "category": "info",
-      "difficulty": "easy",
-      "query_type": "informational"
-    },
-    {
-      "id": 44,
-      "query_ar": "ما هي خدمات حكومي المتاحة؟",
-      "query_en": "What services does Hukoomi provide?",
-      "category": "info",
-      "difficulty": "easy",
-      "query_type": "informational"
-    },
-    {
-      "id": 45,
-      "query_ar": "كيف أستخدم بوابة حكومي؟",
-      "query_en": "How to use Hukoomi portal?",
-      "category": "info",
-      "difficulty": "easy",
-      "query_type": "procedural"
-    },
-    {
-      "id": 46,
-      "query_ar": "رخصة ليموزين",
-      "query_en": "limousine license",
-      "category": "transportation",
-      "difficulty": "easy",
-      "query_type": "keyword"
-    },
-    {
-      "id": 47,
-      "query_ar": "تسجيل جامعة قطر",
-      "query_en": "Qatar University registration",
-      "category": "education",
-      "difficulty": "easy",
-      "query_type": "keyword"
-    },
-    {
-      "id": 48,
-      "query_ar": "بحث طبيب",
-      "query_en": "doctor search",
-      "category": "health",
-      "difficulty": "easy",
-      "query_type": "keyword"
-    },
-    {
-      "id": 49,
-      "query_ar": "مناقصات",
-      "query_en": "tenders",
-      "category": "business",
-      "difficulty": "easy",
-      "query_type": "keyword"
-    },
-    {
-      "id": 50,
-      "query_ar": "بدل إيجار",
-      "query_en": "rent allowance",
-      "category": "housing",
-      "difficulty": "easy",
-      "query_type": "keyword"
-    }
+    {"id": 1, "query_ar": "كيف أحصل على رخصة ليموزين؟", "query_en": "How do I get a limousine license?", "category": "transportation", "source": "transportation_mot_limo_license.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 2, "query_ar": "ما هي متطلبات تصريح نقل الأسماك؟", "query_en": "What are the requirements for fish transport permit?", "category": "transportation", "source": "transportation_fish_transport_permit.txt", "difficulty": "medium", "query_type": "informational"},
+    {"id": 3, "query_ar": "كيف أتقدم للحصول على ترخيص شحن جوي؟", "query_en": "How to apply for air cargo license?", "category": "transportation", "source": "transportation_caa_travel_aircargo_license.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 4, "query_ar": "ما هي خطوات شراء حافلة من مواصلات؟", "query_en": "What are the steps to buy a bus from Mowasalat?", "category": "transportation", "source": "transportation_mowasalat_bus_purchase.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 5, "query_ar": "كيف أطلب تعميم على مركبة؟", "query_en": "How to request vehicle circulation?", "category": "transportation", "source": "transportation_ag_vehicle_circulation_request.txt", "difficulty": "hard", "query_type": "procedural"},
+    {"id": 6, "query_ar": "ما هي خدمة الشحن من بريد قطر؟", "query_en": "What is the cargo service from Qatar Post?", "category": "transportation", "source": "transportation_qpost_cargo_service.txt", "difficulty": "easy", "query_type": "informational"},
+    {"id": 7, "query_ar": "كيف أسجل في مقررات جامعة قطر؟", "query_en": "How to register for courses at Qatar University?", "category": "education", "source": "education_qu_course_registration.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 8, "query_ar": "ما هي خطوات طلب كشف الدرجات؟", "query_en": "What are the steps to request transcript?", "category": "education", "source": "education_qu_transcript_request.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 9, "query_ar": "كيف أتقدم للقبول في جامعة حمد بن خليفة؟", "query_en": "How to apply for admission to HBKU?", "category": "education", "source": "education_hbku_admission_application.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 10, "query_ar": "كيف أنسحب من الجامعة؟", "query_en": "How to withdraw from university?", "category": "education", "source": "education_qu_withdrawal_request.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 11, "query_ar": "ما هي خطوات التسجيل في مسابقة القرآن المدرسية؟", "query_en": "What are the steps to register for school Quran competition?", "category": "education", "source": "education_meia_quran_competition.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 12, "query_ar": "كيف أسجل طفلي في المدرسة إذا لم يكن هناك شاغر؟", "query_en": "How to register my child in school if there's no vacancy?", "category": "education", "source": "education_moehe_no_vacancy_registration.txt", "difficulty": "hard", "query_type": "procedural"},
+    {"id": 13, "query_ar": "كيف أحصل على القسائم التعليمية لذوي الإعاقة؟", "query_en": "How to get educational vouchers for people with disabilities?", "category": "education", "source": "education_moehe_disability_vouchers.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 14, "query_ar": "كيف أبحث عن طبيب في قطر؟", "query_en": "How to search for a doctor in Qatar?", "category": "health", "source": "health_moph_doctor_search.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 15, "query_ar": "كيف أبحث عن ممرض مرخص؟", "query_en": "How to search for licensed nurse?", "category": "health", "source": "health_moph_nurse_search.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 16, "query_ar": "كيف أطلب استشارة طبية من الجمعية القطرية للسكري؟", "query_en": "How to request medical consultation from Qatar Diabetes Association?", "category": "health", "source": "health_hmc_doctor_consultation.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 17, "query_ar": "كيف أتقدم للعمل في مؤسسة حمد الطبية؟", "query_en": "How to apply for job at Hamad Medical Corporation?", "category": "health", "source": "health_hmc_job_application.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 18, "query_ar": "كيف أحصل على التقارير الطبية من مؤسسة حمد؟", "query_en": "How to get medical reports from Hamad?", "category": "health", "source": "health_hmc_medical_report_request.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 19, "query_ar": "كيف أحصل على ترخيص دائم للممارسين الصحيين؟", "query_en": "How to get permanent license for health practitioners?", "category": "health", "source": "health_qchp_practitioner_license.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 20, "query_ar": "كيف أتواصل مع مؤسسة حمد للاستشارات الطبية العاجلة؟", "query_en": "How to contact Hamad for urgent medical consultation?", "category": "health", "source": "health_hmc_urgent_medical_consultation.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 21, "query_ar": "كيف أعيد تفعيل رخصة تجارية؟", "query_en": "How to reactivate commercial license?", "category": "business", "source": "business_moci_license_reactivation.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 22, "query_ar": "كيف أحصل على بيانات براءة اختراع؟", "query_en": "How to get patent data?", "category": "business", "source": "business_moci_patent_data_request.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 23, "query_ar": "كيف أسجل نفسي كمكلف في الضرائب؟", "query_en": "How to self-register as taxpayer?", "category": "business", "source": "business_gta_self_registration_request.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 24, "query_ar": "كيف أحصل على شهادة إقرار من غرفة التجارة؟", "query_en": "How to get acknowledgement certificate from Chamber of Commerce?", "category": "business", "source": "business_cra_acknowledgement_certificate.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 25, "query_ar": "كيف أقدم عروض المناقصات للهيئة العامة للطيران؟", "query_en": "How to submit tenders to Civil Aviation Authority?", "category": "business", "source": "business_caa_tenders_submission.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 26, "query_ar": "كيف أحصل على تصريح استيراد مبيدات؟", "query_en": "How to get pesticide import permit?", "category": "business", "source": "business_moci_import_pesticides.txt", "difficulty": "hard", "query_type": "procedural"},
+    {"id": 27, "query_ar": "كيف أجدد عقد إيجار أرض؟", "query_en": "How to renew land lease contract?", "category": "housing", "source": "housing_mm_land_lease_renewal.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 28, "query_ar": "كيف أحصل على بدل إيجار؟", "query_en": "How to get rent allowance?", "category": "housing", "source": "housing_mm_rent_allowance.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 29, "query_ar": "كيف أطلب هدم وإعادة بناء المساكن الشعبية؟", "query_en": "How to request demolition and rebuilding of public housing?", "category": "housing", "source": "housing_msdf_demolition_reconstruction_phase2.txt", "difficulty": "hard", "query_type": "procedural"},
+    {"id": 30, "query_ar": "كيف أحصل على سند الملكية؟", "query_en": "How to get property ownership deed?", "category": "housing", "source": "housing_msdf_property_title_request.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 31, "query_ar": "كيف أحصل على تسليم الإرث المنقول؟", "query_en": "How to get movable inheritance delivery?", "category": "housing", "source": "housing_gama_movable_inheritance_delivery.txt", "difficulty": "hard", "query_type": "procedural"},
+    {"id": 32, "query_ar": "كيف أبحث عن قضية في النيابة العامة؟", "query_en": "How to search for case at Attorney General?", "category": "justice", "source": "justice_ag_case_search.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 33, "query_ar": "كيف أطلب فتح باب مرافعة؟", "query_en": "How to request open pleading?", "category": "justice", "source": "justice_ag_open_pleading_request.txt", "difficulty": "hard", "query_type": "procedural"},
+    {"id": 34, "query_ar": "كيف أستخدم بوابة المحامين؟", "query_en": "How to use lawyers portal?", "category": "justice", "source": "justice_moj_lawyer_portal.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 35, "query_ar": "كيف أتقدم للعيادة القانونية في مركز قطر للمال؟", "query_en": "How to apply to legal clinic at Qatar Financial Centre?", "category": "business", "source": "business_qfc_legal_clinic_application.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 36, "query_ar": "كيف أحصل على ترخيص فعالية فنية؟", "query_en": "How to get artistic event license?", "category": "culture", "source": "culture_moc_artistic_event_license.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 37, "query_ar": "كيف أحصل على تصريح تصوير فيلم؟", "query_en": "How to get film shooting permit?", "category": "culture", "source": "culture_moc_film_tv_shoot_permit.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 38, "query_ar": "كيف أحصل على ترخيص محطة راديو FM؟", "query_en": "How to get FM radio license?", "category": "culture", "source": "culture_moc_fm_radio_license.txt", "difficulty": "hard", "query_type": "procedural"},
+    {"id": 39, "query_ar": "كيف أحصل على ترخيص مطبعة؟", "query_en": "How to get printing press license?", "category": "culture", "source": "culture_moc_press_card_license.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 40, "query_ar": "كيف أحصل على ترخيص بطاقة صحفية؟", "query_en": "How to get press card license?", "category": "culture", "source": "culture_moc_press_card_license.txt", "difficulty": "medium", "query_type": "procedural"},
+    {"id": 41, "query_ar": "ما هو حكومي؟", "query_en": "What is Hukoomi?", "category": "info", "source": "about_hukoomi.txt", "difficulty": "easy", "query_type": "informational"},
+    {"id": 42, "query_ar": "كيف أتواصل مع حكومي؟", "query_en": "How to contact Hukoomi?", "category": "info", "source": "contact_info.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 43, "query_ar": "ما هي الأسئلة الشائعة عن حكومي؟", "query_en": "What are Hukoomi FAQs?", "category": "info", "source": "faq_hukoomi.txt", "difficulty": "easy", "query_type": "informational"},
+    {"id": 44, "query_ar": "ما هي خدمات حكومي المتاحة؟", "query_en": "What services does Hukoomi provide?", "category": "info", "source": "about_hukoomi.txt", "difficulty": "easy", "query_type": "informational"},
+    {"id": 45, "query_ar": "كيف أستخدم بوابة حكومي؟", "query_en": "How to use Hukoomi portal?", "category": "info", "source": "about_hukoomi.txt", "difficulty": "easy", "query_type": "procedural"},
+    {"id": 46, "query_ar": "رخصة ليموزين", "query_en": "limousine license", "category": "transportation", "source": "transportation_mot_limo_license.txt", "difficulty": "easy", "query_type": "keyword"},
+    {"id": 47, "query_ar": "تسجيل جامعة قطر", "query_en": "Qatar University registration", "category": "education", "source": "education_qu_course_registration.txt", "difficulty": "easy", "query_type": "keyword"},
+    {"id": 48, "query_ar": "بحث طبيب", "query_en": "doctor search", "category": "health", "source": "health_moph_doctor_search.txt", "difficulty": "easy", "query_type": "keyword"},
+    {"id": 49, "query_ar": "مناقصات", "query_en": "tenders", "category": "business", "source": "business_caa_tenders_submission.txt", "difficulty": "easy", "query_type": "keyword"},
+    {"id": 50, "query_ar": "بدل إيجار", "query_en": "rent allowance", "category": "housing", "source": "housing_mm_rent_allowance.txt", "difficulty": "easy", "query_type": "keyword"}
   ]
 }

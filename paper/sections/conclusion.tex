@@ -1,0 +1,17 @@
+\section{Conclusion}
+
+In this work, we evaluated a multilingual RAG system for Arabic-English government services and addressed four research questions about cross-lingual retrieval design.
+
+For RQ1, we showed that multilingual embeddings (paraphrase-multilingual-mpnet-base-v2) achieve 100\% accuracy on English queries without translation, matching direct English embeddings while eliminating latency and error propagation. Translation-based methods achieved only 83.3\%.
+
+For RQ2, we found that hybrid retrieval provides marginal improvement. Hybrid 70/30 achieved 92\% P@1 compared to 90\% for pure semantic search (+2\%). However, domain-specific keyword boosting (+8\%) provides a larger gain, suggesting targeted enhancements outperform generic hybrid approaches.
+
+For RQ3, we demonstrated that the system degrades gracefully on real-world query variations. Dialectal Arabic achieved 90\%, short phrases 84\%, broken grammar 80\%, and single words 80\%. The overall 15\% drop from formal to messy queries indicates robust semantic understanding.
+
+For RQ4, ablation revealed that keyword boosting contributes +8\% accuracy while title matching contributes nothing. Domain-specific keyword boosting is a simple, effective enhancement.
+
+The system achieves 99\% category accuracy and 84\% source accuracy on formal queries. Notably, even on messy queries (single words, broken grammar, dialectal Arabic), source accuracy reaches 51\% at P@1, 69\% at P@3, and 78\% at P@5—demonstrating that multilingual embeddings capture sufficient semantic information for exact document matching even from noisy inputs. All improvements over the BM25 baseline are statistically significant (99\% vs 56\%, p < 0.0001).
+
+The main limitations are corpus size (51 documents) and domain specificity (Qatar government services). Future work should expand the corpus, test on other domains, and develop public benchmarks for Arabic-English QA.
+
+Our code is available at \url{https://github.com/Rayyan1704/arabic-gov-assistant-rag}.

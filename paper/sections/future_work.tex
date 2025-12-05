@@ -1,0 +1,75 @@
+\section{Future Work}
+
+\subsection{Conversational Interface}
+
+\textbf{Multi-turn Dialogue:} Extend the system to support conversational interactions with context retention across multiple turns. This would enable users to ask follow-up questions and refine their queries naturally.
+
+\textbf{Clarification Mechanisms:} Implement active learning strategies where the system asks clarifying questions when queries are ambiguous or underspecified.
+
+\subsection{Agentic AI for Form Completion}
+
+\textbf{Automated Form Filling:} Develop agentic AI capabilities to automatically extract required information from user queries and pre-populate government service forms.
+
+\textbf{Document Verification:} Integrate document verification agents that can check user-provided information against requirements and flag missing or incorrect data.
+
+\textbf{Multi-step Procedures:} Implement workflow agents that guide users through complex multi-step government procedures, tracking progress and providing contextual assistance.
+
+\subsection{Production Deployment}
+
+\textbf{Scalable Architecture:} Deploy the system on cloud infrastructure (AWS, GCP, Azure) with load balancing and auto-scaling to handle production traffic.
+
+\textbf{Monitoring and Analytics:} Implement comprehensive logging, monitoring, and analytics to track system performance, user behaviour, and failure modes in production.
+
+\textbf{A/B Testing Framework:} Develop infrastructure for controlled experiments to continuously improve system components based on real user feedback.
+
+\subsection{Multimodal Capabilities}
+
+\textbf{Speech Input/Output:} Integrate speech recognition (Arabic and English) and text-to-speech to support voice-based interactions, improving accessibility for users with literacy challenges or visual impairments.
+
+\textbf{Document Upload and Processing:} Enable users to upload documents (PDFs, images) for automatic information extraction and form filling, reducing manual data entry.
+
+\textbf{Visual Question Answering:} Extend the system to answer questions about uploaded documents, diagrams, or forms using multimodal models.
+
+\subsection{Accuracy and Reliability Improvements}
+
+\textbf{Corpus Expansion:} Significantly expand the document corpus to 500+ documents, ensuring comprehensive coverage across all government service categories, particularly the smaller categories (currently 5-6 documents each).
+
+\textbf{Fine-tuning:} Fine-tune embedding models on domain-specific data to improve semantic understanding of government terminology and procedures.
+
+\textbf{Query Expansion:} Implement automatic query expansion using synonyms, related terms, and common reformulations to improve recall.
+
+\textbf{Confidence Calibration:} Develop calibrated confidence scores that accurately reflect answer reliability, enabling the system to defer to human agents when uncertain.
+
+\textbf{Feedback Loop:} Implement user feedback mechanisms (thumbs up/down, corrections) to continuously improve retrieval and generation quality.
+
+\subsection{Enhanced User Experience}
+
+\textbf{Personalisation:} Adapt responses based on user profile, history, and preferences (e.g., language preference, detail level).
+
+\textbf{Proactive Assistance:} Implement recommendation systems that suggest relevant services based on user queries and context.
+
+\textbf{Mobile Optimisation:} Develop native mobile applications with offline capabilities for common queries.
+
+\textbf{Accessibility Features:} Ensure WCAG 2.1 AA compliance with screen reader support, keyboard navigation, and adjustable text sizes.
+
+\subsection{Advanced Retrieval Techniques}
+
+\textbf{Dense-Sparse Hybrid at Scale:} Re-evaluate hybrid retrieval approaches with larger corpora (10,000+ documents) where sparse methods may provide complementary value.
+
+\textbf{Query Understanding:} Implement intent classification and entity extraction to better understand user needs and route queries appropriately.
+
+\textbf{Temporal Awareness:} Handle time-sensitive queries by incorporating document timestamps and update frequencies.
+
+\subsection{Multilingual Expansion}
+
+\textbf{Additional Languages:} Extend support to other languages common in Qatar (Urdu, Hindi, Tagalog) to serve the diverse expatriate population.
+
+\textbf{Code-Switching:} Improve handling of code-switched queries that mix Arabic and English within a single sentence.
+
+\subsection{Evaluation and Benchmarking}
+
+\textbf{Larger Test Sets:} Create comprehensive test sets with 500+ queries covering edge cases, rare services, and complex multi-step procedures.
+
+\textbf{Human Evaluation:} Conduct large-scale human evaluation studies to assess answer quality, helpfulness, and user satisfaction.
+
+\textbf{Benchmark Creation:} Develop and release a public benchmark for Arabic-English government service QA to enable reproducible research.

@@ -1,0 +1,73 @@
+\section{Methodology}
+
+\subsection{Problem Formulation}
+
+Given a query $q$ in language $L_q \in \{Arabic, English\}$ and a corpus $\mathcal{D} = \{d_1, d_2, ..., d_n\}$ of Arabic documents, the retrieval task aims to return the most relevant document $d^* \in \mathcal{D}$. We define relevance through semantic similarity in a shared embedding space.
+
+Let $E: \mathcal{T} \rightarrow \mathbb{R}^{768}$ be a multilingual encoder that maps text to a 768-dimensional vector. The retrieval score for a query-document pair is computed as:
+
+\begin{equation}
+    s(q, d) = \cos(E(q), E(d)) = \frac{E(q) \cdot E(d)}{\|E(q)\| \|E(d)\|}
+\end{equation}
+
+The system retrieves the top-$k$ documents by ranking all $d \in \mathcal{D}$ according to $s(q, d)$.
+
+\subsection{System Architecture}
+
+Our RAG system consists of four components:
+
+\textbf{Document Processing.} Arabic text undergoes normalisation following \cite{habash2010introduction}: character normalisation, diacritic removal, and whitespace standardisation. Documents are chunked into paragraphs (512 characters, 128 overlap) to create retrieval units.
+
+\textbf{Embedding Generation.} We use paraphrase-multilingual-mpnet-base-v2 \cite{reimers2020making}, which maps Arabic and English text into a shared semantic space. This enables cross-lingual retrieval without explicit translation.
+
+\textbf{Retrieval.} We employ FAISS IndexFlatIP \cite{karpukhin2020dense} for efficient similarity search. The final retrieval score incorporates optional keyword boosting:
+
+\begin{equation}
+    s_{final}(q, d) = s(q, d) + \alpha \cdot \mathbb{1}[\text{keyword match}]
+\end{equation}
+
+where $\alpha$ is the boost weight and $\mathbb{1}[\cdot]$ is an indicator function for domain-specific keyword matches.
+
+\textbf{Answer Generation.} Retrieved documents are passed to Google Gemini 2.0 Flash with context-only prompting to generate answers grounded in the retrieved content.
+
+\subsection{Dataset}
+
+We collected 51 Arabic government service documents from Qatar's Hukoomi portal across 8 categories: transportation (7), education (8), health (7), business (8), housing (5), culture (5), info (5), and justice (6). Each document describes procedures, requirements, or regulations.
+
+\subsection{Evaluation Protocol}
+
+\textbf{Test Sets.} We construct two test sets:
+\begin{itemize}
+    \item \textit{Formal queries}: 100 well-formed questions (50 Arabic, 50 English)
+    \item \textit{Messy queries}: 100 real-world variations (20 single words, 25 short phrases, 25 broken grammar, 30 dialectal Arabic)
+\end{itemize}
+
+\textbf{Metrics.} We report two levels of accuracy:
+\begin{itemize}
+    \item \textit{Category accuracy}: Retrieved document belongs to the correct service category
+    \item \textit{Source accuracy}: Retrieved document is the exact correct document for the query
+\end{itemize}
+
+We also report Precision@K (P@K), the fraction of correct retrievals in top-$k$ results, and Mean Reciprocal Rank (MRR):
+
+\begin{equation}
+    \text{MRR} = \frac{1}{|Q|} \sum_{i=1}^{|Q|} \frac{1}{\text{rank}_i}
+\end{equation}
+
+where $\text{rank}_i$ is the position of the first correct result for query $i$.
+
+\textbf{Statistical Testing.} We use paired t-tests to compare system performance against a BM25 baseline, with significance threshold $p < 0.05$.
+
+\subsection{Experimental Design}
+
+To answer our research questions, we conduct five experiments:
+
+\textbf{Experiment 1 (RQ1): Translation Strategies.} We compare: (i) direct English embeddings, (ii) multilingual embeddings, (iii) translate-then-embed, and (iv) back-translation query expansion.
+
+\textbf{Experiment 2 (RQ2): Hybrid Retrieval.} Following \cite{gao2021clear}, we test: (i) semantic only, (ii) BM25 only, (iii) weighted hybrids (70/30, 50/50), and (iv) cascade reranking \cite{nogueira2019passage}.
+
+\textbf{Experiment 3: Comprehensive Evaluation.} We evaluate on 100 formal queries with statistical validation against BM25 and per-category analysis.
+
+\textbf{Experiment 4 (RQ3): Robustness Testing.} We test 100 messy queries across four types to assess degradation on noisy input.
+
+\textbf{Experiment 5 (RQ4): Ablation Study.} We measure the contribution of keyword boosting and title matching by removing each component.

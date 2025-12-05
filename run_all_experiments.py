@@ -36,17 +36,24 @@ def run_experiment(script_name, description):
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description='Run all research experiments')
+    parser.add_argument('--auto', action='store_true', help='Run without prompts (for automation)')
+    args = parser.parse_args()
+    
     print("="*80)
-    print("RESEARCH EXPERIMENTS - ALL 4 EXPERIMENTS")
+    print("RESEARCH EXPERIMENTS - ALL 5 EXPERIMENTS")
     print("="*80)
     print("\nThis will run:")
     print("1. Experiment 1: Translation Strategies (4 methods)")
     print("2. Experiment 2: Hybrid Retrieval (5 configurations)")
-    print("3. Experiment 3: Comprehensive Evaluation (100 queries)")
-    print("4. Experiment 4: Ablation Study (component analysis)")
-    print("\nEstimated time: 20-25 minutes")
+    print("3. Experiment 3: Formal Queries Evaluation (100 queries)")
+    print("4. Experiment 4: Robustness Evaluation (100 messy queries)")
+    print("5. Experiment 5: Ablation Study (component analysis)")
+    print("\nEstimated time: 5-8 minutes")
     
-    input("\nPress Enter to start...")
+    if not args.auto:
+        input("\nPress Enter to start...")
     
     experiments = [
         {
@@ -62,8 +69,12 @@ def main():
             'description': 'Experiment 3 - Comprehensive Evaluation'
         },
         {
-            'script': 'experiments/experiment4_ablation_study.py',
-            'description': 'Experiment 4 - Ablation Study'
+            'script': 'experiments/experiment4_robustness_evaluation.py',
+            'description': 'Experiment 4 - Robustness Evaluation'
+        },
+        {
+            'script': 'experiments/experiment5_ablation_study.py',
+            'description': 'Experiment 5 - Ablation Study'
         }
     ]
     
@@ -78,11 +89,14 @@ def main():
         })
         
         if not success:
-            print(f"\n⚠️  {exp['description']} failed. Continue anyway? (y/n)")
-            response = input().strip().lower()
-            if response != 'y':
-                print("\nExperiments stopped.")
-                break
+            if args.auto:
+                print(f"\n⚠️  {exp['description']} failed. Continuing (--auto mode)...")
+            else:
+                print(f"\n⚠️  {exp['description']} failed. Continue anyway? (y/n)")
+                response = input().strip().lower()
+                if response != 'y':
+                    print("\nExperiments stopped.")
+                    break
     
     # Summary
     total_elapsed = time.time() - total_start
@@ -105,7 +119,8 @@ def main():
         print("  - index/experiment1_translation_strategies.json")
         print("  - index/experiment2_hybrid_retrieval.json")
         print("  - index/experiment3_comprehensive_evaluation.json")
-        print("  - index/experiment4_ablation_study.json")
+        print("  - index/experiment4_robustness_evaluation.json")
+        print("  - index/experiment5_ablation_study.json")
     else:
         print("\n⚠️  Some experiments failed. Check the output above for details.")
 

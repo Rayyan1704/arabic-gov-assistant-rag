@@ -1,0 +1,37 @@
+\section{Discussion}
+
+\subsection{Interpretation of Results}
+
+\textbf{Multilingual embeddings eliminate translation overhead (RQ1).} The paraphrase-multilingual-mpnet-base-v2 model achieved 100\% accuracy on English queries without any translation step. This simplifies the architecture, removes latency (0.11s vs 0.34s for translate-then-embed), and avoids error propagation. The retrieval time of 0.17s enables real-time applications. For Arabic-English RAG, translation appears unnecessary when embeddings are sufficiently strong.
+
+\textbf{Hybrid retrieval provides marginal improvement (RQ2).} Hybrid 70/30 weighting achieved 92\% P@1 compared to 90\% for pure semantic search—a modest 2\% gain. This aligns with conventional wisdom that BM25 can complement semantic search \cite{ma2021replication}. However, domain-specific keyword boosting (+8\%) provides a larger improvement than hybrid retrieval (+2\%), suggesting that targeted enhancements outperform generic hybrid approaches for specialized domains.
+
+\textbf{Dialectal Arabic performs better than expected (RQ3).} The 90\% accuracy on Gulf dialect queries exceeded our expectations. The multilingual model apparently learned sufficient dialectal variation from its training data to handle moderate dialect. Very colloquial expressions still fail, but the baseline is stronger than assumed. The 15\% overall drop from formal to messy queries indicates robust semantic understanding.
+
+\textbf{Keyword boosting is the primary lever (RQ4).} The ablation was clear: +8\% from domain-specific keyword boosting, 0\% from title matching. For domain-specific RAG systems, investing in terminology understanding and boosting accordingly is a simple, effective strategy.
+
+\subsection{Practical Implications}
+
+For practitioners building cross-lingual RAG systems:
+\begin{enumerate}
+    \item Use high-quality multilingual embeddings instead of translation pipelines
+    \item Test pure semantic search before adding hybrid complexity
+    \item Implement domain-specific keyword boosting—it is simple and effective
+    \item Ensure corpus coverage matches user query distribution; no algorithm compensates for missing documents
+\end{enumerate}
+
+\subsection{Limitations}
+
+\textbf{Corpus size.} 51 documents is small. Retrieval is inherently easier with fewer candidates, and results may not generalise to thousands of documents. The 84\% category accuracy on messy queries provides a more realistic picture than the 99\% on formal queries.
+
+\textbf{Category vs source accuracy.} Our primary metric is category accuracy (99\% formal, 84\% messy), but exact source accuracy is lower: 84\% at P@1 for formal queries and 51\% for messy queries. Notably, even on noisy inputs like single words or dialectal Arabic, the system identifies the exact correct document over half the time. Source accuracy improves significantly at P@3 (92\% formal, 69\% messy) and P@5 (78\% messy), indicating the correct document is usually in the top results.
+
+\textbf{Single domain.} This evaluation covers government services in Qatar. Other domains—technical documentation, customer support, medical information—may exhibit different characteristics.
+
+\textbf{Category coverage.} Several categories contain only 5-6 documents. More coverage would strengthen confidence in per-category conclusions.
+
+\textbf{No human evaluation.} All metrics are automated. User studies would provide stronger validation of answer quality and usefulness.
+
+\subsection{Comparison with Prior Work}
+
+Our 99\% category accuracy on formal queries exceeds typical RAG benchmarks (70-85\%) \cite{thakur2021beir}, but this likely reflects the small, focused corpus rather than algorithmic superiority. The 84\% on messy queries aligns with robustness studies showing 10-20\% degradation on noisy inputs \cite{wang2022robustness}. Our contribution is less about beating benchmarks and more about providing empirical evidence for design decisions in cross-lingual settings—specifically, that translation is unnecessary and hybrid retrieval may hurt when embeddings are strong.

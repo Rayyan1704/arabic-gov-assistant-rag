@@ -1,0 +1,40 @@
+\section{Experimental Setup}
+
+\subsection{Implementation Details}
+
+\textbf{Hardware:} Standard laptop (16GB RAM, Intel i7)
+
+\textbf{Software Stack:}
+\begin{itemize}
+    \item Python 3.12
+    \item sentence-transformers 2.2.2
+    \item FAISS 1.7.4
+    \item Google Generative AI 0.3.2
+    \item Streamlit 1.28.1
+\end{itemize}
+
+\textbf{Model Configuration:}
+\begin{itemize}
+    \item Embedding model: paraphrase-multilingual-mpnet-base-v2
+    \item Batch size: 32
+    \item Normalisation: L2 for cosine similarity
+    \item LLM: Gemini 2.0 Flash (free tier)
+\end{itemize}
+
+\subsection{Baseline Systems}
+
+\textbf{BM25 Baseline:} Standard BM25 implementation with custom Arabic tokeniser (k1=1.5, b=0.75)
+
+\textbf{Translation Baseline:} Google Translate API for query translation + Arabic embeddings
+
+\subsection{Evaluation Protocol}
+
+\textbf{Ground Truth:} Manual category labels for each query, validated by native Arabic speaker
+
+\textbf{Success Criteria:} Top-1 result matches expected category
+
+\textbf{Statistical Testing:} Paired t-test comparing system accuracy vs BM25 baseline (α=0.05)
+
+\subsection{Reproducibility}
+
+All code, data, and experimental results are available at \url{https://github.com/Rayyan1704/arabic-gov-assistant-rag}. Experiments were run with fixed random seeds for reproducibility.

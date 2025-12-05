@@ -1,0 +1,21 @@
+\section{Related Work}
+
+\subsection{Retrieval-Augmented Generation}
+
+RAG systems pair dense retrieval with generative models to produce factually grounded answers \cite{lewis2020retrieval}. The approach has gained widespread adoption due to its ability to reduce hallucinations and provide verifiable responses \cite{gao2023retrieval}. Researchers have explored retrieval strategies, reranking methods \cite{nogueira2019passage}, and prompt engineering \cite{liu2023pre}. However, most work focuses on English-only scenarios, leaving cross-lingual RAG understudied.
+
+\subsection{Multilingual Information Retrieval}
+
+Cross-lingual retrieval has a long history \cite{nie2010cross}. Early approaches relied on machine translation to bridge the language gap \cite{oard1998comparative}, but translation introduces latency and error propagation. More recent work uses multilingual embeddings that map multiple languages into a shared semantic space \cite{reimers2020making, artetxe2019laser}. Multilingual sentence transformers \cite{reimers2020making} and cross-lingual pre-training methods \cite{tran2020criss} enable zero-shot transfer, but their effectiveness within RAG systems has not been systematically evaluated.
+
+\subsection{Arabic NLP}
+
+Arabic poses distinct challenges: rich morphology and wide dialectal variation \cite{habash2010introduction}. Modern Standard Arabic (MSA) is well-supported by current NLP systems, but dialectal Arabic remains difficult \cite{bouamor2019madar}. Arabic-specific models like AraBERT \cite{antoun2020arabert}, built on BERT \cite{devlin2019bert}, achieve strong performance on MSA tasks but are not designed for cross-lingual retrieval. The robustness of multilingual models to Gulf Arabic dialect has not been previously measured.
+
+\subsection{Hybrid Retrieval}
+
+Combining dense and sparse retrieval is a common strategy to leverage complementary strengths \cite{ma2021replication}. The intuition is that BM25 captures exact lexical matches while embeddings capture semantic similarity. However, recent benchmarks suggest that high-quality dense retrievers may not benefit from BM25 augmentation \cite{thakur2021beir}. Our work tests this hypothesis in an Arabic-English setting with strong multilingual embeddings.
+
+\subsection{Government Service Information Systems}
+
+Government chatbots and information systems have been studied in English \cite{androutsopoulou2019transforming} and monolingual deployments \cite{lee2019government}. To our knowledge, no prior work has systematically evaluated cross-lingual RAG for Arabic-English government services or measured robustness to dialectal Arabic queries in this domain.

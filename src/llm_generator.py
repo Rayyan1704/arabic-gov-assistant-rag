@@ -33,11 +33,16 @@ class AnswerGenerator:
         Returns:
             Dictionary with query, answer, and sources
         """
-        # Prepare context string
+        # Prepare context string based on return language
         context_str = ""
-        for i, ctx in enumerate(contexts[:3], 1):  # Top 3
-            context_str += f"\n\n[مصدر {i}]\n{ctx['chunk']}\n"
-            context_str += f"الفئة: {ctx['metadata']['category']}\n"
+        if return_language == 'ar':
+            for i, ctx in enumerate(contexts[:3], 1):  # Top 3
+                context_str += f"\n\n[مصدر {i}]\n{ctx['chunk']}\n"
+                context_str += f"الفئة: {ctx['metadata']['category']}\n"
+        else:
+            for i, ctx in enumerate(contexts[:3], 1):  # Top 3
+                context_str += f"\n\n[Source {i}]\n{ctx['chunk']}\n"
+                context_str += f"Category: {ctx['metadata']['category']}\n"
         
         # Construct prompt based on return language
         if return_language == 'ar':
@@ -89,7 +94,10 @@ Answer:"""
             answer = response.text
         
         except Exception as e:
-            answer = f"عذراً، حدث خطأ في توليد الإجابة: {str(e)}"
+            if return_language == 'ar':
+                answer = f"عذراً، حدث خطأ في توليد الإجابة: {str(e)}"
+            else:
+                answer = f"Sorry, an error occurred while generating the answer: {str(e)}"
         
         # Prepare full response
         result = {
