@@ -6,17 +6,17 @@
 
 To answer RQ1, we compare the retrieval performance of multilingual embeddings against translation-based approaches. Table~\ref{tab:translation} shows that multilingual embeddings match direct English embeddings at 100\% P@1 without any translation step. Translation-based methods perform worse (83.3\%) and add significant latency.
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
-\begin{tabular}{lcccc}
-\hline
+\begin{tabular}{lrrrr}
+\toprule
 \textbf{Method} & \textbf{P@1} & \textbf{P@3} & \textbf{MRR} & \textbf{Time (s)} \\
-\hline
+\midrule
 Direct English & 100\% & 100\% & 1.000 & 0.13 \\
 Multilingual & 100\% & 100\% & 1.000 & 0.11 \\
 Translate + Embed & 83.3\% & 83.3\% & 0.833 & 0.34 \\
 Back-translation & 83.3\% & 91.7\% & 0.861 & 1.14 \\
-\hline
+\bottomrule
 \end{tabular}
 \caption{Translation strategy comparison (12 English queries). Multilingual embeddings match direct English performance while eliminating translation overhead.}
 \label{tab:translation}
@@ -35,18 +35,18 @@ Back-translation & 83.3\% & 91.7\% & 0.861 & 1.14 \\
 
 To answer RQ2, we compare pure semantic search against BM25-augmented hybrid configurations. Table~\ref{tab:hybrid} shows that hybrid 70/30 achieves the highest P@1 (92\%), slightly outperforming pure semantic (90\%).
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
-\begin{tabular}{lccccc}
-\hline
+\begin{tabular}{lrrrrr}
+\toprule
 \textbf{Method} & \textbf{P@1} & \textbf{P@3} & \textbf{P@5} & \textbf{MRR} & \textbf{Time (s)} \\
-\hline
+\midrule
 Semantic Only & 90\% & 94\% & 94\% & 0.922 & 0.17 \\
 BM25 Only & 52\% & 84\% & 88\% & 0.688 & 0.0003 \\
 Hybrid 70/30 & 92\% & 98\% & 98\% & 0.949 & 0.15 \\
 Hybrid 50/50 & 86\% & 98\% & 98\% & 0.912 & 0.15 \\
 Cascade & 90\% & 94\% & 94\% & 0.922 & 0.15 \\
-\hline
+\bottomrule
 \end{tabular}
 \caption{Hybrid retrieval comparison (50 Arabic queries). Hybrid 70/30 slightly outperforms pure semantic search.}
 \label{tab:hybrid}
@@ -65,20 +65,20 @@ Cascade & 90\% & 94\% & 94\% & 0.922 & 0.15 \\
 
 To answer RQ3, we evaluate the system on 100 messy queries across four categories. Table~\ref{tab:robustness} shows performance by query type.
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
-\begin{tabular}{lccc}
-\hline
+\begin{tabular}{lrrrr}
+\toprule
 \textbf{Query Type} & \textbf{Count} & \textbf{Accuracy} & \textbf{Drop from Formal} \\
-\hline
+\midrule
 Formal (baseline) & 100 & 99\% & — \\
 Dialectal Arabic & 30 & 90\% & -9\% \\
 Short phrases & 25 & 84\% & -15\% \\
 Broken grammar & 25 & 80\% & -19\% \\
 Single words & 20 & 80\% & -19\% \\
-\hline
+\midrule
 \textbf{All messy} & 100 & 84\% & -15\% \\
-\hline
+\bottomrule
 \end{tabular}
 \caption{Robustness results across query types. Dialectal Arabic shows the smallest degradation.}
 \label{tab:robustness}
@@ -97,17 +97,17 @@ Single words & 20 & 80\% & -19\% \\
 
 To answer RQ4, we measure the contribution of each system component. Table~\ref{tab:ablation} shows the impact of removing keyword boosting and title matching.
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
-\begin{tabular}{lcc}
-\hline
+\begin{tabular}{lrr}
+\toprule
 \textbf{Configuration} & \textbf{Accuracy} & \textbf{Impact} \\
-\hline
+\midrule
 Full System & 99\% & baseline \\
 Without Keyword Boosting & 91\% & -8\%$^\dagger$ \\
 Without Title Matching & 99\% & 0\% \\
 Pure Semantic Baseline & 91\% & — \\
-\hline
+\bottomrule
 \end{tabular}
 \caption{Ablation study results (100 queries). $^\dagger$ indicates statistically significant difference (p < 0.05).}
 \label{tab:ablation}
@@ -126,15 +126,15 @@ Pure Semantic Baseline & 91\% & — \\
 
 The full system (99\%) significantly outperforms the BM25 baseline (56\%), with p < 0.0001 (paired t-test) and large effect size (Cohen's d > 0.8). Table~\ref{tab:overall} summarises overall category-level performance (whether the top result is from the correct service category).
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
-\begin{tabular}{lccccc}
-\hline
+\begin{tabular}{lrrrrl}
+\toprule
 \textbf{System} & \textbf{P@1} & \textbf{P@3} & \textbf{MRR} & \textbf{Time (s)} & \textbf{95\% CI} \\
-\hline
+\midrule
 Our System & 99\% & 99\% & 0.970 & 0.17 & [0.921, 0.999] \\
 BM25 Baseline & 56\% & 70\% & 0.638 & 0.0003 & [0.512, 0.764] \\
-\hline
+\bottomrule
 \end{tabular}
 \caption{Overall performance comparison (100 formal queries). Our system significantly outperforms BM25 (p < 0.0001). Response time includes retrieval only (not LLM generation).}
 \label{tab:overall}
@@ -149,15 +149,15 @@ Arabic and English queries perform comparably: 100\% (50/50) for Arabic, 98\% (4
 
 The metrics above report category-level accuracy (retrieved document from correct category). We also measured exact source accuracy—whether the system retrieves the specific correct document.
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
-\begin{tabular}{lcccc}
-\hline
+\begin{tabular}{lrrrr}
+\toprule
 \textbf{Query Type} & \textbf{Cat P@1} & \textbf{Cat P@3} & \textbf{Src P@1} & \textbf{Src P@3} \\
-\hline
+\midrule
 Formal Queries & 99\% & 99\% & 84\% & 92\% \\
 Messy Queries & 84\% & 89\% & 51\% & 69\% \\
-\hline
+\bottomrule
 \end{tabular}
 \caption{Category vs exact source accuracy. ``Cat'' = correct service category retrieved; ``Src'' = exact correct document retrieved. Category accuracy measures whether the top result is from the correct service category, while source accuracy measures whether the system retrieves the specific target document.}
 \label{tab:source_accuracy}

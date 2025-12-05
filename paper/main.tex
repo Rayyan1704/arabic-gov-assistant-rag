@@ -1,17 +1,15 @@
-% Workshop/Conference Paper Template
-% 8 pages maximum for workshop, adjust as needed
-
+% Standard LaTeX Research Paper
 \documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{times}
+\usepackage{newtxtext,newtxmath}  % Modern Times font package
 \usepackage{latexsym}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{multirow}
-\usepackage{hyperref}
 \usepackage[margin=1in]{geometry}
 \usepackage{natbib}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}  % Load last for compatibility
 
 \title{Cross-Lingual Retrieval-Augmented Generation for Arabic Government Services}
 
@@ -44,7 +42,8 @@
 
 I thank the Qatar government (Hukoomi) for making government service documentation publicly accessible. I'm grateful to Google for providing access to the Gemini API and to the Sentence-Transformers team for their multilingual embedding models. This work was conducted as an independent research project.
 
+\newpage
+\bibliographystyle{plainnat}
 \bibliography{references}
-\bibliographystyle{acl_natbib}
 
 \end{document}
