@@ -28,7 +28,7 @@ streamlit>=1.28.0
 google-generativeai>=0.3.0
 
 # Translation
-googletrans==4.0.0-rc1
+deep-translator>=1.11.4
 
 # Hybrid Retrieval
 rank-bm25>=0.2.2

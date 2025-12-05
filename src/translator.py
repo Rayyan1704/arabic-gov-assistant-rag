@@ -3,7 +3,7 @@ Translation Service for Bilingual RAG System
 Handles Arabic-English translation for queries and answers.
 """
 
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 import re
 
 
@@ -15,7 +15,7 @@ class TranslationService:
     
     def __init__(self):
         """Initialize translator"""
-        self.translator = Translator()
+        # deep-translator doesn't need initialization
         print("[OK] Translation service initialized")
     
     def detect_language(self, text):
@@ -47,8 +47,8 @@ class TranslationService:
             Arabic translation
         """
         try:
-            result = self.translator.translate(text, src='en', dest='ar')
-            return result.text
+            result = GoogleTranslator(source='en', target='ar').translate(text)
+            return result
         except Exception as e:
             print(f"⚠️ Translation error: {e}")
             return text  # Return original if translation fails
@@ -64,8 +64,8 @@ class TranslationService:
             English translation
         """
         try:
-            result = self.translator.translate(text, src='ar', dest='en')
-            return result.text
+            result = GoogleTranslator(source='ar', target='en').translate(text)
+            return result
         except Exception as e:
             print(f"⚠️ Translation error: {e}")
             return text  # Return original if translation fails
