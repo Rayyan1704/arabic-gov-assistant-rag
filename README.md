@@ -117,10 +117,10 @@ arabic-gov-assistant-rag/
 - Saves 0.23s latency per query
 - No translation errors
 
-### 2. Pure Semantic Search Outperforms Hybrid
-- Semantic: 84% P@1
-- Hybrid (BM25 + Semantic): 70-80% P@1
-- High-quality embeddings already capture lexical information
+### 2. Hybrid Retrieval Provides Marginal Improvement
+- Hybrid 70/30: 92% P@1
+- Semantic Only: 90% P@1
+- Marginal improvement (+2%), but keyword boosting (+8%) is more effective
 
 ### 3. Keyword Boosting is Critical
 - Adds +8% accuracy (91% → 99%)
