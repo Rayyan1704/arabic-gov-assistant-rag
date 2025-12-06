@@ -3,7 +3,8 @@
 A bilingual (Arabic-English) Retrieval-Augmented Generation system achieving **99% category accuracy** (84% source accuracy) on government service queries. Built with multilingual embeddings and domain-specific keyword boosting.
 
 **Author:** Mohammed Aaqil Rayyan  
-**Paper:** [Cross-Lingual Retrieval-Augmented Generation for Arabic Government Services](paper/main.tex)
+**Paper:** [Cross-Lingual Retrieval-Augmented Generation for Arabic Government Services](paper/main.tex)  
+**Live Demo:** [Try it on Streamlit](https://arabic-gov-assistant-rag.streamlit.app)
 
 ---
 
