@@ -4,6 +4,7 @@ A bilingual (Arabic-English) Retrieval-Augmented Generation system achieving **9
 
 **Author:** Mohammed Aaqil Rayyan  
 **Paper:** [Cross-Lingual Retrieval-Augmented Generation for Arabic Government Services](paper/Cross_Lingual_Retrieval_Augmented_Generation_for_Arabic_Government_Services.pdf)
+
 **Live Demo:** [Try it on Streamlit](https://arabic-gov-assistant-rag.streamlit.app)
 
 ---
