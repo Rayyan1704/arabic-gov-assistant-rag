@@ -345,17 +345,24 @@ if 'search_results' in st.session_state:
                             # Check cache first
                             if cache_key in st.session_state.document_translations:
                                 full_content = st.session_state.document_translations[cache_key]
-                                doc_lang = "English"
+                                doc_lang = "English (Translated)"
                             else:
                                 # Translate and cache
-                                with st.spinner(f"Translating document {i} to English..."):
-                                    translated_content = translator.translate_text(full_content, 'en')
-                                    st.session_state.document_translations[cache_key] = translated_content
-                                    full_content = translated_content
-                                    doc_lang = "English"
+                                try:
+                                    with st.spinner(f"🔄 Translating document {i} to English..."):
+                                        translated_content = translator.translate_text(full_content, 'en')
+                                        if translated_content and len(translated_content) > 10:
+                                            st.session_state.document_translations[cache_key] = translated_content
+                                            full_content = translated_content
+                                            doc_lang = "English (Translated)"
+                                        else:
+                                            doc_lang = "Arabic (Translation failed)"
+                                except Exception as trans_error:
+                                    st.warning(f"⚠️ Translation failed: {str(trans_error)[:50]}")
+                                    doc_lang = "Arabic (Translation error)"
                         else:
                             # Keep original Arabic
-                            doc_lang = "Arabic"
+                            doc_lang = "Arabic (Original)"
                         
                         st.text_area(
                             f"Full Document ({doc_lang}):",
