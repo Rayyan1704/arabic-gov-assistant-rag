@@ -293,17 +293,17 @@ if 'search_results' in st.session_state:
     with tab2:
         st.markdown("### 📚 Retrieved Sources")
         
-        # Determine current desired display language based on current setting
-        if answer_lang == "Same as query":
+        # Determine current desired display language based on stored setting
+        if answer_lang_setting == "Same as query":
             current_display_lang = query_lang
-        elif answer_lang == "Always Arabic":
+        elif answer_lang_setting == "Always Arabic":
             current_display_lang = 'ar'
         else:  # Always English
             current_display_lang = 'en'
         
         lang_display = "English" if current_display_lang == 'en' else "Arabic"
         
-        st.info(f"💡 Full documents displayed in **{lang_display}** (Setting: {answer_lang})")
+        st.info(f"💡 Full documents displayed in **{lang_display}** (Setting: {answer_lang_setting})")
         
         # Initialize translation cache in session state if not exists
         if 'document_translations' not in st.session_state:
