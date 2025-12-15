@@ -391,7 +391,7 @@ if 'search_results' in st.session_state:
             st.markdown("**Performance**")
             st.markdown(f"- Response: {response_time:.2f}s")
             st.markdown(f"- Model: MPNet")
-            st.markdown(f"- LLM: Gemini 2.0")
+            st.markdown(f"- LLM: Gemini 1.5")
         
         st.markdown("---")
         st.markdown("**Score Distribution:**")

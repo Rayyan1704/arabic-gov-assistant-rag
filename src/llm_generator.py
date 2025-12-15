@@ -7,18 +7,30 @@ from typing import List, Dict
 load_dotenv()
 
 class AnswerGenerator:
-    """Generate answers using Google Gemini"""
+    """Generate answers using Google Gemini with automatic fallback"""
     
-    def __init__(self, model_name: str = "gemini-2.0-flash"):
-        """Initialize Gemini model"""
+    def __init__(self, model_names: List[str] = None):
+        """Initialize Gemini with multiple model fallbacks"""
         api_key = os.getenv('GEMINI_API_KEY')
         
         if not api_key:
             raise ValueError("GEMINI_API_KEY not found in .env file")
         
         genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel(model_name)
-        print(f"✅ Gemini model initialized: {model_name}")
+        
+        # Default models to try in order (free tier models)
+        if model_names is None:
+            self.model_names = [
+                "gemini-1.5-flash",
+                "gemini-1.5-flash-8b",
+                "gemini-1.0-pro",
+                "gemini-pro"
+            ]
+        else:
+            self.model_names = model_names
+        
+        self.models = [genai.GenerativeModel(name) for name in self.model_names]
+        print(f"✅ Gemini models initialized with fallback: {', '.join(self.model_names)}")
     
     def generate_answer(self, query: str, contexts: List[Dict], language: str = 'ar', return_language: str = 'ar') -> Dict:
         """
@@ -81,23 +93,36 @@ Instructions:
 
 Answer:"""
         
-        # Call Gemini API
-        try:
-            response = self.model.generate_content(
-                prompt,
-                generation_config=genai.types.GenerationConfig(
-                    temperature=0.3,  # Lower = more factual
-                    max_output_tokens=500
-                )
-            )
-            
-            answer = response.text
+        # Call Gemini API with fallback
+        answer = None
+        last_error = None
         
-        except Exception as e:
+        for i, model in enumerate(self.models):
+            try:
+                response = model.generate_content(
+                    prompt,
+                    generation_config=genai.types.GenerationConfig(
+                        temperature=0.3,  # Lower = more factual
+                        max_output_tokens=500
+                    )
+                )
+                
+                answer = response.text
+                print(f"✅ Successfully used model: {self.model_names[i]}")
+                break  # Success, exit loop
+            
+            except Exception as e:
+                last_error = e
+                print(f"⚠️ Model {self.model_names[i]} failed: {str(e)[:100]}")
+                # Try next model
+                continue
+        
+        # If all models failed
+        if answer is None:
             if return_language == 'ar':
-                answer = f"عذراً، حدث خطأ في توليد الإجابة: {str(e)}"
+                answer = f"عذراً، حدث خطأ في توليد الإجابة: {str(last_error)}"
             else:
-                answer = f"Sorry, an error occurred while generating the answer: {str(e)}"
+                answer = f"Sorry, an error occurred while generating the answer: {str(last_error)}"
         
         # Prepare full response
         result = {
