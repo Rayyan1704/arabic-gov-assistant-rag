@@ -18,13 +18,14 @@ class AnswerGenerator:
         
         genai.configure(api_key=api_key)
         
-        # Default models to try in order (free tier models)
+        # Default models to try in order (free tier models, newest first)
         if model_names is None:
             self.model_names = [
-                "gemini-1.5-flash",
-                "gemini-1.5-flash-8b",
-                "gemini-1.0-pro",
-                "gemini-pro"
+                "gemini-2.0-flash-exp",      # Latest experimental
+                "gemini-1.5-flash",          # Stable and fast
+                "gemini-1.5-flash-8b",       # Lighter version
+                "gemini-1.5-pro",            # More capable
+                "gemini-1.0-pro"             # Legacy fallback
             ]
         else:
             self.model_names = model_names
